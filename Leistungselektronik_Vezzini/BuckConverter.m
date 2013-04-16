@@ -46,9 +46,11 @@ end
 %% Berechnung Leitverluste
 Pv = zeros(size(Pin));  % memory allocation
 %Pv = ...*D % Leitverluste:
-%           MOSFET (*D)
-%           Diode (* 1-D)
-%           Shunt (immer)
+%           MOSFET (*D)     --> Rdson * I_DRMS^2
+%                           --> Uf * If + Rd * If^2 (für antiparallele Diode des Mosfets)
+%           
+%           Diode (* 1-D)   --> Ufd * Ifd + Rd * Ifd^2
+%           Shunt (immer)   --> I
 %           R drossel (immer)
 Pin_tot = Pin + Pv;
 
