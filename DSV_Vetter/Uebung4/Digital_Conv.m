@@ -16,6 +16,7 @@ N = length(x);
 p = length(g)-1;
 y = zeros(1,N+p);
 
+% Zeropadding
 x_zp = [zeros(1, p) x' zeros(1, p)]';
 
 % Berechnung der Faltung für alle Stellen
