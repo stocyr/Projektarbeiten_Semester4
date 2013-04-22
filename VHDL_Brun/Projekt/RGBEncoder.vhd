@@ -30,7 +30,7 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity RGBEncoder is
-    Port ( HUE : in  STD_LOGIC_VECTOR(7 downto 0);
+    Port ( HUE : in  STD_LOGIC_VECTOR(8 downto 0);
            SAT : in  STD_LOGIC_VECTOR(7 downto 0);
            VAL : in  STD_LOGIC_VECTOR(7 downto 0);
            R : out  STD_LOGIC_VECTOR(7 downto 0);
@@ -58,37 +58,37 @@ begin
 			B <= VAL;
 		else
 			base := ((255 - unsigned(SAT)) * unsigned(VAL)) srl 8;
-			switch := unsigned(HUE)/60;
+			switch := unsigned(HUE)/64;
 			case switch is
 				when "000" =>
 					R <= VAL;
-					G <= std_logic_vector((((unsigned(VAL) - base)*unsigned(HUE))/60) + base);
+					G <= std_logic_vector((((unsigned(VAL) - base)*unsigned(HUE))/64) + base);
 					B <= std_logic_vector(base);
 				
 				when "001" =>
-					R <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+					R <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
 					G <= VAL;
 					B <= std_logic_vector(base);
 				
 				when "010" =>
 					R <= std_logic_vector(base);
 					G <= VAL;
-					B <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 60))/60) + base);
+					B <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 64))/64) + base);
 				
 				when "011" =>
 					R <= std_logic_vector(base);
-					G <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+					G <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
 					B <= VAL;
 				
 				when "100" =>
-					R <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 60))/60) + base);
+					R <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 64))/64) + base);
 					G <= std_logic_vector(base);
 					B <= VAL;
 				
 				when "101" =>
 					R <= VAL;
 					G <= std_logic_vector(base);
-					B <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+					B <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
 				when others =>
 			end case;
 		end if;

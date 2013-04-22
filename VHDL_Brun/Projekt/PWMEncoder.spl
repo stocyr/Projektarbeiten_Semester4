@@ -1,7 +1,0 @@
-[Inputs]
-CLK
-RESET
-=VALUE[7:0]=
-[Outputs]
-PWM
-[BiDir]

@@ -4,5 +4,5 @@ DOWN
 CLK
 RESET
 [Outputs]
-=VALUE[7:0]=
+=VALUE[8:0]=
 [BiDir]

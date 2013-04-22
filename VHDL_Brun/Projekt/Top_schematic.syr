@@ -1,0 +1,547 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: Top_schematic.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_schematic.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_schematic"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Top_schematic
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd" in Library work.
+Architecture behavioral of Entity counter256 is up to date.
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd" in Library work.
+Architecture behavioral of Entity pwmencoder is up to date.
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" in Library work.
+Architecture behavioral of Entity rotarydecoder is up to date.
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" in Library work.
+Entity <rgbencoder> compiled.
+Entity <rgbencoder> (Architecture <behavioral>) compiled.
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd" in Library work.
+Entity <Counter384> compiled.
+Entity <Counter384> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf" in Library work.
+Entity <top_schematic> compiled.
+Entity <top_schematic> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Top_schematic> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Counter256> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <PWMEncoder> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <RotaryDecoder> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <RGBEncoder> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Counter384> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Top_schematic> in library <work> (Architecture <behavioral>).
+Entity <Top_schematic> analyzed. Unit <Top_schematic> generated.
+
+Analyzing Entity <Counter256> in library <work> (Architecture <behavioral>).
+Entity <Counter256> analyzed. Unit <Counter256> generated.
+
+Analyzing Entity <PWMEncoder> in library <work> (Architecture <behavioral>).
+Entity <PWMEncoder> analyzed. Unit <PWMEncoder> generated.
+
+Analyzing Entity <RotaryDecoder> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" line 64: Mux is complete : default of case is discarded
+Entity <RotaryDecoder> analyzed. Unit <RotaryDecoder> generated.
+
+Analyzing Entity <RGBEncoder> in library <work> (Architecture <behavioral>).
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 60: Width mismatch. <base> has a width of 8 bits but assigned expression is 16-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 61: Width mismatch. <switch> has a width of 3 bits but assigned expression is 9-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 65: Width mismatch. <G> has a width of 8 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 69: Width mismatch. <R> has a width of 8 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 76: Width mismatch. <B> has a width of 8 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 80: Width mismatch. <G> has a width of 8 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 84: Width mismatch. <R> has a width of 8 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 91: Width mismatch. <B> has a width of 8 bits but assigned expression is 17-bit wide.
+Entity <RGBEncoder> analyzed. Unit <RGBEncoder> generated.
+
+Analyzing Entity <Counter384> in library <work> (Architecture <Behavioral>).
+Entity <Counter384> analyzed. Unit <Counter384> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Counter256>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd".
+    Found 8-bit updown counter for signal <cnt>.
+    Found 1-bit register for signal <DOWN_old>.
+    Found 1-bit register for signal <UP_old>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <Counter256> synthesized.
+
+
+Synthesizing Unit <PWMEncoder>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd".
+    Found 1-bit register for signal <PWM>.
+    Found 8-bit up counter for signal <clock_divider>.
+    Found 8-bit adder for signal <PWM$addsub0000> created at line 57.
+    Found 8-bit comparator greatequal for signal <PWM$cmp_ge0000> created at line 59.
+    Found 8-bit up counter for signal <PWM_period>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <PWMEncoder> synthesized.
+
+
+Synthesizing Unit <RotaryDecoder>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd".
+WARNING:Xst:1780 - Signal <rotary_left> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <rotary_event> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <UP>.
+    Found 1-bit register for signal <DOWN>.
+    Found 1-bit register for signal <delay_rotary_q1>.
+    Found 2-bit register for signal <rotary_in>.
+    Found 1-bit register for signal <rotary_q1>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q1$mux0000> created at line 60.
+    Found 1-bit register for signal <rotary_q2>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q2$mux0000> created at line 60.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <RotaryDecoder> synthesized.
+
+
+Synthesizing Unit <RGBEncoder>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd".
+WARNING:Xst:647 - Input <BUTTON> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <B>.
+    Found 8-bit register for signal <G>.
+    Found 8-bit register for signal <R>.
+    Found 8-bit adder for signal <B$add0000> created at line 91.
+    Found 8-bit adder for signal <B$add0001> created at line 76.
+    Found 9x8-bit multiplier for signal <B$mult0000> created at line 76.
+    Found 8-bit subtractor for signal <B$sub0000> created at line 76.
+    Found 8-bit adder for signal <base$addsub0000> created at line 60.
+    Found 8x8-bit multiplier for signal <base$mult0000> created at line 60.
+    Found 8-bit adder for signal <G$addsub0000> created at line 65.
+    Found 9x8-bit multiplier for signal <G$mult0000> created at line 65.
+    Found 9-bit adder for signal <R$addsub0000> created at line 69.
+    Found 9x8-bit multiplier for signal <R$mult0000> created at line 69.
+    Summary:
+	inferred  24 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   4 Multiplier(s).
+Unit <RGBEncoder> synthesized.
+
+
+Synthesizing Unit <Counter384>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd".
+    Found 9-bit updown counter for signal <cnt>.
+    Found 1-bit register for signal <DOWN_old>.
+    Found 1-bit register for signal <UP_old>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <Counter384> synthesized.
+
+
+Synthesizing Unit <Top_schematic>.
+    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf".
+Unit <Top_schematic> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 8x8-bit multiplier                                    : 1
+ 9x8-bit multiplier                                    : 3
+# Adders/Subtractors                                   : 9
+ 8-bit adder                                           : 7
+ 8-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
+# Counters                                             : 9
+ 8-bit up counter                                      : 6
+ 8-bit updown counter                                  : 2
+ 9-bit updown counter                                  : 1
+# Registers                                            : 18
+ 1-bit register                                        : 14
+ 2-bit register                                        : 1
+ 8-bit register                                        : 3
+# Comparators                                          : 3
+ 8-bit comparator greatequal                           : 3
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 4
+ 7x8-bit multiplier                                    : 1
+ 8x8-bit multiplier                                    : 1
+ 9x8-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 9
+ 8-bit adder                                           : 7
+ 8-bit subtractor                                      : 1
+ 9-bit adder                                           : 1
+# Counters                                             : 9
+ 8-bit up counter                                      : 6
+ 8-bit updown counter                                  : 2
+ 9-bit updown counter                                  : 1
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Comparators                                          : 3
+ 8-bit comparator greatequal                           : 3
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Top_schematic> ...
+
+Optimizing unit <Counter256> ...
+
+Optimizing unit <PWMEncoder> ...
+
+Optimizing unit <RotaryDecoder> ...
+
+Optimizing unit <RGBEncoder> ...
+
+Optimizing unit <Counter384> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_schematic, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 113
+ Flip-Flops                                            : 113
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Top_schematic.ngr
+Top Level Output File Name         : Top_schematic
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 532
+#      GND                         : 1
+#      INV                         : 22
+#      LUT1                        : 42
+#      LUT2                        : 53
+#      LUT3                        : 31
+#      LUT3_D                      : 1
+#      LUT4                        : 136
+#      LUT4_L                      : 20
+#      MUXCY                       : 116
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 105
+# FlipFlops/Latches                : 113
+#      FD                          : 5
+#      FDC                         : 24
+#      FDCE                        : 49
+#      FDE                         : 33
+#      FDRE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 7
+#      OBUF                        : 3
+# MULTs                            : 4
+#      MULT18X18SIO                : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      150  out of   4656     3%  
+ Number of Slice Flip Flops:            113  out of   9312     1%  
+ Number of 4 input LUTs:                305  out of   9312     3%  
+ Number of IOs:                          12
+ Number of bonded IOBs:                  11  out of    232     4%  
+ Number of MULT18X18SIOs:                 4  out of     20    20%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+SYSTEM_CLK                         | BUFGP                  | 113   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+RESET                              | IBUF                   | 73    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 20.258ns (Maximum Frequency: 49.363MHz)
+   Minimum input arrival time before clock: 5.015ns
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'SYSTEM_CLK'
+  Clock period: 20.258ns (frequency: 49.363MHz)
+  Total number of paths / destination ports: 246185 / 161
+-------------------------------------------------------------------------
+Delay:               20.258ns (Levels of Logic = 17)
+  Source:            XLXI_2/cnt_3 (FF)
+  Destination:       XLXI_31/B_7 (FF)
+  Source Clock:      SYSTEM_CLK rising
+  Destination Clock: SYSTEM_CLK rising
+
+  Data Path: XLXI_2/cnt_3 to XLXI_31/B_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.591   0.633  XLXI_2/cnt_3 (XLXI_2/cnt_3)
+     INV:I->O              1   0.704   0.420  XLXI_31/Madd_base_not0000<3>1_INV_0 (XLXI_31/Madd_base_not0000<3>)
+     MULT18X18SIO:A3->P10    7   4.602   0.787  XLXI_31/Mmult_base_mult0000 (XLXI_31/base_mult0000<10>)
+     LUT2:I1->O            1   0.704   0.000  XLXI_31/Msub_B_sub0000_lut<2> (XLXI_31/Msub_B_sub0000_lut<2>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_31/Msub_B_sub0000_cy<2> (XLXI_31/Msub_B_sub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<3> (XLXI_31/Msub_B_sub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<4> (XLXI_31/Msub_B_sub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<5> (XLXI_31/Msub_B_sub0000_cy<5>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<6> (XLXI_31/Msub_B_sub0000_cy<6>)
+     XORCY:CI->O           3   0.804   0.531  XLXI_31/Msub_B_sub0000_xor<7> (XLXI_31/B_sub0000<7>)
+     MULT18X18SIO:B7->P10    1   4.602   0.499  XLXI_31/Mmult_B_mult0000 (XLXI_31/B_mult0000<10>)
+     LUT2:I1->O            1   0.704   0.000  XLXI_31/Madd_B_add0001_lut<4> (XLXI_31/Madd_B_add0001_lut<4>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_31/Madd_B_add0001_cy<4> (XLXI_31/Madd_B_add0001_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Madd_B_add0001_cy<5> (XLXI_31/Madd_B_add0001_cy<5>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Madd_B_add0001_cy<6> (XLXI_31/Madd_B_add0001_cy<6>)
+     XORCY:CI->O           2   0.804   0.451  XLXI_31/Madd_B_add0001_xor<7> (XLXI_31/B_add0001<7>)
+     LUT4:I3->O            1   0.704   0.424  XLXI_31/B_mux0000<7>22_SW0 (N10)
+     LUT4:I3->O            1   0.704   0.000  XLXI_31/B_mux0000<7>22 (XLXI_31/B_mux0000<7>)
+     FDE:D                     0.308          XLXI_31/B_7
+    ----------------------------------------
+    Total                     20.258ns (16.513ns logic, 3.745ns route)
+                                       (81.5% logic, 18.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'SYSTEM_CLK'
+  Total number of paths / destination ports: 263 / 71
+-------------------------------------------------------------------------
+Offset:              5.015ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       XLXI_27/DOWN_old (FF)
+  Destination Clock: SYSTEM_CLK rising
+
+  Data Path: RESET to XLXI_27/DOWN_old
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            77   1.218   1.276  RESET_IBUF (RESET_IBUF)
+     INV:I->O             30   0.704   1.262  XLXI_33/RESET_inv1_INV_0 (XLXI_2/RESET_inv)
+     FDE:CE                    0.555          XLXI_2/UP_old
+    ----------------------------------------
+    Total                      5.015ns (2.477ns logic, 2.538ns route)
+                                       (49.4% logic, 50.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'SYSTEM_CLK'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            XLXI_3/PWM (FF)
+  Destination:       LED0 (PAD)
+  Source Clock:      SYSTEM_CLK rising
+
+  Data Path: XLXI_3/PWM to LED0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  XLXI_3/PWM (XLXI_3/PWM)
+     OBUF:I->O                 3.272          LED0_OBUF (LED0)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.28 secs
+ 
+--> 
+
+Total memory usage is 283504 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

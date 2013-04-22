@@ -2,7 +2,7 @@
 CLK
 BUTTON
 RESET
-=HUE[7:0]=
+=HUE[8:0]=
 =SAT[7:0]=
 =VAL[7:0]=
 [Outputs]

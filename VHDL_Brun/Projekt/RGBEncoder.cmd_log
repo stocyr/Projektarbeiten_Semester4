@@ -2,3 +2,9 @@ vhdtdtfi -lib work RGBEncoder.vhd -prj RGB -o RGBEncoder.spl -module RGBEncoder 
 spl2sym -intstyle ise -family spartan3e RGBEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.sym 
 vhdtdtfi -lib work RGBEncoder.vhd -prj RGB -o RGBEncoder.spl -module RGBEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
 spl2sym -intstyle ise -family spartan3e RGBEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.sym 
+vhdtdtfi -lib work RGBEncoder.vhd -prj RGB -o RGBEncoder.spl -module RGBEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e RGBEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.sym 
+vhdtdtfi -lib work RGBEncoder.vhd -prj RGB -o RGBEncoder.spl -module RGBEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e RGBEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.sym 
+vhdtdtfi -lib work RGBEncoder.vhd -prj RGB -o RGBEncoder.spl -module RGBEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e RGBEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.sym 

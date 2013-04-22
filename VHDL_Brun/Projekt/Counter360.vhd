@@ -29,20 +29,20 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
--- Counter that counts between 0 and 359 in single steps.
+-- Counter that counts between 0 and 384 in single steps.
 -- Steps can be triggered by a rising edge on either UP
 -- or DOWN input pin.
 
-entity Counter360 is
+entity Counter384 is
     Port ( UP : in STD_LOGIC;
            DOWN : in STD_LOGIC;
 			  CLK : in STD_LOGIC;
 			  RESET : in STD_LOGIC;
            VALUE : out STD_LOGIC_VECTOR(8 downto 0));
-end Counter360;
+end Counter384;
 
 
-architecture Behavioral of Counter360 is
+architecture Behavioral of Counter384 is
 	signal cnt : unsigned(8 downto 0);
 	signal UP_old, DOWN_old : std_logic;
 begin
@@ -56,7 +56,7 @@ begin
 		DOWN_old <= DOWN;
 		
 		if (UP='1' and UP_old='0' and DOWN='0') then
-			if cnt /= "101100111" then
+			if cnt /= "101111111" then
 				cnt <= cnt + 1;
 			end if;
 			

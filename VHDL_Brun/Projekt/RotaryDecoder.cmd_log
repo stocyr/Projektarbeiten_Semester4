@@ -1,5 +1,0 @@
-xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 RotaryDecoder.ngc RotaryDecoder.ngd  
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 RotaryDecoder.ngc RotaryDecoder.ngd  
-vhdtdtfi -lib work RotaryDecoder.vhd -prj RGB -o RotaryDecoder.spl -module RotaryDecoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e RotaryDecoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.sym 
