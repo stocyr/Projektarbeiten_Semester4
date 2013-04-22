@@ -90,6 +90,9 @@ begin
 					G <= std_logic_vector(base);
 					B <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
 				when others =>
+					R <= "11111100";
+					G <= "11111101";
+					B <= "11111110";
 			end case;
 		end if;
 	end if;

@@ -50,7 +50,7 @@ begin
 process(RESET, CLK)
 begin
 	if RESET = '1' then
-		cnt <= (others => '0');
+		cnt <= "010011101";
 	elsif rising_edge(CLK) then 
 		UP_old <= UP;
 		DOWN_old <= DOWN;

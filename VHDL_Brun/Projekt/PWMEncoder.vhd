@@ -53,7 +53,7 @@ begin
 	elsif rising_edge(CLK) then
 		clock_divider <= std_logic_vector(unsigned(clock_divider) + 1);
 		
-		if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
+		--if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
 			PWM_period := PWM_period + 1;
 			
 			if PWM_period >= unsigned(VALUE) then
@@ -61,7 +61,7 @@ begin
 			else
 				PWM <= '1';
 			end if;
-		end if;
+		--end if;
 	end if;
 end process;
 

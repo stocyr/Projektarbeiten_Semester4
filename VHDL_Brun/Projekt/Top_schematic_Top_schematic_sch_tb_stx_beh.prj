@@ -1,0 +1,7 @@
+vhdl isim_temp "RotaryDecoder.vhd"
+vhdl isim_temp "RGBEncoder.vhd"
+vhdl isim_temp "PWMEncoder.vhd"
+vhdl isim_temp "Counter360.vhd"
+vhdl isim_temp "Counter256.vhd"
+vhdl isim_temp "Top_schematic.vhf"
+vhdl isim_temp "top_tb.vhd"
