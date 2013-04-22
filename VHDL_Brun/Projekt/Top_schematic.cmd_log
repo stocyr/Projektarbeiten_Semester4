@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan3e -refsym Top_schematic D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.sch D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.sym 

@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -37,13 +37,63 @@ entity RGBEncoder is
            G : out  STD_LOGIC_VECTOR(7 downto 0);
            B : out  STD_LOGIC_VECTOR(7 downto 0);
            CLK : in  STD_LOGIC;
-           BUTTON : in  STD_LOGIC);
+           BUTTON : in  STD_LOGIC;
+			  RESET : in  STD_LOGIC);
 end RGBEncoder;
 
 architecture Behavioral of RGBEncoder is
 
 begin
 
+process(CLK,RESET)
+	variable base : unsigned(7 downto 0);
+	variable switch : unsigned(2 downto 0);
+begin
+	if RESET = '1' then
+		base := "00000000";
+	elsif rising_edge(CLK) then
+		if SAT = "00000000" then
+			R <= VAL;
+			G <= VAL;
+			B <= VAL;
+		else
+			base := ((255 - unsigned(SAT)) * unsigned(VAL)) srl 8;
+			switch := unsigned(HUE)/60;
+			case switch is
+				when "000" =>
+					R <= VAL;
+					G <= std_logic_vector((((unsigned(VAL) - base)*unsigned(HUE))/60) + base);
+					B <= std_logic_vector(base);
+				
+				when "001" =>
+					R <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+					G <= VAL;
+					B <= std_logic_vector(base);
+				
+				when "010" =>
+					R <= std_logic_vector(base);
+					G <= VAL;
+					B <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 60))/60) + base);
+				
+				when "011" =>
+					R <= std_logic_vector(base);
+					G <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+					B <= VAL;
+				
+				when "100" =>
+					R <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 60))/60) + base);
+					G <= std_logic_vector(base);
+					B <= VAL;
+				
+				when "101" =>
+					R <= VAL;
+					G <= std_logic_vector(base);
+					B <= std_logic_vector((((unsigned(VAL) - base)*(60-(unsigned(HUE) mod 60)))/60) + base);
+				when others =>
+			end case;
+		end if;
+	end if;
+end process;
 
 end Behavioral;
 

@@ -1,0 +1,4 @@
+vhdtdtfi -lib work PWMEncoder.vhd -prj RGB -o PWMEncoder.spl -module PWMEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e PWMEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.sym 
+vhdtdtfi -lib work PWMEncoder.vhd -prj RGB -o PWMEncoder.spl -module PWMEncoder -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e PWMEncoder.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.sym 

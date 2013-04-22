@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;RESET&quot;  LOC = &quot;K17&quot; |&gt; [pin_v1.ucf(11)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RESET</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;RESET&quot;  LOC = &quot;K17&quot; |&gt; [pin_v1.ucf(11)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;PULLDOWN  |&gt; [pin_v1.ucf(11)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RESET</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33 ;&gt; [pin_v1.ucf(11)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RESET</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;SYSTEM_CLK&quot;  LOC = &quot;C9&quot;  ;&gt; [pin_v1.ucf(16)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">SYSTEM_CLK</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;SYSTEM_CLK&quot;  LOC = &quot;C9&quot;  ;&gt; [pin_v1.ucf(16)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;LCD_E&quot;  LOC = &quot;M18&quot; |&gt; [pin_v1.ucf(18)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_E</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;LCD_E&quot;  LOC = &quot;M18&quot; |&gt; [pin_v1.ucf(18)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(18)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_E</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(18)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_E</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(18)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_E</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;LCD_RS&quot;  LOC = &quot;L18&quot; |&gt; [pin_v1.ucf(19)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RS</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;LCD_RS&quot;  LOC = &quot;L18&quot; |&gt; [pin_v1.ucf(19)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(19)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RS</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(19)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RS</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(19)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RS</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;LCD_RW&quot;  LOC = &quot;L17&quot; |&gt; [pin_v1.ucf(20)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RW</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;LCD_RW&quot;  LOC = &quot;L17&quot; |&gt; [pin_v1.ucf(20)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(20)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RW</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(20)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RW</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(20)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">LCD_RW</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;sf_CE0&quot;  LOC = &quot;D16&quot; |&gt; [pin_v1.ucf(21)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_CE0</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;sf_CE0&quot;  LOC = &quot;D16&quot; |&gt; [pin_v1.ucf(21)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(21)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_CE0</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW  |&gt; [pin_v1.ucf(21)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_CE0</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4 ;&gt; [pin_v1.ucf(21)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_CE0</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;sf_d&lt;10&gt;&quot;  LOC = &quot;P17&quot; |&gt; [pin_v1.ucf(22)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;10&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;sf_d&lt;10&gt;&quot;  LOC = &quot;P17&quot; |&gt; [pin_v1.ucf(22)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(22)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;10&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(22)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;10&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(22)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;10&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;sf_d&lt;11&gt;&quot;  LOC = &quot;M15&quot; |&gt; [pin_v1.ucf(23)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;11&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;sf_d&lt;11&gt;&quot;  LOC = &quot;M15&quot; |&gt; [pin_v1.ucf(23)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(23)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;11&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(23)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;11&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(23)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;11&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;sf_d&lt;8&gt;&quot;  LOC = &quot;R15&quot; |&gt; [pin_v1.ucf(24)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;8&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;sf_d&lt;8&gt;&quot;  LOC = &quot;R15&quot; |&gt; [pin_v1.ucf(24)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(24)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;8&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(24)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;8&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(24)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;8&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;sf_d&lt;9&gt;&quot;  LOC = &quot;R16&quot; |&gt; [pin_v1.ucf(25)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;9&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;sf_d&lt;9&gt;&quot;  LOC = &quot;R16&quot; |&gt; [pin_v1.ucf(25)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33  |&gt; [pin_v1.ucf(25)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;9&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;DRIVE = 4  |&gt; [pin_v1.ucf(25)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;9&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;SLEW = SLOW ;&gt; [pin_v1.ucf(25)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">sf_d&lt;9&gt;</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;MOD_n&quot;  LOC = &quot;A6&quot;   |&gt; [pin_v1.ucf(27)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">MOD_n</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;MOD_n&quot;  LOC = &quot;A6&quot;   |&gt; [pin_v1.ucf(27)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33;&gt; [pin_v1.ucf(27)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">MOD_n</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;SHD_n&quot;  LOC = &quot;B6&quot;   |&gt; [pin_v1.ucf(28)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">SHD_n</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;SHD_n&quot;  LOC = &quot;B6&quot;   |&gt; [pin_v1.ucf(28)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33;&gt; [pin_v1.ucf(28)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">SHD_n</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;RDY&quot;  LOC = &quot;F7&quot;   |&gt; [pin_v1.ucf(29)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RDY</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;RDY&quot;  LOC = &quot;F7&quot;   |&gt; [pin_v1.ucf(29)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33;&gt; [pin_v1.ucf(29)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RDY</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;DEMOD&quot;  LOC = &quot;E7&quot; |&gt; [pin_v1.ucf(30)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">DEMOD</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="0" >A target design object for the Locate constraint &apos;&lt;NET &quot;DEMOD&quot;  LOC = &quot;E7&quot; |&gt; [pin_v1.ucf(30)]&apos; could not be found and so the Locate constraint will be removed.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;IOSTANDARD = LVCMOS33 ;&gt; [pin_v1.ucf(30)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">DEMOD</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+<msg type="error" file="ConstraintSystem" num="59" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;RDY&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [pin_v1.ucf(31)]</arg>: <arg fmt="%s" index="2">NET</arg> &quot;<arg fmt="%s" index="3">RDY</arg>&quot; not found.  Please verify that:
+1. The specified design element actually exists in the original design.
+2. The specified object is spelled correctly in the constraint source file.
+</msg>
+
+</messages>
+
