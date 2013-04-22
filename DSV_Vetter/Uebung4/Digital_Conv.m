@@ -2,35 +2,40 @@
 
 close all;
 clear all;
-t = 0:0.01:2*pi;
-% x = [1 0 1 0 1 0 1 0 1]';
-% x = [0 1 2 3 4 5 6 0 0 0 0 0]';
-x = sin(t)';
-% g = [1 -1]';
+
+% X-Vektor
+x = [1 0 1 0 1 0 1 0 1 ]';
+
+% Auswahl an Übertragungsfunktionen
+g = [1 -1]';
 % g = [1 1]';
-g = [1 0 0 0 0 1]';
+% g = [1 0 0 0 0 1]';
 
 
 N = length(x);
 p = length(g)-1;
-y = zeros(1,N);
+y = zeros(1,N+p);
 
+x_zp = [zeros(1, p) x' zeros(1, p)]';
 
-for n = p+1:N;
-    phi_n = x(n:-1:n-p);
-    y(n) = g'*phi_n;
+% Berechnung der Faltung für alle Stellen
+for n = p+1:N+2*p;
+    phi_n = x_zp(n:-1:n-p);
+    y(n-p) = g'*phi_n;
 end
 
-% Kontrolle mit Matlabfunktion
-y_k = conv(x, g, 'same');
+% Kontrolle mit Matlabfunktion (Parameter für Fkt sind: 'full', 'valid', 'same')
+y_k = conv(x, g, 'full');
 
 
-
+% Ausgabe an Konsole
 disp('Eigene Fkt.: '); y
 disp('Matlab Fkt.: '); y_k'
+
+% Darstellung der Kurve
 plot(x);
 hold all;
 stairs(y);
+stairs(y_k);
 
-legende = int2str(g');
-legend('Eingangssignal', 'Ableitung durch Falten mit ['legende ']');
+legend('Eingangssignal', ['Gefaltet mit [',int2str(g') ,']'], 'Faltung mit conv');
