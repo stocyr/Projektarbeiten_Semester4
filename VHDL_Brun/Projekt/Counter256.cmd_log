@@ -1,0 +1,2 @@
+vhdtdtfi -lib work Counter256.vhd -prj RGB -o Counter256.spl -module Counter256 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Counter256.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.sym 

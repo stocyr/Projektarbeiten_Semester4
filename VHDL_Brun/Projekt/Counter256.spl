@@ -1,0 +1,8 @@
+[Inputs]
+UP
+DOWN
+CLK
+RESET
+[Outputs]
+=VALUE[7:0]=
+[BiDir]

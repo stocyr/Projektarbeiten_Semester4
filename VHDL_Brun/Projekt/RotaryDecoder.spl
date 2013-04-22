@@ -1,0 +1,8 @@
+[Inputs]
+ROT_A
+ROT_B
+CLK
+[Outputs]
+UP
+DOWN
+[BiDir]
