@@ -1,7 +1,7 @@
 #LEDS
-#NET "led<0>"  LOC = "F12"  ; 
-#NET "led<1>"  LOC = "E12"  ; 
-#NET "led<2>"  LOC = "E11"  ; 
+NET "led0"  LOC = "F12"  ; 
+NET "led1"  LOC = "E12"  ; 
+NET "led2"  LOC = "E11"  ; 
 #NET "led<3>"  LOC = "F11"  ; 
 #NET "led<4>"  LOC = "C11"  ; 
 #NET "led<5>"  LOC = "D11"  ; 
@@ -9,9 +9,14 @@
 #NET "led<7>"  LOC = "F9"  ; 
 #Schalter
 NET "RESET"  LOC = "K17" | PULLDOWN  | IOSTANDARD = LVCMOS33 ; 
-#NET "rot_a"  LOC = "K18" | PULLUP  | IOSTANDARD = LVTTL ; 
-#NET "rot_b"  LOC = "G18" | PULLUP  | IOSTANDARD = LVTTL ; 
-#NET "rot_c"  LOC = "V16" | PULLDOWN  | IOSTANDARD = LVTTL ; 
+NET "rot_a"  LOC = "K18" | PULLUP  | IOSTANDARD = LVTTL ; 
+NET "rot_b"  LOC = "G18" | PULLUP  | IOSTANDARD = LVTTL ; 
+NET "rot_c"  LOC = "V16" | PULLDOWN  | IOSTANDARD = LVTTL ;
+#Taster um den Drehencoder herum
+NET"BTN_EAST" LOC= "T16" | IOSTANDARD= LVTTL | PULLDOWN;
+NET"BTN_NORTH" LOC= "T14" | IOSTANDARD= LVTTL | PULLDOWN;
+NET"BTN_SOUTH" LOC= "T15" | IOSTANDARD= LVTTL | PULLDOWN;
+NET"BTN_WEST" LOC= "U15" | IOSTANDARD= LVTTL | PULLDOWN;
 #Systemtakt 50 MHz
 NET "SYSTEM_CLK"  LOC = "C9"  ; 
 #Display
