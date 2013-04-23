@@ -35,7 +35,10 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Counter384.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Counter384.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Counter384.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PWMEncoder.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PWMEncoder.stx"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="PWMEncoder.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="PWMEncoder.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PWMEncoder_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PWMEncoder_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RGBEncoder.prj"/>
@@ -72,7 +75,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
@@ -83,7 +85,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1366757037" xil_pn:in_ck="-2372098840833751868" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1366757037">
+    <transform xil_pn:end_ts="1366759418" xil_pn:in_ck="-2372098840833751868" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1366759418">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Counter256.vhd"/>
@@ -97,7 +99,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1366754830" xil_pn:in_ck="-7940494905420553265" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2238793561458549451" xil_pn:start_ts="1366754826">
+    <transform xil_pn:end_ts="1366759673" xil_pn:in_ck="-7940494905420553265" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2238793561458549451" xil_pn:start_ts="1366759670">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Top_schematic.vhf"/>
@@ -106,7 +108,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1366757037" xil_pn:in_ck="-1083053889443828295" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1366757037">
+    <transform xil_pn:end_ts="1366759673" xil_pn:in_ck="-1083053889443828295" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1366759673">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Counter256.vhd"/>
@@ -117,22 +119,22 @@
       <outfile xil_pn:name="Top_schematic.vhf"/>
       <outfile xil_pn:name="top_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1366757048" xil_pn:in_ck="-1083053889443828295" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="672855334387546242" xil_pn:start_ts="1366757037">
+    <transform xil_pn:end_ts="1366759680" xil_pn:in_ck="-1083053889443828295" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="672855334387546242" xil_pn:start_ts="1366759673">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Top_schematic_Top_schematic_sch_tb_beh.prj"/>
       <outfile xil_pn:name="Top_schematic_Top_schematic_sch_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1366757049" xil_pn:in_ck="274666836832957055" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4028214501920924911" xil_pn:start_ts="1366757048">
+    <transform xil_pn:end_ts="1366759681" xil_pn:in_ck="274666836832957055" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4028214501920924911" xil_pn:start_ts="1366759680">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top_schematic_Top_schematic_sch_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1366667135" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1366667135">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -141,6 +143,10 @@
     <transform xil_pn:end_ts="1366668485" xil_pn:in_ck="-7940494905420553265" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-2386376346231214005" xil_pn:start_ts="1366668484">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top_schematic.vhf"/>
     </transform>
     <transform xil_pn:end_ts="1366665107" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-3598319284757597096" xil_pn:start_ts="1366665107">
@@ -158,35 +164,25 @@
     <transform xil_pn:end_ts="1366667137" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-3893270297158069842" xil_pn:start_ts="1366667137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1366667137" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-8809360442694337566" xil_pn:start_ts="1366667137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1366716899" xil_pn:in_ck="-3571324229971238783" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-9038925237203315422" xil_pn:start_ts="1366716880">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
-      <outfile xil_pn:name=".lso"/>
-      <outfile xil_pn:name="Top_schematic.jhd"/>
-      <outfile xil_pn:name="Top_schematic.lso"/>
-      <outfile xil_pn:name="Top_schematic.ngc"/>
-      <outfile xil_pn:name="Top_schematic.ngr"/>
-      <outfile xil_pn:name="Top_schematic.prj"/>
-      <outfile xil_pn:name="Top_schematic.stx"/>
-      <outfile xil_pn:name="Top_schematic.syr"/>
-      <outfile xil_pn:name="Top_schematic.xst"/>
-      <outfile xil_pn:name="Top_schematic_Top_schematic_sch_tb_stx_beh.prj"/>
-      <outfile xil_pn:name="Top_schematic_vhdl.prj"/>
-      <outfile xil_pn:name="Top_schematic_xst.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
-      <outfile xil_pn:name="webtalk_pn.xml"/>
-      <outfile xil_pn:name="xst"/>
     </transform>
   </transforms>
 

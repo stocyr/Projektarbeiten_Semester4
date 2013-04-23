@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Top_schematic.vhf
--- /___/   /\     Timestamp : 04/23/2013 00:08:04
+-- /___/   /\     Timestamp : 04/24/2013 01:27:52
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -64,14 +64,6 @@ architecture BEHAVIORAL of Top_schematic is
              PWM   : out   std_logic);
    end component;
    
-   component RotaryDecoder
-      port ( ROT_A : in    std_logic; 
-             ROT_B : in    std_logic; 
-             CLK   : in    std_logic; 
-             UP    : out   std_logic; 
-             DOWN  : out   std_logic);
-   end component;
-   
    component RGBEncoder
       port ( CLK    : in    std_logic; 
              BUTTON : in    std_logic; 
@@ -90,6 +82,14 @@ architecture BEHAVIORAL of Top_schematic is
              CLK   : in    std_logic; 
              RESET : in    std_logic; 
              VALUE : out   std_logic_vector (8 downto 0));
+   end component;
+   
+   component RotaryDecoder
+      port ( ROT_A : in    std_logic; 
+             ROT_B : in    std_logic; 
+             CLK   : in    std_logic; 
+             UP    : out   std_logic; 
+             DOWN  : out   std_logic);
    end component;
    
 begin
@@ -118,13 +118,6 @@ begin
                 VALUE(7 downto 0)=>XLXN_24(7 downto 0),
                 PWM=>LED2);
    
-   XLXI_7 : RotaryDecoder
-      port map (CLK=>SYSTEM_CLK,
-                ROT_A=>rot_a,
-                ROT_B=>rot_b,
-                DOWN=>XLXN_18,
-                UP=>XLXN_17);
-   
    XLXI_27 : Counter256
       port map (CLK=>SYSTEM_CLK,
                 DOWN=>BTN_SOUTH,
@@ -149,6 +142,13 @@ begin
                 RESET=>RESET,
                 UP=>XLXN_17,
                 VALUE(8 downto 0)=>XLXN_76(8 downto 0));
+   
+   XLXI_34 : RotaryDecoder
+      port map (CLK=>SYSTEM_CLK,
+                ROT_A=>rot_a,
+                ROT_B=>rot_b,
+                DOWN=>XLXN_18,
+                UP=>XLXN_17);
    
 end BEHAVIORAL;
 

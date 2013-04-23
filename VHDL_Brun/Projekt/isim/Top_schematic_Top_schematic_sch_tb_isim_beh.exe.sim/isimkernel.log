@@ -2,12 +2,12 @@ Command line:
    Top_schematic_Top_schematic_sch_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  1128
+     -socket  1138
 
-Wed Apr 24 00:44:13 2013
+Wed Apr 24 01:28:05 2013
 
 
- Elaboration Time: 0.078001 sec
+ Elaboration Time: 0.093601 sec
 
  Current Memory Usage: 515.015 Meg
 
@@ -17,14 +17,14 @@ Wed Apr 24 00:44:13 2013
  Total Blocks           : 13
  Total Primitive Blocks : 11
  Total Processes        : 17
- Total Traceable Variables  : 14
- Total Scalar Nets and Variables : 636
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 1404
 Total Line Count : 182
 Total Line Count : 182
 
- Total Simulation Time: 6.98885 sec
+ Total Simulation Time: 6.39604 sec
 
  Current Memory Usage: 515.015 Meg
 
-Wed Apr 24 00:44:47 2013
+Wed Apr 24 01:31:57 2013
 
