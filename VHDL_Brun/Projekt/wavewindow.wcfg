@@ -12,47 +12,87 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led0" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">led0</obj_property>
-      <obj_property name="ObjectShortName">led0</obj_property>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group32" type="group">
+      <obj_property name="label">Switcheees</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/btn_east" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btn_east</obj_property>
+         <obj_property name="ObjectShortName">btn_east</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/btn_west" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btn_west</obj_property>
+         <obj_property name="ObjectShortName">btn_west</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/btn_north" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btn_north</obj_property>
+         <obj_property name="ObjectShortName">btn_north</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/btn_south" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">btn_south</obj_property>
+         <obj_property name="ObjectShortName">btn_south</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/rot_a" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rot_a</obj_property>
+         <obj_property name="ObjectShortName">rot_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/rot_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rot_b</obj_property>
+         <obj_property name="ObjectShortName">rot_b</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led1" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">led1</obj_property>
-      <obj_property name="ObjectShortName">led1</obj_property>
+   <wvobject fp_name="group33" type="group">
+      <obj_property name="label">Before RGB Encoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/hue" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">hue[8:0]</obj_property>
+         <obj_property name="ObjectShortName">hue[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/sat" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">sat[7:0]</obj_property>
+         <obj_property name="ObjectShortName">sat[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/val" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">val[7:0]</obj_property>
+         <obj_property name="ObjectShortName">val[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led2" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">led2</obj_property>
-      <obj_property name="ObjectShortName">led2</obj_property>
+   <wvobject fp_name="group34" type="group">
+      <obj_property name="label">After RGB Encoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/r" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">r[7:0]</obj_property>
+         <obj_property name="ObjectShortName">r[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/g" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">g[7:0]</obj_property>
+         <obj_property name="ObjectShortName">g[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">b[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/hue" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">hue[8:0]</obj_property>
-      <obj_property name="ObjectShortName">hue[8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/sat" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">sat[7:0]</obj_property>
-      <obj_property name="ObjectShortName">sat[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/val" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">val[7:0]</obj_property>
-      <obj_property name="ObjectShortName">val[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/r" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">r[7:0]</obj_property>
-      <obj_property name="ObjectShortName">r[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/g" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">g[7:0]</obj_property>
-      <obj_property name="ObjectShortName">g[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/b" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">b[7:0]</obj_property>
-      <obj_property name="ObjectShortName">b[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="group35" type="group">
+      <obj_property name="label">After PWM Encoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">led0</obj_property>
+         <obj_property name="ObjectShortName">led0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">led1</obj_property>
+         <obj_property name="ObjectShortName">led1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/led2" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">led2</obj_property>
+         <obj_property name="ObjectShortName">led2</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

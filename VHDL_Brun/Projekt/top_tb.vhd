@@ -70,6 +70,18 @@ BEGIN
 
 process
 begin
+	wait for clk_period*100;
+	rot_a <= '1';
+	wait for clk_period*10;
+	rot_b <= '1';
+	wait for clk_period*10;
+	rot_a <= '0';
+	wait for clk_period*10;
+	rot_b <= '0';
+end process;
+
+process
+begin
 	wait for clk_period/2;									-- Systemclock: 50MHz Takt
 	SYSTEM_CLK <= not SYSTEM_CLK;							-- alle halbe Periode toggeln	
 end process;
@@ -79,6 +91,73 @@ BEGIN
 	RESET <= '1';											-- künstliches Reset
 	wait for clk_period*4;								-- (80ns lang)
 	RESET <= '0';
+	
+	wait for clk_period*50;
+	
+	-- Drehencoder Rechts	
+	--wait for clk_period*10;
+	--rot_a <= '1';
+	--wait for clk_period*10;
+	--rot_b <= '1';
+	--wait for clk_period*10;
+	--rot_a <= '0';
+	--wait for clk_period*10;
+	--rot_b <= '0';
+
+	
+	-- VAL Up / Down
+	wait for clk_period*10;
+	BTN_SOUTH <= '1';
+	wait for clk_period*10;
+	BTN_SOUTH <= '0';
+	wait for clk_period*10;
+	BTN_SOUTH <= '1';
+	wait for clk_period*10;
+	BTN_SOUTH <= '0';
+	wait for clk_period*10;
+	BTN_SOUTH <= '1';
+	wait for clk_period*10;
+	BTN_SOUTH <= '0';
+	wait for clk_period*10;
+	BTN_NORTH <= '1';
+	wait for clk_period*10;
+	BTN_NORTH <= '0';
+	wait for clk_period*10;
+	BTN_NORTH <= '1';
+	wait for clk_period*10;
+	BTN_NORTH <= '0';
+	wait for clk_period*10;
+	BTN_NORTH <= '1';
+	wait for clk_period*10;
+	BTN_NORTH <= '0';
+	
+	wait for clk_period*50;
+	
+	-- SAT Up / Down
+	wait for clk_period*10;
+	BTN_WEST <= '1';
+	wait for clk_period*10;
+	BTN_WEST <= '0';
+	wait for clk_period*10;
+	BTN_WEST <= '1';
+	wait for clk_period*10;
+	BTN_WEST <= '0';
+	wait for clk_period*10;
+	BTN_WEST <= '1';
+	wait for clk_period*10;
+	BTN_WEST <= '0';
+	wait for clk_period*10;
+	BTN_EAST <= '1';
+	wait for clk_period*10;
+	BTN_EAST <= '0';
+	wait for clk_period*10;
+	BTN_EAST <= '1';
+	wait for clk_period*10;
+	BTN_EAST <= '0';
+	wait for clk_period*10;
+	BTN_EAST <= '1';
+	wait for clk_period*10;
+	BTN_EAST <= '0';
 	
 	WAIT;														-- will wait forever
 END PROCESS;

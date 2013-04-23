@@ -42,57 +42,65 @@ entity RGBEncoder is
 end RGBEncoder;
 
 architecture Behavioral of RGBEncoder is
-
 begin
 
 process(CLK,RESET)
-	variable base : unsigned(7 downto 0);
-	variable switch : unsigned(2 downto 0);
+	variable base : unsigned(15 downto 0);
+	variable led_value : unsigned(15 downto 0);
+	variable switch : unsigned(8 downto 0);
 begin
 	if RESET = '1' then
-		base := "00000000";
+		base := "0000000000000000";
+		led_value := "0000000000000000";
 	elsif rising_edge(CLK) then
 		if SAT = "00000000" then
 			R <= VAL;
 			G <= VAL;
 			B <= VAL;
 		else
-			base := ((255 - unsigned(SAT)) * unsigned(VAL)) srl 8;
-			switch := unsigned(HUE)/64;
-			case switch is
+			base := (("11111111" - unsigned(SAT)) * unsigned(VAL)) srl 8;
+			switch := unsigned(HUE) srl 6;
+			case switch(2 downto 0) is
 				when "000" =>
 					R <= VAL;
-					G <= std_logic_vector((((unsigned(VAL) - base)*unsigned(HUE))/64) + base);
-					B <= std_logic_vector(base);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * unsigned(HUE)) srl 5) + base(7 downto 0);
+					G <= std_logic_vector(led_value(7 downto 0));
+					B <= std_logic_vector(base(7 downto 0));
 				
 				when "001" =>
-					R <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					R <= std_logic_vector(led_value(7 downto 0));
 					G <= VAL;
-					B <= std_logic_vector(base);
+					B <= std_logic_vector(base(7 downto 0));
 				
 				when "010" =>
-					R <= std_logic_vector(base);
+					R <= std_logic_vector(base(7 downto 0));
 					G <= VAL;
-					B <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 64))/64) + base);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 5) + base(7 downto 0);
+					B <= std_logic_vector(led_value(7 downto 0));
 				
 				when "011" =>
-					R <= std_logic_vector(base);
-					G <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
+					R <= std_logic_vector(base(7 downto 0));
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					G <= std_logic_vector(led_value(7 downto 0));
 					B <= VAL;
 				
 				when "100" =>
-					R <= std_logic_vector((((unsigned(VAL) - base)*(unsigned(HUE) mod 64))/64) + base);
-					G <= std_logic_vector(base);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 5) + base(7 downto 0);
+					R <= std_logic_vector(led_value(7 downto 0));
+					G <= std_logic_vector(base(7 downto 0));
 					B <= VAL;
 				
 				when "101" =>
 					R <= VAL;
-					G <= std_logic_vector(base);
-					B <= std_logic_vector((((unsigned(VAL) - base)*(64-(unsigned(HUE) mod 64)))/64) + base);
+					G <= std_logic_vector(base(7 downto 0));
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					B <= std_logic_vector(led_value(7 downto 0));
+					
 				when others =>
-					R <= "11111100";
-					G <= "11111101";
-					B <= "11111110";
+					R <= "00000000";
+					G <= "00000000";
+					B <= "00000000";
 			end case;
 		end if;
 	end if;

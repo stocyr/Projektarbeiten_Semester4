@@ -6,3 +6,4 @@ xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_s
 xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
 xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
 xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
+xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
