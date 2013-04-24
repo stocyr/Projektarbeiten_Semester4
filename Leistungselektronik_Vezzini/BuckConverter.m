@@ -7,9 +7,20 @@ I0  = 1:10;
 f = 80000;
 
 %% Bauteilspezifikationen
-Vf0 = 0.2;          % Diode Vorwärtsspannung
-R0  = 0.033;        % Verlustwiderstand Schottkydiode
-Rdson = 0.0033;     % Verlustwiderstand MOSFET
+% Diodenmodell:
+% Diode = NTST20120CT
+x1 = 0.4; y1 = 1; x2 = 0.88; y2 = 10;
+dx = x2-x1; dy = y2-y1;
+a = dy/dx;
+b = y1 - a*x1;
+Vf0 = -b/a;         % Diode Vorwärtsspannung (wurst-käse szenario)
+RDiodeLinear = a;
+R0  = 0.033;        % Verlustwiderstand Schottkydiode (angenommen)
+
+% MOSFET-Modell
+% MOSFET = IPB027N10N3
+Rdson = 0.0027;     % Verlustwiderstand MOSFET - aus DB (Driver Voltage = 10V)
+
 Rl  = 0.01;         % Verlustwiderstand Drossel
 Rsh = 0.01;         % Schöntwiderstand
 
@@ -44,15 +55,12 @@ for Vin_k = Vin
 end
 
 %% Berechnung Leitverluste
-Pv = zeros(size(Pin));  % memory allocation
-%Pv = ...*D % Leitverluste:
-%           MOSFET (*D)     --> Rdson * I_DRMS^2
-%                           --> Uf * If + Rd * If^2 (für antiparallele Diode des Mosfets)
-%           
-%           Diode (* 1-D)   --> Ufd * Ifd + Rd * Ifd^2
+Pl = zeros(size(Pin));  % memory allocation
+Pl_MOSFET = Iin.^2.*D*Rdson;
+Pl_MOSFET_Diode = 0*Iin.*(1-D);     % vernachlässigt (Uf * If + Rd * If^2)
+Pl_Diode = (1-D).*I0*Vf0;           % Modell: Vf0*I0 + RDiodeLinear*I0.^2;
 %           Shunt (immer)   --> I
 %           R drossel (immer)
-Pin_tot = Pin + Pv;
 
 %% Berechnung Schaltverlustleistung
 % MOSFET application note
@@ -65,6 +73,7 @@ Pin_tot = Pin + Pv;
 % Diese mit Schaltfrequenz multiplizieren
 
 %% Addition zu Eingangsleistung
+Pin_tot = Pin + Pl + Ps;
 
 %% Berechnung Ausgangsleistung
 Pout = zeros(size(D));  % memory allocation
@@ -89,6 +98,8 @@ n = permute(Pout ./ Pin, [2 3 1]);
 % zusammenfassen. Diesen dann 1x mit FPS = 3 abspielen
 for I0_k = I0
    contourf(n(:,:,find(I0 == I0_k)));
+   xlabel('V_{in}');
+   ylabel('V_{out}');
    %surf(n(:,:,find(I0 == I0_k)));
    axis equal
    M(find(I0 == I0_k)) = getframe;
