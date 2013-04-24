@@ -4,18 +4,23 @@ close all;
 clear all;
 
 % X-Vektor
-x = [1 0 1 0 1 0 1 0 1 ]';
+% x = [1 0 1 0 1 0 1 0 1 ]';
+% Dirac
+x = [1 0 0 0 0 0 0]';
 
 % Auswahl an Übertragungsfunktionen
-g = [1 -1]';
+% g = [1 -1]';
 % g = [1 1]';
 % g = [1 0 0 0 0 1]';
+
+g = [1 -0.9 0.8 -0.7 0.6 -0.5 0.4 -0.3 0.2 -0.1 0]';  
 
 
 N = length(x);
 p = length(g)-1;
 y = zeros(1,N+p);
 
+% Zeropadding
 x_zp = [zeros(1, p) x' zeros(1, p)]';
 
 % Berechnung der Faltung für alle Stellen
@@ -38,4 +43,4 @@ hold all;
 stairs(y);
 stairs(y_k);
 
-legend('Eingangssignal', ['Gefaltet mit [',int2str(g') ,']'], 'Faltung mit conv');
+legend('Eingangssignal', ['Gefaltet mit [',num2str(g') ,']'], 'Faltung mit conv');
