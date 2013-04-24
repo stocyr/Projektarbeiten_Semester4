@@ -94,70 +94,9 @@ BEGIN
 	
 	wait for clk_period*50;
 	
-	-- Drehencoder Rechts	
-	--wait for clk_period*10;
-	--rot_a <= '1';
-	--wait for clk_period*10;
-	--rot_b <= '1';
-	--wait for clk_period*10;
-	--rot_a <= '0';
-	--wait for clk_period*10;
-	--rot_b <= '0';
-
-	
-	-- VAL Up / Down
-	wait for clk_period*10;
 	BTN_SOUTH <= '1';
-	wait for clk_period*10;
+	wait for clk_period*5000000;
 	BTN_SOUTH <= '0';
-	wait for clk_period*10;
-	BTN_SOUTH <= '1';
-	wait for clk_period*10;
-	BTN_SOUTH <= '0';
-	wait for clk_period*10;
-	BTN_SOUTH <= '1';
-	wait for clk_period*10;
-	BTN_SOUTH <= '0';
-	wait for clk_period*10;
-	BTN_NORTH <= '1';
-	wait for clk_period*10;
-	BTN_NORTH <= '0';
-	wait for clk_period*10;
-	BTN_NORTH <= '1';
-	wait for clk_period*10;
-	BTN_NORTH <= '0';
-	wait for clk_period*10;
-	BTN_NORTH <= '1';
-	wait for clk_period*10;
-	BTN_NORTH <= '0';
-	
-	wait for clk_period*50;
-	
-	-- SAT Up / Down
-	wait for clk_period*10;
-	BTN_WEST <= '1';
-	wait for clk_period*10;
-	BTN_WEST <= '0';
-	wait for clk_period*10;
-	BTN_WEST <= '1';
-	wait for clk_period*10;
-	BTN_WEST <= '0';
-	wait for clk_period*10;
-	BTN_WEST <= '1';
-	wait for clk_period*10;
-	BTN_WEST <= '0';
-	wait for clk_period*10;
-	BTN_EAST <= '1';
-	wait for clk_period*10;
-	BTN_EAST <= '0';
-	wait for clk_period*10;
-	BTN_EAST <= '1';
-	wait for clk_period*10;
-	BTN_EAST <= '0';
-	wait for clk_period*10;
-	BTN_EAST <= '1';
-	wait for clk_period*10;
-	BTN_EAST <= '0';
 	
 	WAIT;														-- will wait forever
 END PROCESS;

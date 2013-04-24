@@ -1,6 +1,8 @@
 AR counter384 behavioral D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd sub00/vhpl13 1366744966
 AR rgbencoder behavioral D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd sub00/vhpl09 1366716892
+EN autorepeat NULL D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd sub00/vhpl14 1366817706
 EN pwmencoder NULL D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd sub00/vhpl04 1366759382
+AR autorepeat behavioral D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd sub00/vhpl15 1366817707
 AR counter256 behavioral D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd sub00/vhpl03 1366716886
 AR pwmencoder behavioral D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd sub00/vhpl05 1366759383
 EN rotarydecoder NULL D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd sub00/vhpl06 1366716889

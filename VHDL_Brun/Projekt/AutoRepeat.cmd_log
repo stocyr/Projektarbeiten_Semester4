@@ -1,0 +1,2 @@
+vhdtdtfi -lib work AutoRepeat.vhd -prj RGB -o AutoRepeat.spl -module AutoRepeat -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e AutoRepeat.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.sym 

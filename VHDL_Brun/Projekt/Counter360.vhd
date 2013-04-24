@@ -32,6 +32,7 @@ use IEEE.NUMERIC_STD.ALL;
 -- Counter that counts between 0 and 384 in single steps.
 -- Steps can be triggered by a rising edge on either UP
 -- or DOWN input pin.
+-- THIS COUNTER HAS OVERFLOW CHARACTERISTIC!!
 
 entity Counter384 is
     Port ( UP : in STD_LOGIC;
@@ -56,14 +57,9 @@ begin
 		DOWN_old <= DOWN;
 		
 		if (UP='1' and UP_old='0' and DOWN='0') then
-			if cnt /= "101111111" then
-				cnt <= cnt + 1;
-			end if;
-			
+			cnt <= cnt + 1;
 		elsif (DOWN='1' and DOWN_old='0' and UP='0') then  
-			if cnt /= "000000000" then
-				cnt <= cnt - 1;
-			end if;
+			cnt <= cnt - 1;
 		end if;
 	end if;
 end process;

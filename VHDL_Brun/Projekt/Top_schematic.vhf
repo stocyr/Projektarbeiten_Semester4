@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Top_schematic.vhf
--- /___/   /\     Timestamp : 04/24/2013 01:27:52
+-- /___/   /\     Timestamp : 04/24/2013 17:45:40
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -49,6 +49,10 @@ architecture BEHAVIORAL of Top_schematic is
    signal XLXN_76    : std_logic_vector (8 downto 0);
    signal XLXN_77    : std_logic_vector (7 downto 0);
    signal XLXN_78    : std_logic_vector (7 downto 0);
+   signal XLXN_118   : std_logic;
+   signal XLXN_119   : std_logic;
+   signal XLXN_124   : std_logic;
+   signal XLXN_125   : std_logic;
    component Counter256
       port ( UP    : in    std_logic; 
              DOWN  : in    std_logic; 
@@ -92,12 +96,19 @@ architecture BEHAVIORAL of Top_schematic is
              DOWN  : out   std_logic);
    end component;
    
+   component AutoRepeat
+      port ( TRIGGER : in    std_logic; 
+             CLK     : in    std_logic; 
+             RESET   : in    std_logic; 
+             OUTPUT  : out   std_logic);
+   end component;
+   
 begin
    XLXI_2 : Counter256
       port map (CLK=>SYSTEM_CLK,
-                DOWN=>BTN_WEST,
+                DOWN=>XLXN_118,
                 RESET=>RESET,
-                UP=>BTN_EAST,
+                UP=>XLXN_124,
                 VALUE(7 downto 0)=>XLXN_78(7 downto 0));
    
    XLXI_3 : PWMEncoder
@@ -120,9 +131,9 @@ begin
    
    XLXI_27 : Counter256
       port map (CLK=>SYSTEM_CLK,
-                DOWN=>BTN_SOUTH,
+                DOWN=>XLXN_119,
                 RESET=>RESET,
-                UP=>BTN_NORTH,
+                UP=>XLXN_125,
                 VALUE(7 downto 0)=>XLXN_77(7 downto 0));
    
    XLXI_31 : RGBEncoder
@@ -149,6 +160,30 @@ begin
                 ROT_B=>rot_b,
                 DOWN=>XLXN_18,
                 UP=>XLXN_17);
+   
+   XLXI_39 : AutoRepeat
+      port map (CLK=>SYSTEM_CLK,
+                RESET=>RESET,
+                TRIGGER=>BTN_EAST,
+                OUTPUT=>XLXN_124);
+   
+   XLXI_40 : AutoRepeat
+      port map (CLK=>SYSTEM_CLK,
+                RESET=>RESET,
+                TRIGGER=>BTN_WEST,
+                OUTPUT=>XLXN_118);
+   
+   XLXI_41 : AutoRepeat
+      port map (CLK=>SYSTEM_CLK,
+                RESET=>RESET,
+                TRIGGER=>BTN_NORTH,
+                OUTPUT=>XLXN_125);
+   
+   XLXI_42 : AutoRepeat
+      port map (CLK=>SYSTEM_CLK,
+                RESET=>RESET,
+                TRIGGER=>BTN_SOUTH,
+                OUTPUT=>XLXN_119);
    
 end BEHAVIORAL;
 

@@ -1,0 +1,7 @@
+[Inputs]
+TRIGGER
+CLK
+RESET
+[Outputs]
+OUTPUT
+[BiDir]

@@ -8,6 +8,7 @@ Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder
 Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd" into library work
 Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd" into library work
 Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd" into library work
 Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf" into library work
 Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/top_tb.vhd" into library work
 Starting static elaboration
@@ -21,11 +22,12 @@ Compiling architecture behavioral of entity PWMEncoder [pwmencoder_default]
 Compiling architecture behavioral of entity RGBEncoder [rgbencoder_default]
 Compiling architecture behavioral of entity Counter384 [counter384_default]
 Compiling architecture behavioral of entity RotaryDecoder [rotarydecoder_default]
+Compiling architecture behavioral of entity AutoRepeat [autorepeat_default]
 Compiling architecture behavioral of entity Top_schematic [top_schematic_default]
 Compiling architecture behavioral of entity top_schematic_top_schematic_sch_...
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 17 VHDL Units
+Compiled 19 VHDL Units
 Built simulation executable D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe
-Fuse Memory Usage: 50048 KB
-Fuse CPU Usage: 717 ms
+Fuse Memory Usage: 50120 KB
+Fuse CPU Usage: 1185 ms
