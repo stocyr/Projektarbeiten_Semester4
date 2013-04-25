@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xc3576ebc */
+/* This file is designed for use with ISim build 0xa0883be4 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/top_tb.vhd";
+static const char *ng0 = "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/top_tb.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_1690584930_503743352(char *, unsigned char );

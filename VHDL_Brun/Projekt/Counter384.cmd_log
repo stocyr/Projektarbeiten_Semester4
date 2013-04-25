@@ -1,2 +1,4 @@
-vhdtdtfi -lib work Counter360.vhd -prj RGB -o Counter384.spl -module Counter384 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family spartan3e Counter384.spl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter384.sym 
+vhdtdtfi -lib work Counter360.vhd -prj RGB -o Counter384.spl -module Counter384 -template C:/Apps/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Counter384.spl U:/VHDL/RGB/Projekt/Counter384.sym 
+vhdtdtfi -lib work Counter360.vhd -prj RGB -o Counter384.spl -module Counter384 -template C:/Apps/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Counter384.spl U:/VHDL/RGB/Projekt/Counter384.sym 

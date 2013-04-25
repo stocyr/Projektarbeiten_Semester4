@@ -63,12 +63,12 @@ begin
 			case switch(2 downto 0) is
 				when "000" =>
 					R <= VAL;
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * unsigned(HUE)) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * unsigned(HUE)) srl 6) + base(7 downto 0);
 					G <= std_logic_vector(led_value(7 downto 0));
 					B <= std_logic_vector(base(7 downto 0));
 				
 				when "001" =>
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
 					R <= std_logic_vector(led_value(7 downto 0));
 					G <= VAL;
 					B <= std_logic_vector(base(7 downto 0));
@@ -76,17 +76,17 @@ begin
 				when "010" =>
 					R <= std_logic_vector(base(7 downto 0));
 					G <= VAL;
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 6) + base(7 downto 0);
 					B <= std_logic_vector(led_value(7 downto 0));
 				
 				when "011" =>
 					R <= std_logic_vector(base(7 downto 0));
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
 					G <= std_logic_vector(led_value(7 downto 0));
 					B <= VAL;
 				
 				when "100" =>
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 6) + base(7 downto 0);
 					R <= std_logic_vector(led_value(7 downto 0));
 					G <= std_logic_vector(base(7 downto 0));
 					B <= VAL;
@@ -94,7 +94,7 @@ begin
 				when "101" =>
 					R <= VAL;
 					G <= std_logic_vector(base(7 downto 0));
-					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 5) + base(7 downto 0);
+					led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
 					B <= std_logic_vector(led_value(7 downto 0));
 					
 				when others =>

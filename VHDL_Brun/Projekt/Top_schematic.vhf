@@ -4,14 +4,14 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 14.1
+-- \   \   \/     Version : 14.2
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Top_schematic.vhf
--- /___/   /\     Timestamp : 04/24/2013 17:45:40
+-- /___/   /\     Timestamp : 04/25/2013 09:06:04
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf -w D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.sch
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl U:/VHDL/RGB/Projekt/Top_schematic.vhf -w U:/VHDL/RGB/Projekt/Top_schematic.sch
 --Design Name: Top_schematic
 --Device: spartan3e
 --Purpose:
@@ -80,14 +80,6 @@ architecture BEHAVIORAL of Top_schematic is
              B      : out   std_logic_vector (7 downto 0));
    end component;
    
-   component Counter384
-      port ( UP    : in    std_logic; 
-             DOWN  : in    std_logic; 
-             CLK   : in    std_logic; 
-             RESET : in    std_logic; 
-             VALUE : out   std_logic_vector (8 downto 0));
-   end component;
-   
    component RotaryDecoder
       port ( ROT_A : in    std_logic; 
              ROT_B : in    std_logic; 
@@ -101,6 +93,14 @@ architecture BEHAVIORAL of Top_schematic is
              CLK     : in    std_logic; 
              RESET   : in    std_logic; 
              OUTPUT  : out   std_logic);
+   end component;
+   
+   component Counter384
+      port ( UP    : in    std_logic; 
+             DOWN  : in    std_logic; 
+             CLK   : in    std_logic; 
+             RESET : in    std_logic; 
+             VALUE : out   std_logic_vector (8 downto 0));
    end component;
    
 begin
@@ -147,13 +147,6 @@ begin
                 G(7 downto 0)=>XLXN_22(7 downto 0),
                 R(7 downto 0)=>XLXN_23(7 downto 0));
    
-   XLXI_33 : Counter384
-      port map (CLK=>SYSTEM_CLK,
-                DOWN=>XLXN_18,
-                RESET=>RESET,
-                UP=>XLXN_17,
-                VALUE(8 downto 0)=>XLXN_76(8 downto 0));
-   
    XLXI_34 : RotaryDecoder
       port map (CLK=>SYSTEM_CLK,
                 ROT_A=>rot_a,
@@ -184,6 +177,13 @@ begin
                 RESET=>RESET,
                 TRIGGER=>BTN_SOUTH,
                 OUTPUT=>XLXN_119);
+   
+   XLXI_43 : Counter384
+      port map (CLK=>SYSTEM_CLK,
+                DOWN=>XLXN_18,
+                RESET=>RESET,
+                UP=>XLXN_17,
+                VALUE(8 downto 0)=>XLXN_76(8 downto 0));
    
 end BEHAVIORAL;
 

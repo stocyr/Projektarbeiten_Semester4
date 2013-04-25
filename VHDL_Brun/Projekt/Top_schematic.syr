@@ -1,16 +1,16 @@
-Release 14.1 - xst P.15xf (nt64)
+Release 14.2 - xst P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: Top_schematic.prj
 
@@ -104,20 +104,19 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd" in Library work.
-Entity <counter256> compiled.
-Entity <counter256> (Architecture <behavioral>) compiled.
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd" in Library work.
-Entity <pwmencoder> compiled.
-Entity <pwmencoder> (Architecture <behavioral>) compiled.
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" in Library work.
-Architecture behavioral of Entity rotarydecoder is up to date.
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" in Library work.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter256.vhd" in Library work.
+Architecture behavioral of Entity counter256 is up to date.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/PWMEncoder.vhd" in Library work.
+Architecture behavioral of Entity pwmencoder is up to date.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" in Library work.
 Architecture behavioral of Entity rgbencoder is up to date.
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd" in Library work.
-Entity <counter384> compiled.
-Entity <counter384> (Architecture <behavioral>) compiled.
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf" in Library work.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RotaryDecoder.vhd" in Library work.
+Architecture behavioral of Entity rotarydecoder is up to date.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/AutoRepeat.vhd" in Library work.
+Architecture behavioral of Entity autorepeat is up to date.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter360.vhd" in Library work.
+Architecture behavioral of Entity counter384 is up to date.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Top_schematic.vhf" in Library work.
 Architecture behavioral of Entity top_schematic is up to date.
 
 =========================================================================
@@ -129,9 +128,11 @@ Analyzing hierarchy for entity <Counter256> in library <work> (architecture <beh
 
 Analyzing hierarchy for entity <PWMEncoder> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <RGBEncoder> in library <work> (architecture <behavioral>).
+
 Analyzing hierarchy for entity <RotaryDecoder> in library <work> (architecture <behavioral>).
 
-Analyzing hierarchy for entity <RGBEncoder> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <AutoRepeat> in library <work> (architecture <behavioral>).
 
 Analyzing hierarchy for entity <Counter384> in library <work> (architecture <behavioral>).
 
@@ -148,24 +149,24 @@ Entity <Counter256> analyzed. Unit <Counter256> generated.
 Analyzing Entity <PWMEncoder> in library <work> (Architecture <behavioral>).
 Entity <PWMEncoder> analyzed. Unit <PWMEncoder> generated.
 
-Analyzing Entity <RotaryDecoder> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" line 64: Mux is complete : default of case is discarded
-Entity <RotaryDecoder> analyzed. Unit <RotaryDecoder> generated.
-
 Analyzing Entity <RGBEncoder> in library <work> (Architecture <behavioral>).
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 65: Width mismatch. <base2> has a width of 8 bits but assigned expression is 16-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 68: Width mismatch. <base> has a width of 8 bits but assigned expression is 16-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 70: Width mismatch. <switch> has a width of 3 bits but assigned expression is 9-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 75: Width mismatch. <G> has a width of 8 bits but assigned expression is 17-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 79: Width mismatch. <R> has a width of 8 bits but assigned expression is 17-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 86: Width mismatch. <B> has a width of 8 bits but assigned expression is 17-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 90: Width mismatch. <G> has a width of 8 bits but assigned expression is 17-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 94: Width mismatch. <R> has a width of 8 bits but assigned expression is 17-bit wide.
-WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" line 101: Width mismatch. <B> has a width of 8 bits but assigned expression is 17-bit wide.
-INFO:Xst:2679 - Register <base3> in unit <RGBEncoder> has a constant value of 00000000 during circuit operation. The register is replaced by logic.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 66: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 71: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 79: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 84: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 89: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd" line 97: Width mismatch. <led_value> has a width of 16 bits but assigned expression is 17-bit wide.
 Entity <RGBEncoder> analyzed. Unit <RGBEncoder> generated.
 
+Analyzing Entity <RotaryDecoder> in library <work> (Architecture <behavioral>).
+INFO:Xst:1561 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RotaryDecoder.vhd" line 64: Mux is complete : default of case is discarded
+Entity <RotaryDecoder> analyzed. Unit <RotaryDecoder> generated.
+
+Analyzing Entity <AutoRepeat> in library <work> (Architecture <behavioral>).
+Entity <AutoRepeat> analyzed. Unit <AutoRepeat> generated.
+
 Analyzing Entity <Counter384> in library <work> (Architecture <behavioral>).
+WARNING:Xst:1610 - "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter360.vhd" line 71: Width mismatch. <cnt> has a width of 9 bits but assigned expression is 10-bit wide.
 Entity <Counter384> analyzed. Unit <Counter384> generated.
 
 
@@ -176,7 +177,7 @@ Entity <Counter384> analyzed. Unit <Counter384> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <Counter256>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd".
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter256.vhd".
     Found 8-bit updown counter for signal <cnt>.
     Found 1-bit register for signal <DOWN_old>.
     Found 1-bit register for signal <UP_old>.
@@ -187,22 +188,48 @@ Unit <Counter256> synthesized.
 
 
 Synthesizing Unit <PWMEncoder>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd".
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/PWMEncoder.vhd".
+    Found 256x32-bit ROM for signal <PWM$rom0000> created at line 329.
+    Found 256x32-bit ROM for signal <PWM$rom0001> created at line 329.
     Found 1-bit register for signal <PWM>.
     Found 8-bit up counter for signal <clock_divider>.
-    Found 8-bit adder for signal <PWM$addsub0000> created at line 57.
-    Found 8-bit comparator greatequal for signal <PWM$cmp_ge0000> created at line 59.
-    Found 8-bit up counter for signal <PWM_period>.
+    Found 32-bit comparator less for signal <PWM$cmp_lt0000> created at line 329.
+    Found 8-bit register for signal <PWM_period>.
+    Found 8-bit adder for signal <PWM_period$addsub0000> created at line 323.
     Summary:
-	inferred   2 Counter(s).
-	inferred   1 D-type flip-flop(s).
+	inferred   2 ROM(s).
+	inferred   1 Counter(s).
+	inferred   9 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <PWMEncoder> synthesized.
 
 
+Synthesizing Unit <RGBEncoder>.
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd".
+WARNING:Xst:647 - Input <BUTTON> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <B>.
+    Found 8-bit register for signal <G>.
+    Found 8-bit register for signal <R>.
+    Found 8-bit adder for signal <base$addsub0000> created at line 61.
+    Found 8x8-bit multiplier for signal <base$mult0000> created at line 61.
+    Found 17-bit adder for signal <led_value$add0000> created at line 66.
+    Found 17-bit adder for signal <led_value$add0001> created at line 71.
+    Found 17-bit adder for signal <led_value$add0002> created at line 79.
+    Found 9-bit adder for signal <led_value$addsub0000> created at line 71.
+    Found 9x8-bit multiplier for signal <led_value$mult0000> created at line 66.
+    Found 9x8-bit multiplier for signal <led_value$mult0001> created at line 71.
+    Found 9x8-bit multiplier for signal <led_value$mult0002> created at line 79.
+    Found 8-bit subtractor for signal <led_value$sub0000> created at line 66.
+    Summary:
+	inferred  24 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   4 Multiplier(s).
+Unit <RGBEncoder> synthesized.
+
+
 Synthesizing Unit <RotaryDecoder>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd".
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RotaryDecoder.vhd".
 WARNING:Xst:1780 - Signal <rotary_left> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <rotary_event> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 1-bit register for signal <UP>.
@@ -219,70 +246,61 @@ WARNING:Xst:646 - Signal <rotary_event> is assigned but never used. This unconne
 Unit <RotaryDecoder> synthesized.
 
 
-Synthesizing Unit <RGBEncoder>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd".
-WARNING:Xst:647 - Input <BUTTON> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <switch_dbg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <base_dbg> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <base3> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <base2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-    Found 8-bit register for signal <B>.
-    Found 8-bit register for signal <G>.
-    Found 8-bit register for signal <R>.
-    Found 8-bit adder for signal <B$add0000> created at line 101.
-    Found 8-bit adder for signal <B$add0001> created at line 86.
-    Found 9x8-bit multiplier for signal <B$mult0000> created at line 86.
-    Found 8-bit subtractor for signal <B$sub0000> created at line 86.
-    Found 8-bit adder for signal <base$addsub0000> created at line 68.
-    Found 8x8-bit multiplier for signal <base$mult0000> created at line 68.
-    Found 8-bit adder for signal <G$addsub0000> created at line 75.
-    Found 9x8-bit multiplier for signal <G$mult0000> created at line 75.
-    Found 9-bit adder for signal <R$addsub0000> created at line 79.
-    Found 9x8-bit multiplier for signal <R$mult0000> created at line 79.
+Synthesizing Unit <AutoRepeat>.
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/AutoRepeat.vhd".
+    Found 17-bit up counter for signal <clock_divider>.
+    Found 1-bit register for signal <output_int>.
+    Found 17-bit adder for signal <output_int$addsub0000> created at line 51.
     Summary:
-	inferred  24 D-type flip-flop(s).
-	inferred   6 Adder/Subtractor(s).
-	inferred   4 Multiplier(s).
-Unit <RGBEncoder> synthesized.
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <AutoRepeat> synthesized.
 
 
 Synthesizing Unit <Counter384>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd".
-    Found 9-bit updown counter for signal <cnt>.
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter360.vhd".
+    Found 9-bit register for signal <cnt>.
+    Found 9-bit addsub for signal <cnt$share0000>.
     Found 1-bit register for signal <DOWN_old>.
     Found 1-bit register for signal <UP_old>.
     Summary:
-	inferred   1 Counter(s).
-	inferred   2 D-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
 Unit <Counter384> synthesized.
 
 
 Synthesizing Unit <Top_schematic>.
-    Related source file is "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf".
+    Related source file is "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Top_schematic.vhf".
 Unit <Top_schematic> synthesized.
 
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 3
+ 256x32-bit ROM                                        : 3
 # Multipliers                                          : 4
  8x8-bit multiplier                                    : 1
  9x8-bit multiplier                                    : 3
-# Adders/Subtractors                                   : 9
- 8-bit adder                                           : 7
+# Adders/Subtractors                                   : 14
+ 17-bit adder                                          : 7
+ 8-bit adder                                           : 4
  8-bit subtractor                                      : 1
  9-bit adder                                           : 1
+ 9-bit addsub                                          : 1
 # Counters                                             : 6
- 8-bit up counter                                      : 3
+ 17-bit up counter                                     : 4
  8-bit updown counter                                  : 2
- 9-bit updown counter                                  : 1
-# Registers                                            : 18
- 1-bit register                                        : 14
+# Registers                                            : 26
+ 1-bit register                                        : 18
  2-bit register                                        : 1
- 8-bit register                                        : 3
+ 8-bit register                                        : 6
+ 9-bit register                                        : 1
 # Comparators                                          : 3
- 8-bit comparator greatequal                           : 3
+ 32-bit comparator less                                : 3
 # Multiplexers                                         : 2
  1-bit 4-to-1 multiplexer                              : 2
 
@@ -293,26 +311,83 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <Top_schematic>.
+INFO:Xst:3044 - The ROM <XLXI_5/Mrom_PWM_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <XLXI_31/B>.
+INFO:Xst:3044 - The ROM <XLXI_4/Mrom_PWM_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <XLXI_31/G>.
+INFO:Xst:3044 - The ROM <XLXI_3/Mrom_PWM_rom0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <XLXI_31/R>.
+INFO:Xst:3225 - The RAM <XLXI_5/Mrom_PWM_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <SYSTEM_CLK>    | rise     |
+    |     enA            | connected to signal <RESET>         | low      |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <XLXI_4/Mrom_PWM_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <SYSTEM_CLK>    | rise     |
+    |     enA            | connected to signal <RESET>         | low      |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3225 - The RAM <XLXI_3/Mrom_PWM_rom0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <SYSTEM_CLK>    | rise     |
+    |     enA            | connected to signal <RESET>         | low      |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to internal node          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Top_schematic> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# RAMs                                                 : 3
+ 256x32-bit single-port block RAM                      : 3
 # Multipliers                                          : 4
  7x8-bit multiplier                                    : 1
  8x8-bit multiplier                                    : 1
  9x8-bit multiplier                                    : 2
-# Adders/Subtractors                                   : 9
+# Adders/Subtractors                                   : 14
+ 17-bit adder                                          : 4
  8-bit adder                                           : 7
  8-bit subtractor                                      : 1
  9-bit adder                                           : 1
+ 9-bit addsub                                          : 1
 # Counters                                             : 6
- 8-bit up counter                                      : 3
+ 17-bit up counter                                     : 4
  8-bit updown counter                                  : 2
- 9-bit updown counter                                  : 1
-# Registers                                            : 40
- Flip-Flops                                            : 40
+# Registers                                            : 53
+ Flip-Flops                                            : 53
 # Comparators                                          : 3
- 8-bit comparator greatequal                           : 3
+ 32-bit comparator less                                : 3
 # Multiplexers                                         : 2
  1-bit 4-to-1 multiplexer                              : 2
 
@@ -321,7 +396,8 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2146 - In block <Top_schematic>, Counter <XLXI_5/PWM_period> <XLXI_4/PWM_period> <XLXI_3/PWM_period> are equivalent, XST will keep only <XLXI_5/PWM_period>.
+INFO:Xst:2697 - Unit <Top_schematic> : the RAMs <XLXI_5/Mrom_PWM_rom0000>, <XLXI_4/Mrom_PWM_rom0000> are packed into the single block RAM <XLXI_5/Mrom_PWM_rom00001>
+INFO:Xst:2146 - In block <Top_schematic>, Counter <XLXI_42/clock_divider> <XLXI_41/clock_divider> <XLXI_39/clock_divider> <XLXI_40/clock_divider> are equivalent, XST will keep only <XLXI_42/clock_divider>.
 
 Optimizing unit <Top_schematic> ...
 
@@ -329,13 +405,11 @@ Optimizing unit <Counter256> ...
 
 Optimizing unit <RotaryDecoder> ...
 
-Optimizing unit <RGBEncoder> ...
-
 Optimizing unit <Counter384> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Top_schematic, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block Top_schematic, actual ratio is 5.
 
 Final Macro Processing ...
 
@@ -343,8 +417,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 73
- Flip-Flops                                            : 73
+# Registers                                            : 86
+ Flip-Flops                                            : 86
 
 =========================================================================
 
@@ -373,27 +447,30 @@ Design Statistics
 # IOs                              : 12
 
 Cell Usage :
-# BELS                             : 411
+# BELS                             : 804
 #      GND                         : 1
-#      INV                         : 15
-#      LUT1                        : 7
-#      LUT2                        : 49
-#      LUT3                        : 32
-#      LUT3_D                      : 1
-#      LUT3_L                      : 6
-#      LUT4                        : 132
-#      LUT4_L                      : 9
-#      MUXCY                       : 81
-#      MUXF5                       : 12
+#      INV                         : 21
+#      LUT1                        : 84
+#      LUT2                        : 51
+#      LUT2_L                      : 24
+#      LUT3                        : 56
+#      LUT4                        : 199
+#      LUT4_D                      : 1
+#      MULT_AND                    : 24
+#      MUXCY                       : 192
+#      MUXF5                       : 8
 #      VCC                         : 1
-#      XORCY                       : 65
-# FlipFlops/Latches                : 73
+#      XORCY                       : 142
+# FlipFlops/Latches                : 86
 #      FD                          : 5
-#      FDC                         : 8
-#      FDCE                        : 12
-#      FDE                         : 33
-#      FDPE                        : 13
+#      FDC                         : 41
+#      FDCE                        : 13
+#      FDE                         : 9
+#      FDPE                        : 16
 #      FDRE                        : 2
+# RAMS                             : 2
+#      RAMB16_S36                  : 1
+#      RAMB16_S36_S36              : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 10
@@ -408,11 +485,12 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                      123  out of   4656     2%  
- Number of Slice Flip Flops:             73  out of   9312     0%  
- Number of 4 input LUTs:                251  out of   9312     2%  
+ Number of Slices:                      221  out of   4656     4%  
+ Number of Slice Flip Flops:             86  out of   9312     0%  
+ Number of 4 input LUTs:                436  out of   9312     4%  
  Number of IOs:                          12
  Number of bonded IOBs:                  11  out of    232     4%  
+ Number of BRAMs:                         2  out of     20    10%  
  Number of MULT18X18SIOs:                 4  out of     20    20%  
  Number of GCLKs:                         1  out of     24     4%  
 
@@ -437,7 +515,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-SYSTEM_CLK                         | BUFGP                  | 73    |
+SYSTEM_CLK                         | BUFGP                  | 88    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -445,15 +523,15 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-RESET                              | IBUF                   | 33    |
+RESET                              | IBUF                   | 70    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 20.342ns (Maximum Frequency: 49.159MHz)
-   Minimum input arrival time before clock: 5.003ns
+   Minimum period: 20.831ns (Maximum Frequency: 48.005MHz)
+   Minimum input arrival time before clock: 4.928ns
    Maximum output required time after clock: 4.283ns
    Maximum combinational path delay: No path found
 
@@ -463,69 +541,61 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SYSTEM_CLK'
-  Clock period: 20.342ns (frequency: 49.159MHz)
-  Total number of paths / destination ports: 245739 / 94
+  Clock period: 20.831ns (frequency: 48.005MHz)
+  Total number of paths / destination ports: 248470 / 139
 -------------------------------------------------------------------------
-Delay:               20.342ns (Levels of Logic = 17)
-  Source:            XLXI_2/cnt_7 (FF)
-  Destination:       XLXI_31/G_7 (FF)
+Delay:               20.831ns (Levels of Logic = 17)
+  Source:            XLXI_2/cnt_0 (FF)
+  Destination:       XLXI_5/Mrom_PWM_rom00001 (RAM)
   Source Clock:      SYSTEM_CLK rising
   Destination Clock: SYSTEM_CLK rising
 
-  Data Path: XLXI_2/cnt_7 to XLXI_31/G_7
+  Data Path: XLXI_2/cnt_0 to XLXI_5/Mrom_PWM_rom00001
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             5   0.591   0.633  XLXI_2/cnt_7 (XLXI_2/cnt_7)
-     INV:I->O              1   0.704   0.420  XLXI_31/Madd_base_not0000<7>1_INV_0 (XLXI_31/Madd_base_not0000<7>)
-     MULT18X18SIO:A7->P10    7   4.602   0.787  XLXI_31/Mmult_base_mult0000 (XLXI_31/base_mult0000<10>)
-     LUT2:I1->O            1   0.704   0.000  XLXI_31/Msub_B_sub0000_lut<2> (XLXI_31/Msub_B_sub0000_lut<2>)
-     MUXCY:S->O            1   0.464   0.000  XLXI_31/Msub_B_sub0000_cy<2> (XLXI_31/Msub_B_sub0000_cy<2>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<3> (XLXI_31/Msub_B_sub0000_cy<3>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<4> (XLXI_31/Msub_B_sub0000_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<5> (XLXI_31/Msub_B_sub0000_cy<5>)
-     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Msub_B_sub0000_cy<6> (XLXI_31/Msub_B_sub0000_cy<6>)
-     XORCY:CI->O           3   0.804   0.531  XLXI_31/Msub_B_sub0000_xor<7> (XLXI_31/B_sub0000<7>)
-     MULT18X18SIO:B7->P10    1   4.602   0.499  XLXI_31/Mmult_R_mult0000 (XLXI_31/R_mult0000<10>)
-     LUT2:I1->O            1   0.704   0.000  XLXI_31/Madd_B_add0000_lut<4> (XLXI_31/Madd_B_add0000_lut<4>)
-     MUXCY:S->O            1   0.464   0.000  XLXI_31/Madd_B_add0000_cy<4> (XLXI_31/Madd_B_add0000_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Madd_B_add0000_cy<5> (XLXI_31/Madd_B_add0000_cy<5>)
-     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Madd_B_add0000_cy<6> (XLXI_31/Madd_B_add0000_cy<6>)
-     XORCY:CI->O           3   0.804   0.535  XLXI_31/Madd_B_add0000_xor<7> (XLXI_31/B_add0000<7>)
-     LUT4:I3->O            1   0.704   0.424  XLXI_31/G_mux0002<7>25_SW0 (N3)
-     LUT4:I3->O            1   0.704   0.000  XLXI_31/G_mux0002<7>35 (XLXI_31/G_mux0002<7>)
-     FDE:D                     0.308          XLXI_31/G_7
+     FDPE:C->Q             5   0.591   0.633  XLXI_2/cnt_0 (XLXI_2/cnt_0)
+     INV:I->O              1   0.704   0.420  XLXI_31/Madd_base_not0000<0>1_INV_0 (XLXI_31/Madd_base_not0000<0>)
+     MULT18X18SIO:A0->P10    7   4.602   0.787  XLXI_31/Mmult_base_mult0000 (XLXI_31/base_mult0000<10>)
+     LUT2:I1->O            1   0.704   0.000  XLXI_31/Msub_led_value_sub0000_lut<2> (XLXI_31/Msub_led_value_sub0000_lut<2>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_31/Msub_led_value_sub0000_cy<2> (XLXI_31/Msub_led_value_sub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_led_value_sub0000_cy<3> (XLXI_31/Msub_led_value_sub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_led_value_sub0000_cy<4> (XLXI_31/Msub_led_value_sub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Msub_led_value_sub0000_cy<5> (XLXI_31/Msub_led_value_sub0000_cy<5>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Msub_led_value_sub0000_cy<6> (XLXI_31/Msub_led_value_sub0000_cy<6>)
+     XORCY:CI->O           3   0.804   0.531  XLXI_31/Msub_led_value_sub0000_xor<7> (XLXI_31/led_value_sub0000<7>)
+     MULT18X18SIO:B7->P10    1   4.602   0.499  XLXI_31/Mmult_led_value_mult0001 (XLXI_31/led_value_mult0001<10>)
+     LUT2:I1->O            1   0.704   0.000  XLXI_31/Madd_led_value_add0001_Madd_lut<4> (XLXI_31/Madd_led_value_add0001_Madd_lut<4>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_31/Madd_led_value_add0001_Madd_cy<4> (XLXI_31/Madd_led_value_add0001_Madd_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_31/Madd_led_value_add0001_Madd_cy<5> (XLXI_31/Madd_led_value_add0001_Madd_cy<5>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_31/Madd_led_value_add0001_Madd_cy<6> (XLXI_31/Madd_led_value_add0001_Madd_cy<6>)
+     XORCY:CI->O           3   0.804   0.535  XLXI_31/Madd_led_value_add0001_Madd_xor<7> (XLXI_31/led_value_add0001<7>)
+     LUT4:I3->O            1   0.704   0.424  XLXI_31/B_mux0002<7>64 (XLXI_31/B_mux0002<7>64)
+     LUT4:I3->O            1   0.704   0.420  XLXI_31/B_mux0002<7>78 (XLXI_31/B_mux0002<7>)
+     RAMB16_S36_S36:ADDRA7        0.377          XLXI_5/Mrom_PWM_rom00001
     ----------------------------------------
-    Total                     20.342ns (16.513ns logic, 3.829ns route)
-                                       (81.2% logic, 18.8% route)
+    Total                     20.831ns (16.582ns logic, 4.249ns route)
+                                       (79.6% logic, 20.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SYSTEM_CLK'
-  Total number of paths / destination ports: 263 / 71
+  Total number of paths / destination ports: 18 / 18
 -------------------------------------------------------------------------
-Offset:              5.003ns (Levels of Logic = 10)
-  Source:            BTN_SOUTH (PAD)
-  Destination:       XLXI_27/cnt_7 (FF)
+Offset:              4.928ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       XLXI_5/Mrom_PWM_rom00001 (RAM)
   Destination Clock: SYSTEM_CLK rising
 
-  Data Path: BTN_SOUTH to XLXI_27/cnt_7
+  Data Path: RESET to XLXI_5/Mrom_PWM_rom00001
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            12   1.218   1.136  BTN_SOUTH_IBUF (BTN_SOUTH_IBUF)
-     LUT3:I0->O            1   0.704   0.420  XLXI_27/cnt_and0000_inv2 (XLXI_27/cnt_and0000_inv)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<0> (XLXI_27/Mcount_cnt_cy<0>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<1> (XLXI_27/Mcount_cnt_cy<1>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<2> (XLXI_27/Mcount_cnt_cy<2>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<3> (XLXI_27/Mcount_cnt_cy<3>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<4> (XLXI_27/Mcount_cnt_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  XLXI_27/Mcount_cnt_cy<5> (XLXI_27/Mcount_cnt_cy<5>)
-     MUXCY:CI->O           0   0.059   0.000  XLXI_27/Mcount_cnt_cy<6> (XLXI_27/Mcount_cnt_cy<6>)
-     XORCY:CI->O           1   0.804   0.000  XLXI_27/Mcount_cnt_xor<7> (XLXI_27/Result<7>)
-     FDCE:D                    0.308          XLXI_27/cnt_7
+     IBUF:I->O            71   1.218   1.275  RESET_IBUF (RESET_IBUF)
+     INV:I->O             12   0.704   0.961  RESET_inv1_INV_0 (RESET_inv)
+     RAMB16_S36_S36:ENA        0.770          XLXI_5/Mrom_PWM_rom00001
     ----------------------------------------
-    Total                      5.003ns (3.447ns logic, 1.556ns route)
-                                       (68.9% logic, 31.1% route)
+    Total                      4.928ns (2.692ns logic, 2.236ns route)
+                                       (54.6% logic, 45.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SYSTEM_CLK'
@@ -549,14 +619,14 @@ Offset:              4.283ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.47 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.45 secs
  
 --> 
 
-Total memory usage is 284528 kilobytes
+Total memory usage is 284028 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   16 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

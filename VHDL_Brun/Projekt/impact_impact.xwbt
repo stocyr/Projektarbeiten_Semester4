@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=U:\VHDL\RGB\Projekt\impact.xsl
+OUTFILE=U:\VHDL\RGB\Projekt\impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=U:\VHDL\RGB\Projekt
+LICENSE=iMPACT
+USER_INFO=iMPACT

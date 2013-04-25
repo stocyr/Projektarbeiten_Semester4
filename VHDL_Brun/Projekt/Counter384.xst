@@ -1,5 +1,5 @@
-set -tmpdir "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst/projnav.tmp"
-set -xsthdpdir "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst"
+set -tmpdir "U:/VHDL/RGB/Projekt/xst/projnav.tmp"
+set -xsthdpdir "U:/VHDL/RGB/Projekt/xst"
 elaborate
 -ifn Counter384.prj
 -ifmt mixed

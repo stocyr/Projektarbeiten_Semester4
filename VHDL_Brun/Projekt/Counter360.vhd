@@ -44,27 +44,36 @@ end Counter384;
 
 
 architecture Behavioral of Counter384 is
-	signal cnt : unsigned(8 downto 0);
 	signal UP_old, DOWN_old : std_logic;
 begin
  
 process(RESET, CLK)
+	variable cnt : unsigned(8 downto 0);
+	constant step : integer := 4;
 begin
 	if RESET = '1' then
-		cnt <= "000000000";
+		cnt := "000000000";
 	elsif rising_edge(CLK) then 
 		UP_old <= UP;
 		DOWN_old <= DOWN;
-		
+
 		if (UP='1' and UP_old='0' and DOWN='0') then
-			cnt <= cnt + 1;
+			if cnt /= ("110000000" - step) then
+				cnt := cnt + step;
+			else
+				cnt := "000000000";
+			end if;
+
 		elsif (DOWN='1' and DOWN_old='0' and UP='0') then  
-			cnt <= cnt - 1;
+			if cnt /= "000000000" then
+				cnt := cnt - step;
+			else
+				cnt := ("110000000" - step);
+			end if;
 		end if;
 	end if;
+	VALUE <= std_logic_vector(cnt);
 end process;
-
-VALUE <= std_logic_vector(cnt);
 
 end Behavioral;
 

@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xc3576ebc */
+/* This file is designed for use with ISim build 0xa0883be4 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd";
+static const char *ng0 = "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/AutoRepeat.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -74,7 +74,7 @@ LAB3:    t1 = (t0 + 3640);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(48, ng0);
-    t1 = (t0 + 5954);
+    t1 = (t0 + 5822);
     t6 = (t0 + 2088U);
     t7 = *((char **)t6);
     t6 = (t7 + 0);
@@ -92,7 +92,7 @@ LAB2:    xsi_set_current_line(48, ng0);
 LAB5:    xsi_set_current_line(51, ng0);
     t2 = (t0 + 2088U);
     t5 = *((char **)t2);
-    t2 = (t0 + 5908U);
+    t2 = (t0 + 5776U);
     t6 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t8, t5, t2, 1);
     t7 = (t0 + 2088U);
     t9 = *((char **)t7);
@@ -102,19 +102,10 @@ LAB5:    xsi_set_current_line(51, ng0);
     t12 = (1U * t11);
     memcpy(t7, t6, t12);
     xsi_set_current_line(53, ng0);
-    t1 = (t0 + 1032U);
-    t2 = *((char **)t1);
-    t3 = *((unsigned char *)t2);
-    t4 = (t3 == (unsigned char)3);
-    if (t4 != 0)
-        goto LAB7;
-
-LAB9:
-LAB8:    xsi_set_current_line(57, ng0);
     t1 = (t0 + 2088U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5908U);
-    t5 = (t0 + 5971);
+    t1 = (t0 + 5776U);
+    t5 = (t0 + 5839);
     t7 = (t8 + 0U);
     t9 = (t7 + 0U);
     *((int *)t9) = 0;
@@ -129,30 +120,20 @@ LAB8:    xsi_set_current_line(57, ng0);
     *((unsigned int *)t9) = t11;
     t3 = ieee_p_1242562249_sub_2110375371_1035706684(IEEE_P_1242562249, t2, t1, t5, t8);
     if (t3 != 0)
-        goto LAB10;
+        goto LAB7;
 
-LAB12:
-LAB11:    goto LAB3;
+LAB9:
+LAB8:    goto LAB3;
 
-LAB7:    xsi_set_current_line(54, ng0);
-    t1 = (t0 + 3736);
-    t5 = (t1 + 56U);
-    t6 = *((char **)t5);
-    t7 = (t6 + 56U);
-    t9 = *((char **)t7);
-    *((unsigned char *)t9) = (unsigned char)3;
-    xsi_driver_first_trans_fast(t1);
-    goto LAB8;
-
-LAB10:    xsi_set_current_line(59, ng0);
+LAB7:    xsi_set_current_line(55, ng0);
     t9 = (t0 + 1032U);
     t10 = *((char **)t9);
     t4 = *((unsigned char *)t10);
     t14 = (t4 == (unsigned char)3);
     if (t14 != 0)
-        goto LAB13;
+        goto LAB10;
 
-LAB15:    xsi_set_current_line(62, ng0);
+LAB12:    xsi_set_current_line(58, ng0);
     t1 = (t0 + 3736);
     t2 = (t1 + 56U);
     t5 = *((char **)t2);
@@ -161,9 +142,9 @@ LAB15:    xsi_set_current_line(62, ng0);
     *((unsigned char *)t7) = (unsigned char)2;
     xsi_driver_first_trans_fast(t1);
 
-LAB14:    goto LAB11;
+LAB11:    goto LAB8;
 
-LAB13:    xsi_set_current_line(60, ng0);
+LAB10:    xsi_set_current_line(56, ng0);
     t9 = (t0 + 1672U);
     t15 = *((char **)t9);
     t16 = *((unsigned char *)t15);
@@ -175,7 +156,7 @@ LAB13:    xsi_set_current_line(60, ng0);
     t21 = *((char **)t20);
     *((unsigned char *)t21) = t17;
     xsi_driver_first_trans_fast(t9);
-    goto LAB14;
+    goto LAB11;
 
 }
 
@@ -190,7 +171,7 @@ static void work_a_3529471042_3212880686_p_1(char *t0)
     char *t7;
     char *t8;
 
-LAB0:    xsi_set_current_line(68, ng0);
+LAB0:    xsi_set_current_line(64, ng0);
 
 LAB3:    t1 = (t0 + 1672U);
     t2 = *((char **)t1);

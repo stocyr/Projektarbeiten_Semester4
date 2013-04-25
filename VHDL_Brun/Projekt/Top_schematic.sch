@@ -26,13 +26,6 @@
         <signal name="XLXN_119" />
         <signal name="XLXN_124" />
         <signal name="XLXN_125" />
-        <signal name="XLXN_126" />
-        <signal name="XLXN_127" />
-        <signal name="XLXN_128" />
-        <signal name="XLXN_129" />
-        <signal name="XLXN_130" />
-        <signal name="XLXN_131" />
-        <signal name="XLXN_132" />
         <signal name="BTN_SOUTH" />
         <signal name="BTN_NORTH" />
         <signal name="BTN_WEST" />
@@ -96,16 +89,6 @@
             <rect width="64" x="320" y="-44" height="24" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
         </blockdef>
-        <blockdef name="Counter384">
-            <timestamp>2013-4-22T22:4:54</timestamp>
-            <rect width="256" x="64" y="-256" height="256" />
-            <line x2="0" y1="-224" y2="-224" x1="64" />
-            <line x2="0" y1="-160" y2="-160" x1="64" />
-            <line x2="0" y1="-96" y2="-96" x1="64" />
-            <line x2="0" y1="-32" y2="-32" x1="64" />
-            <rect width="64" x="320" y="-236" height="24" />
-            <line x2="384" y1="-224" y2="-224" x1="320" />
-        </blockdef>
         <blockdef name="AutoRepeat">
             <timestamp>2013-4-24T15:35:55</timestamp>
             <rect width="256" x="64" y="-192" height="192" />
@@ -113,6 +96,16 @@
             <line x2="0" y1="-96" y2="-96" x1="64" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <line x2="384" y1="-160" y2="-160" x1="320" />
+        </blockdef>
+        <blockdef name="Counter384">
+            <timestamp>2013-4-25T7:5:43</timestamp>
+            <rect width="256" x="64" y="-256" height="256" />
+            <line x2="0" y1="-224" y2="-224" x1="64" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
+            <rect width="64" x="320" y="-236" height="24" />
+            <line x2="384" y1="-224" y2="-224" x1="320" />
         </blockdef>
         <block symbolname="Counter256" name="XLXI_2">
             <blockpin signalname="XLXN_124" name="UP" />
@@ -138,13 +131,6 @@
             <blockpin signalname="XLXN_23(7:0)" name="R(7:0)" />
             <blockpin signalname="XLXN_22(7:0)" name="G(7:0)" />
             <blockpin signalname="XLXN_24(7:0)" name="B(7:0)" />
-        </block>
-        <block symbolname="Counter384" name="XLXI_33">
-            <blockpin signalname="XLXN_17" name="UP" />
-            <blockpin signalname="XLXN_18" name="DOWN" />
-            <blockpin signalname="SYSTEM_CLK" name="CLK" />
-            <blockpin signalname="RESET" name="RESET" />
-            <blockpin signalname="XLXN_76(8:0)" name="VALUE(8:0)" />
         </block>
         <block symbolname="PWMEncoder" name="XLXI_5">
             <blockpin signalname="SYSTEM_CLK" name="CLK" />
@@ -194,6 +180,13 @@
             <blockpin signalname="SYSTEM_CLK" name="CLK" />
             <blockpin signalname="RESET" name="RESET" />
             <blockpin signalname="XLXN_124" name="OUTPUT" />
+        </block>
+        <block symbolname="Counter384" name="XLXI_43">
+            <blockpin signalname="XLXN_17" name="UP" />
+            <blockpin signalname="XLXN_18" name="DOWN" />
+            <blockpin signalname="SYSTEM_CLK" name="CLK" />
+            <blockpin signalname="RESET" name="RESET" />
+            <blockpin signalname="XLXN_76(8:0)" name="VALUE(8:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -308,8 +301,6 @@
             <wire x2="1200" y1="736" y2="736" x1="1184" />
             <wire x2="1184" y1="736" y2="768" x1="1184" />
         </branch>
-        <instance x="1200" y="896" name="XLXI_33" orien="R0">
-        </instance>
         <iomarker fontsize="28" x="256" y="368" name="rot_c" orien="R180" />
         <iomarker fontsize="28" x="256" y="416" name="RESET" orien="R180" />
         <iomarker fontsize="28" x="256" y="480" name="SYSTEM_CLK" orien="R180" />
@@ -390,5 +381,7 @@
         <iomarker fontsize="28" x="256" y="1184" name="BTN_WEST" orien="R180" />
         <iomarker fontsize="28" x="256" y="1456" name="BTN_NORTH" orien="R180" />
         <iomarker fontsize="28" x="256" y="1728" name="BTN_SOUTH" orien="R180" />
+        <instance x="1200" y="896" name="XLXI_43" orien="R0">
+        </instance>
     </sheet>
 </drawing>
