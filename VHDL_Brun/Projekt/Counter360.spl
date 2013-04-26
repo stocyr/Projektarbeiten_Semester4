@@ -1,8 +1,0 @@
-[Inputs]
-UP
-DOWN
-CLK
-RESET
-[Outputs]
-=VALUE[8:0]=
-[BiDir]

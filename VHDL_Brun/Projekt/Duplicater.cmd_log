@@ -1,0 +1,2 @@
+vhdtdtfi -lib work Duplicater.vhd -prj RGB -o Duplicater.spl -module Duplicater -template C:/Apps/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e Duplicater.spl U:/VHDL/RGB/Projekt/Duplicater.sym 

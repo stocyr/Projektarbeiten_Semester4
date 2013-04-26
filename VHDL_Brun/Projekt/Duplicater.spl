@@ -1,7 +1,6 @@
 [Inputs]
-TRIGGER
-CLK
-RESET
+INPUT
 [Outputs]
-OUTPUT
+OUT1
+OUT2
 [BiDir]

@@ -4,14 +4,14 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 14.2
+-- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Top_schematic.vhf
--- /___/   /\     Timestamp : 04/25/2013 09:06:04
+-- /___/   /\     Timestamp : 04/26/2013 14:44:54
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl U:/VHDL/RGB/Projekt/Top_schematic.vhf -w U:/VHDL/RGB/Projekt/Top_schematic.sch
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf -w D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.sch
 --Design Name: Top_schematic
 --Device: spartan3e
 --Purpose:
@@ -35,9 +35,9 @@ entity Top_schematic is
           rot_b      : in    std_logic; 
           rot_c      : in    std_logic; 
           SYSTEM_CLK : in    std_logic; 
-          LED0       : out   std_logic; 
-          LED1       : out   std_logic; 
-          LED2       : out   std_logic);
+          BLAU       : out   std_logic; 
+          GRUEN      : out   std_logic; 
+          ROT        : out   std_logic);
 end Top_schematic;
 
 architecture BEHAVIORAL of Top_schematic is
@@ -115,19 +115,19 @@ begin
       port map (CLK=>SYSTEM_CLK,
                 RESET=>RESET,
                 VALUE(7 downto 0)=>XLXN_23(7 downto 0),
-                PWM=>LED0);
+                PWM=>ROT);
    
    XLXI_4 : PWMEncoder
       port map (CLK=>SYSTEM_CLK,
                 RESET=>RESET,
                 VALUE(7 downto 0)=>XLXN_22(7 downto 0),
-                PWM=>LED1);
+                PWM=>GRUEN);
    
    XLXI_5 : PWMEncoder
       port map (CLK=>SYSTEM_CLK,
                 RESET=>RESET,
                 VALUE(7 downto 0)=>XLXN_24(7 downto 0),
-                PWM=>LED2);
+                PWM=>BLAU);
    
    XLXI_27 : Counter256
       port map (CLK=>SYSTEM_CLK,

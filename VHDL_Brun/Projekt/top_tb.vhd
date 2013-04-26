@@ -70,7 +70,7 @@ BEGIN
 
 process
 begin
-	wait for clk_period*100;
+	wait for clk_period*10000;
 	rot_a <= '1';
 	wait for clk_period*10;
 	rot_b <= '1';

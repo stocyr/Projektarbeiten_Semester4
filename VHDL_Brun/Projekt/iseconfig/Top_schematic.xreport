@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-04-25T08:57:02</DateModified>
+  <DateModified>2013-04-26T14:31:03</DateModified>
   <ModuleName>Top_schematic</ModuleName>
   <SummaryTimeStamp>2013-04-25T08:39:10</SummaryTimeStamp>
-  <SavedFilePath>U:/VHDL/RGB/Projekt/iseconfig/Top_schematic.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>U:/VHDL/RGB/Projekt\</ImplementationReportsDirectory>
+  <SavedFilePath>D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/iseconfig/Top_schematic.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt\</ImplementationReportsDirectory>
   <DateInitialized>2013-04-22T22:23:56</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

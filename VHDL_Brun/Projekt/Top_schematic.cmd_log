@@ -17,3 +17,45 @@ map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_sch
 par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf 
 bitgen -intstyle ise -f Top_schematic.ut Top_schematic.ncd 
+xst -intstyle ise -ifn "U:/VHDL/RGB/Projekt/Top_schematic.xst" -ofn "U:/VHDL/RGB/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+xst -intstyle ise -ifn "U:/VHDL/RGB/Projekt/Top_schematic.xst" -ofn "U:/VHDL/RGB/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+xst -intstyle ise -ifn "U:/VHDL/RGB/Projekt/Top_schematic.xst" -ofn "U:/VHDL/RGB/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf 
+bitgen -intstyle ise -f Top_schematic.ut Top_schematic.ncd 
+xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf 
+bitgen -intstyle ise -f Top_schematic.ut Top_schematic.ncd 
+xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf 
+bitgen -intstyle ise -f Top_schematic.ut Top_schematic.ncd 
+xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+xst -intstyle ise -ifn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.xst" -ofn "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin_v1.ucf -p xc3s500e-fg320-4 Top_schematic.ngc Top_schematic.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Top_schematic_map.ncd Top_schematic.ngd Top_schematic.pcf 
+par -w -intstyle ise -ol high -t 1 Top_schematic_map.ncd Top_schematic.ncd Top_schematic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf 
+bitgen -intstyle ise -f Top_schematic.ut Top_schematic.ncd 

@@ -1,6 +1,7 @@
 vhdl work "RotaryDecoder.vhd"
 vhdl work "RGBEncoder.vhd"
 vhdl work "PWMEncoder.vhd"
+vhdl work "Duplicater.vhd"
 vhdl work "Counter360.vhd"
 vhdl work "Counter256.vhd"
 vhdl work "AutoRepeat.vhd"

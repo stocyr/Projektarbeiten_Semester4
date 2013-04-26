@@ -2,7 +2,7 @@ ISim log file
 Running: U:\VHDL\RGB\Projekt\Top_schematic_Top_schematic_sch_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb 
 ISim P.28xd (signature 0xa0883be4)
 ----------------------------------------------------------------------
-INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@lizsrvrekt'.
 INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to '2100@lizsrvrekt'.
 WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
 WARNING:Security:44 - Since no license file was found,
@@ -20,14 +20,7 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-# run 1ms
 # restart
-# run 1ms
+# run 20ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

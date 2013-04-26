@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
@@ -12,7 +12,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="group32" type="group">
       <obj_property name="label">Switcheees</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -102,5 +102,18 @@
    <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_42/output_int" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">output_int</obj_property>
       <obj_property name="ObjectShortName">output_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/system_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">system_clk</obj_property>
+      <obj_property name="ObjectShortName">system_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_5/clock_divider" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clock_divider[7:0]</obj_property>
+      <obj_property name="ObjectShortName">clock_divider[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_5/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
 </wave_config>

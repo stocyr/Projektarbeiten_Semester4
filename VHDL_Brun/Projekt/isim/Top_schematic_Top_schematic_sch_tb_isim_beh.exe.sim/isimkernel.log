@@ -2,9 +2,27 @@ Command line:
    Top_schematic_Top_schematic_sch_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50312
+     -socket  50104
 
-Thu Apr 25 09:08:40 2013
+Fri Apr 26 14:07:37 2013
 
 
- Elaboration Time: 0.0312 sec
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 832.557 Meg
+
+ Total Signals          : 153
+ Total Nets             : 133
+ Total Signal Drivers   : 45
+ Total Blocks           : 20
+ Total Primitive Blocks : 18
+ Total Processes        : 30
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 1385
+
+ Total Simulation Time: 39.8895 sec
+
+ Current Memory Usage: 832.557 Meg
+
+Fri Apr 26 14:10:57 2013
+

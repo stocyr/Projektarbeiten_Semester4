@@ -1,33 +1,33 @@
-Release 14.1 - xst P.15xf (nt64)
+Release 14.2 - xst P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst/projnav.tmp
+--> Parameter TMPDIR set to U:/VHDL/RGB/Projekt/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.09 secs
  
---> Parameter xsthdpdir set to D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst
+--> Parameter xsthdpdir set to U:/VHDL/RGB/Projekt/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd" in Library work.
-Entity <autorepeat> compiled.
-Entity <AutoRepeat> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Duplicater.vhd" in Library work.
+Entity <duplicater> compiled.
+Entity <Duplicater> (Architecture <Behavioral>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.26 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> 
 
-Total memory usage is 218572 kilobytes
+Total memory usage is 215128 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

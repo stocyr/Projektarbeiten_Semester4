@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Release 14.2 Trace  (nt64)
+Release 14.1 Trace  (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-C:\Apps\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
--s 4 -n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o
-Top_schematic.twr Top_schematic.pcf -ucf pin_v1.ucf
+C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml Top_schematic.twx Top_schematic.ncd -o Top_schematic.twr
+Top_schematic.pcf -ucf pin_v1.ucf
 
 Design file:              Top_schematic.ncd
 Physical constraint file: Top_schematic.pcf
-Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2012-07-09)
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2012-04-23)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -45,13 +45,13 @@ Setup/Hold to clock SYSTEM_CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-BTN_EAST    |    1.452(R)|   -0.040(R)|SYSTEM_CLK_BUFGP  |   0.000|
-BTN_NORTH   |    3.594(R)|   -1.755(R)|SYSTEM_CLK_BUFGP  |   0.000|
-BTN_SOUTH   |    1.510(R)|   -0.085(R)|SYSTEM_CLK_BUFGP  |   0.000|
-BTN_WEST    |    2.111(R)|   -0.572(R)|SYSTEM_CLK_BUFGP  |   0.000|
-RESET       |    3.679(R)|   -0.660(R)|SYSTEM_CLK_BUFGP  |   0.000|
-rot_a       |    0.737(R)|    0.546(R)|SYSTEM_CLK_BUFGP  |   0.000|
-rot_b       |    0.302(R)|    0.893(R)|SYSTEM_CLK_BUFGP  |   0.000|
+BTN_EAST    |    0.747(R)|    0.534(R)|SYSTEM_CLK_BUFGP  |   0.000|
+BTN_NORTH   |    3.236(R)|   -1.466(R)|SYSTEM_CLK_BUFGP  |   0.000|
+BTN_SOUTH   |    1.508(R)|   -0.086(R)|SYSTEM_CLK_BUFGP  |   0.000|
+BTN_WEST    |    1.748(R)|   -0.264(R)|SYSTEM_CLK_BUFGP  |   0.000|
+RESET       |    4.635(R)|   -0.039(R)|SYSTEM_CLK_BUFGP  |   0.000|
+rot_a       |    0.637(R)|    0.627(R)|SYSTEM_CLK_BUFGP  |   0.000|
+rot_b       |    0.970(R)|    0.362(R)|SYSTEM_CLK_BUFGP  |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock SYSTEM_CLK to Pad
@@ -59,9 +59,9 @@ Clock SYSTEM_CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-LED0        |    7.899(R)|SYSTEM_CLK_BUFGP  |   0.000|
-LED1        |    7.899(R)|SYSTEM_CLK_BUFGP  |   0.000|
-LED2        |    7.897(R)|SYSTEM_CLK_BUFGP  |   0.000|
+BLAU        |    9.063(R)|SYSTEM_CLK_BUFGP  |   0.000|
+GRUEN       |    8.674(R)|SYSTEM_CLK_BUFGP  |   0.000|
+ROT         |    8.712(R)|SYSTEM_CLK_BUFGP  |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock SYSTEM_CLK
@@ -69,18 +69,18 @@ Clock to Setup on destination clock SYSTEM_CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-SYSTEM_CLK     |   23.017|         |         |         |
+SYSTEM_CLK     |   23.156|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Apr 25 09:26:18 2013 
+Analysis completed Fri Apr 26 14:46:26 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 171 MB
+Peak Memory Usage: 179 MB
 
 
 

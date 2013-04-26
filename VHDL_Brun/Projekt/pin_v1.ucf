@@ -1,12 +1,10 @@
 #LEDS
-NET "led0"  LOC = "F12"  ; 
-NET "led1"  LOC = "E12"  ; 
-NET "led2"  LOC = "E11"  ; 
 #NET "led<3>"  LOC = "F11"  ; 
 #NET "led<4>"  LOC = "C11"  ; 
 #NET "led<5>"  LOC = "D11"  ; 
 #NET "led<6>"  LOC = "E9"  ; 
 #NET "led<7>"  LOC = "F9"  ; 
+
 #Schalter
 NET "RESET"  LOC = "L13" | PULLDOWN  | IOSTANDARD = LVCMOS33 ; 
 NET "rot_a"  LOC = "K18" | PULLUP  | IOSTANDARD = LVTTL ; 
@@ -28,9 +26,11 @@ NET "SYSTEM_CLK"  LOC = "C9"  ;
 #NET "sf_d<11>"  LOC = "M15" | IOSTANDARD = LVCMOS33  | DRIVE = 4  | SLEW = SLOW ; 
 #NET "sf_d<8>"  LOC = "R15" | IOSTANDARD = LVCMOS33  | DRIVE = 4  | SLEW = SLOW ; 
 #NET "sf_d<9>"  LOC = "R16" | IOSTANDARD = LVCMOS33  | DRIVE = 4  | SLEW = SLOW ; 
-#Sensor
-#NET "MOD_n"  LOC = "A6"   | IOSTANDARD = LVCMOS33;
-#NET "SHD_n"  LOC = "B6"   | IOSTANDARD = LVCMOS33;
-#NET "RDY"  LOC = "F7"   | IOSTANDARD = LVCMOS33;
-#NET "DEMOD"  LOC = "E7" | IOSTANDARD = LVCMOS33 ;
-#NET "RDY" CLOCK_DEDICATED_ROUTE = FALSE;
+#I/O
+NET "ROT"  LOC = "F7"   | IOSTANDARD = LVTTL;
+NET "GRUEN"  LOC = "E7"   | IOSTANDARD = LVTTL;
+NET "BLAU"  LOC = "B6"   | IOSTANDARD = LVTTL;
+
+#NET "led0"  LOC = "F12"  ; 
+#NET "led1"  LOC = "E12"  ; 
+#NET "led2"  LOC = "E11"  ; 

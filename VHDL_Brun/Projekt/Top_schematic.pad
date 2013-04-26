@@ -1,7 +1,7 @@
-Release 14.2 - par P.28xd (nt64)
+Release 14.1 - par P.15xf (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Thu Apr 25 09:26:04 2013
+Fri Apr 26 14:46:20 2013
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -42,7 +42,7 @@ B2|||GND||||||||||||
 B3||DIFFS|IO_L25N_0/HSWAP|UNUSED||0|||||||||
 B4||DIFFS|IO_L24N_0|UNUSED||0|||||||||
 B5||DIFFSI|IP_L22N_0|UNUSED||0|||||||||
-B6||DIFFM|IO_L20P_0|UNUSED||0|||||||||
+B6|BLAU|IOB|IO_L20P_0|OUTPUT|LVTTL|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
 B7|||VCCAUX||||||||2.5||||
 B8||DIFFMI|IP_L13P_0/GCLK8|UNUSED||0|||||||||
 B9||DIFFSI|IP_L13N_0/GCLK9|UNUSED||0|||||||||
@@ -97,12 +97,12 @@ E3|||NC||||||||||||
 E4|||NC||||||||||||
 E5|||VCCINT||||||||1.2||||
 E6|||NC||||||||||||
-E7||DIFFS|IO_L19N_0/VREF_0|UNUSED||0|||||||||
+E7|GRUEN|IOB|IO_L19N_0/VREF_0|OUTPUT|LVTTL|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
 E8||DIFFM|IO_L17P_0|UNUSED||0|||||||||
 E9||DIFFM|IO_L15P_0|UNUSED||0|||||||||
 E10||DIFFS|IO_L11N_0/GCLK5|UNUSED||0|||||||||
-E11|LED2|IOB|IO_L08P_0|OUTPUT|LVCMOS25*|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
-E12|LED1|IOB|IO_L06N_0|OUTPUT|LVCMOS25*|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
+E11||DIFFM|IO_L08P_0|UNUSED||0|||||||||
+E12||DIFFS|IO_L06N_0|UNUSED||0|||||||||
 E13||IOB|IO|UNUSED||0|||||||||
 E14|||VCCINT||||||||1.2||||
 E15|||NC||||||||||||
@@ -115,12 +115,12 @@ F3|||VCCO_3|||3|||||any******||||
 F4||IOB|IO|UNUSED||3|||||||||
 F5||IBUF|IP|UNUSED||3|||||||||
 F6|||VCCINT||||||||1.2||||
-F7||DIFFM|IO_L19P_0|UNUSED||0|||||||||
+F7|ROT|IOB|IO_L19P_0|OUTPUT|LVTTL|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
 F8||DIFFS|IO_L17N_0|UNUSED||0|||||||||
 F9||DIFFS|IO_L15N_0|UNUSED||0|||||||||
 F10||DIFFMI|IP_L10P_0|UNUSED||0|||||||||
 F11||DIFFS|IO_L08N_0|UNUSED||0|||||||||
-F12|LED0|IOB|IO_L06P_0|OUTPUT|LVCMOS25*|0|12|SLOW|NONE**|||LOCATED|NO|NONE|
+F12||DIFFM|IO_L06P_0|UNUSED||0|||||||||
 F13|||VCCINT||||||||1.2||||
 F14||DIFFS|IO_L21N_1|UNUSED||1|||||||||
 F15||DIFFM|IO_L21P_1|UNUSED||1|||||||||

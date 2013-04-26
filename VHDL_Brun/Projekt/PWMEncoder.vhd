@@ -42,7 +42,6 @@ entity PWMEncoder is
 end PWMEncoder;
 
 architecture Behavioral of PWMEncoder is
-	signal clock_divider : std_logic_vector(7 downto 0);
 	
 --#################################################
 --            LOGARITHMIC LOOK UP TABLE
@@ -312,14 +311,15 @@ begin
 
 process(CLK, RESET)
 	variable PWM_period : unsigned(7 downto 0);
+	variable clock_divider : unsigned(7 downto 0);
 begin
 	if RESET = '1' then
-		clock_divider <= "00000000";
-		PWM_period := (others => '0');
+		clock_divider := "00000000";
+		PWM_period := "00000000";
 	elsif rising_edge(CLK) then
-		clock_divider <= std_logic_vector(unsigned(clock_divider) + 1);
+		clock_divider := unsigned(clock_divider) + 1;
 		
-		--if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
+		if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
 			PWM_period := PWM_period + 1;
 			
 			if PWM_period = "11111111" then	-- nur bis 2^n - 2 gehen: weil es n möglichkeiten (statt n-1) gibt
@@ -331,7 +331,7 @@ begin
 			else
 				PWM <= '0';
 			end if;
-		--end if;
+		end if;
 	end if;
 end process;
 

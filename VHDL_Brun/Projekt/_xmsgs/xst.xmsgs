@@ -5,28 +5,28 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">66</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">66</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">79</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">79</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">84</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">84</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">89</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">89</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">97</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">97</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RotaryDecoder.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="1610" delta="new" >&quot;<arg fmt="%s" index="1">//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter360.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">cnt</arg>&gt; has a width of <arg fmt="%d" index="4">9</arg> bits but assigned expression is <arg fmt="%d" index="5">10</arg>-bit wide.
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">cnt</arg>&gt; has a width of <arg fmt="%d" index="4">9</arg> bits but assigned expression is <arg fmt="%d" index="5">10</arg>-bit wide.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">BUTTON</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -59,10 +59,10 @@
 <msg type="info" file="Xst" num="3225" delta="old" >The RAM &lt;<arg fmt="%s" index="1">XLXI_3/Mrom_PWM_rom0000</arg>&gt; will be implemented as BLOCK RAM
 </msg>
 
+<msg type="info" file="Xst" num="2146" delta="old" >In block &lt;<arg fmt="%s" index="1">Top_schematic</arg>&gt;, <arg fmt="%s" index="2">Counter</arg> &lt;<arg fmt="%s" index="3">XLXI_42/clock_divider</arg>&gt; </msg>
+
 <msg type="info" file="Xst" num="2697" delta="old" >Unit &lt;<arg fmt="%s" index="1">Top_schematic</arg>&gt; : the RAMs &lt;<arg fmt="%s" index="2">XLXI_5/Mrom_PWM_rom0000</arg>&gt;, &lt;<arg fmt="%s" index="3">XLXI_4/Mrom_PWM_rom0000</arg>&gt; are packed into the single block RAM &lt;<arg fmt="%s" index="4">XLXI_5/Mrom_PWM_rom00001</arg>&gt;
 </msg>
-
-<msg type="info" file="Xst" num="2146" delta="old" >In block &lt;<arg fmt="%s" index="1">Top_schematic</arg>&gt;, <arg fmt="%s" index="2">Counter</arg> &lt;<arg fmt="%s" index="3">XLXI_42/clock_divider</arg>&gt; </msg>
 
 </messages>
 

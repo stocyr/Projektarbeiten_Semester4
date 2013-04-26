@@ -49,7 +49,7 @@ LAB2:    xsi_set_current_line(73, ng0);
     t2 = (t0 + 3088U);
     t3 = *((char **)t2);
     t4 = *((int64 *)t3);
-    t5 = (t4 * 100);
+    t5 = (t4 * 10000);
     t2 = (t0 + 3880);
     xsi_process_wait(t2, t5);
 

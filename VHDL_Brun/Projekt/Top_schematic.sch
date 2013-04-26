@@ -17,9 +17,6 @@
         <signal name="XLXN_78(7:0)" />
         <signal name="XLXN_17" />
         <signal name="XLXN_18" />
-        <signal name="LED0" />
-        <signal name="LED1" />
-        <signal name="LED2" />
         <signal name="rot_a" />
         <signal name="rot_b" />
         <signal name="XLXN_118" />
@@ -30,18 +27,21 @@
         <signal name="BTN_NORTH" />
         <signal name="BTN_WEST" />
         <signal name="BTN_EAST" />
+        <signal name="ROT" />
+        <signal name="GRUEN" />
+        <signal name="BLAU" />
         <port polarity="Input" name="RESET" />
         <port polarity="Input" name="rot_c" />
         <port polarity="Input" name="SYSTEM_CLK" />
-        <port polarity="Output" name="LED0" />
-        <port polarity="Output" name="LED1" />
-        <port polarity="Output" name="LED2" />
         <port polarity="Input" name="rot_a" />
         <port polarity="Input" name="rot_b" />
         <port polarity="Input" name="BTN_SOUTH" />
         <port polarity="Input" name="BTN_NORTH" />
         <port polarity="Input" name="BTN_WEST" />
         <port polarity="Input" name="BTN_EAST" />
+        <port polarity="Output" name="ROT" />
+        <port polarity="Output" name="GRUEN" />
+        <port polarity="Output" name="BLAU" />
         <blockdef name="Counter256">
             <timestamp>2013-4-22T15:40:14</timestamp>
             <rect width="256" x="64" y="-256" height="256" />
@@ -136,19 +136,19 @@
             <blockpin signalname="SYSTEM_CLK" name="CLK" />
             <blockpin signalname="RESET" name="RESET" />
             <blockpin signalname="XLXN_24(7:0)" name="VALUE(7:0)" />
-            <blockpin signalname="LED2" name="PWM" />
+            <blockpin signalname="BLAU" name="PWM" />
         </block>
         <block symbolname="PWMEncoder" name="XLXI_4">
             <blockpin signalname="SYSTEM_CLK" name="CLK" />
             <blockpin signalname="RESET" name="RESET" />
             <blockpin signalname="XLXN_22(7:0)" name="VALUE(7:0)" />
-            <blockpin signalname="LED1" name="PWM" />
+            <blockpin signalname="GRUEN" name="PWM" />
         </block>
         <block symbolname="PWMEncoder" name="XLXI_3">
             <blockpin signalname="SYSTEM_CLK" name="CLK" />
             <blockpin signalname="RESET" name="RESET" />
             <blockpin signalname="XLXN_23(7:0)" name="VALUE(7:0)" />
-            <blockpin signalname="LED0" name="PWM" />
+            <blockpin signalname="ROT" name="PWM" />
         </block>
         <block symbolname="RotaryDecoder" name="XLXI_34">
             <blockpin signalname="rot_a" name="ROT_A" />
@@ -196,13 +196,13 @@
             <wire x2="1680" y1="416" y2="416" x1="1168" />
             <wire x2="1680" y1="416" y2="880" x1="1680" />
             <wire x2="1888" y1="880" y2="880" x1="1680" />
-            <wire x2="2880" y1="416" y2="416" x1="1680" />
-            <wire x2="2880" y1="416" y2="576" x1="2880" />
-            <wire x2="2912" y1="576" y2="576" x1="2880" />
-            <wire x2="2880" y1="576" y2="848" x1="2880" />
-            <wire x2="2912" y1="848" y2="848" x1="2880" />
-            <wire x2="2880" y1="848" y2="1120" x1="2880" />
-            <wire x2="2912" y1="1120" y2="1120" x1="2880" />
+            <wire x2="2448" y1="416" y2="416" x1="1680" />
+            <wire x2="2448" y1="416" y2="576" x1="2448" />
+            <wire x2="2448" y1="576" y2="848" x1="2448" />
+            <wire x2="2480" y1="848" y2="848" x1="2448" />
+            <wire x2="2448" y1="848" y2="1120" x1="2448" />
+            <wire x2="2480" y1="1120" y2="1120" x1="2448" />
+            <wire x2="2480" y1="576" y2="576" x1="2448" />
             <wire x2="1168" y1="416" y2="864" x1="1168" />
             <wire x2="1168" y1="864" y2="1200" x1="1168" />
             <wire x2="1168" y1="1200" y2="1552" x1="1168" />
@@ -212,8 +212,7 @@
             <wire x2="608" y1="416" y2="1040" x1="608" />
             <wire x2="608" y1="1040" y2="1312" x1="608" />
             <wire x2="672" y1="1312" y2="1312" x1="608" />
-            <wire x2="608" y1="1312" y2="1584" x1="608" />
-            <wire x2="608" y1="1584" y2="1648" x1="608" />
+            <wire x2="608" y1="1312" y2="1648" x1="608" />
             <wire x2="656" y1="1648" y2="1648" x1="608" />
             <wire x2="608" y1="1648" y2="1856" x1="608" />
             <wire x2="672" y1="1856" y2="1856" x1="608" />
@@ -231,48 +230,45 @@
         <branch name="XLXN_24(7:0)">
             <wire x2="2288" y1="1072" y2="1072" x1="2272" />
             <wire x2="2288" y1="1072" y2="1184" x1="2288" />
-            <wire x2="2912" y1="1184" y2="1184" x1="2288" />
+            <wire x2="2480" y1="1184" y2="1184" x1="2288" />
         </branch>
         <branch name="XLXN_23(7:0)">
             <wire x2="2288" y1="752" y2="752" x1="2272" />
-            <wire x2="2912" y1="640" y2="640" x1="2288" />
+            <wire x2="2480" y1="640" y2="640" x1="2288" />
             <wire x2="2288" y1="640" y2="752" x1="2288" />
         </branch>
         <branch name="XLXN_22(7:0)">
-            <wire x2="2912" y1="912" y2="912" x1="2272" />
+            <wire x2="2480" y1="912" y2="912" x1="2272" />
         </branch>
         <branch name="SYSTEM_CLK">
             <wire x2="640" y1="480" y2="480" x1="256" />
-            <wire x2="672" y1="480" y2="480" x1="640" />
-            <wire x2="1136" y1="480" y2="480" x1="672" />
+            <wire x2="640" y1="480" y2="768" x1="640" />
+            <wire x2="672" y1="768" y2="768" x1="640" />
+            <wire x2="640" y1="768" y2="976" x1="640" />
+            <wire x2="672" y1="976" y2="976" x1="640" />
+            <wire x2="640" y1="976" y2="1248" x1="640" />
+            <wire x2="672" y1="1248" y2="1248" x1="640" />
+            <wire x2="640" y1="1248" y2="1520" x1="640" />
+            <wire x2="672" y1="1520" y2="1520" x1="640" />
+            <wire x2="640" y1="1520" y2="1792" x1="640" />
+            <wire x2="672" y1="1792" y2="1792" x1="640" />
+            <wire x2="1136" y1="480" y2="480" x1="640" />
             <wire x2="1840" y1="480" y2="480" x1="1136" />
             <wire x2="1840" y1="480" y2="752" x1="1840" />
             <wire x2="1888" y1="752" y2="752" x1="1840" />
-            <wire x2="2848" y1="480" y2="480" x1="1840" />
-            <wire x2="2848" y1="480" y2="512" x1="2848" />
-            <wire x2="2912" y1="512" y2="512" x1="2848" />
-            <wire x2="2848" y1="512" y2="784" x1="2848" />
-            <wire x2="2912" y1="784" y2="784" x1="2848" />
-            <wire x2="2848" y1="784" y2="1056" x1="2848" />
-            <wire x2="2912" y1="1056" y2="1056" x1="2848" />
+            <wire x2="2416" y1="480" y2="480" x1="1840" />
+            <wire x2="2416" y1="480" y2="512" x1="2416" />
+            <wire x2="2416" y1="512" y2="784" x1="2416" />
+            <wire x2="2480" y1="784" y2="784" x1="2416" />
+            <wire x2="2416" y1="784" y2="1056" x1="2416" />
+            <wire x2="2480" y1="1056" y2="1056" x1="2416" />
+            <wire x2="2480" y1="512" y2="512" x1="2416" />
             <wire x2="1136" y1="480" y2="800" x1="1136" />
             <wire x2="1136" y1="800" y2="1136" x1="1136" />
             <wire x2="1200" y1="1136" y2="1136" x1="1136" />
             <wire x2="1136" y1="1136" y2="1488" x1="1136" />
             <wire x2="1200" y1="1488" y2="1488" x1="1136" />
             <wire x2="1200" y1="800" y2="800" x1="1136" />
-            <wire x2="640" y1="480" y2="768" x1="640" />
-            <wire x2="672" y1="768" y2="768" x1="640" />
-            <wire x2="640" y1="768" y2="976" x1="640" />
-            <wire x2="672" y1="976" y2="976" x1="640" />
-            <wire x2="640" y1="976" y2="1248" x1="640" />
-            <wire x2="640" y1="1248" y2="1264" x1="640" />
-            <wire x2="640" y1="1264" y2="1520" x1="640" />
-            <wire x2="672" y1="1520" y2="1520" x1="640" />
-            <wire x2="640" y1="1520" y2="1584" x1="640" />
-            <wire x2="640" y1="1584" y2="1792" x1="640" />
-            <wire x2="672" y1="1792" y2="1792" x1="640" />
-            <wire x2="672" y1="1248" y2="1248" x1="640" />
         </branch>
         <instance x="1200" y="1584" name="XLXI_27" orien="R0">
         </instance>
@@ -304,24 +300,6 @@
         <iomarker fontsize="28" x="256" y="368" name="rot_c" orien="R180" />
         <iomarker fontsize="28" x="256" y="416" name="RESET" orien="R180" />
         <iomarker fontsize="28" x="256" y="480" name="SYSTEM_CLK" orien="R180" />
-        <instance x="2912" y="1216" name="XLXI_5" orien="R0">
-        </instance>
-        <instance x="2912" y="944" name="XLXI_4" orien="R0">
-        </instance>
-        <instance x="2912" y="672" name="XLXI_3" orien="R0">
-        </instance>
-        <branch name="LED0">
-            <wire x2="3328" y1="512" y2="512" x1="3296" />
-        </branch>
-        <branch name="LED1">
-            <wire x2="3328" y1="784" y2="784" x1="3296" />
-        </branch>
-        <branch name="LED2">
-            <wire x2="3328" y1="1056" y2="1056" x1="3296" />
-        </branch>
-        <iomarker fontsize="28" x="3328" y="512" name="LED0" orien="R0" />
-        <iomarker fontsize="28" x="3328" y="784" name="LED1" orien="R0" />
-        <iomarker fontsize="28" x="3328" y="1056" name="LED2" orien="R0" />
         <instance x="672" y="800" name="XLXI_34" orien="R0">
         </instance>
         <branch name="rot_a">
@@ -383,5 +361,29 @@
         <iomarker fontsize="28" x="256" y="1728" name="BTN_SOUTH" orien="R180" />
         <instance x="1200" y="896" name="XLXI_43" orien="R0">
         </instance>
+        <instance x="2480" y="944" name="XLXI_4" orien="R0">
+        </instance>
+        <instance x="2480" y="672" name="XLXI_3" orien="R0">
+        </instance>
+        <instance x="2480" y="1216" name="XLXI_5" orien="R0">
+        </instance>
+        <branch name="ROT">
+            <wire x2="2912" y1="512" y2="512" x1="2864" />
+            <wire x2="3296" y1="512" y2="512" x1="2912" />
+            <wire x2="3328" y1="512" y2="512" x1="3296" />
+        </branch>
+        <branch name="GRUEN">
+            <wire x2="2912" y1="784" y2="784" x1="2864" />
+            <wire x2="3296" y1="784" y2="784" x1="2912" />
+            <wire x2="3328" y1="784" y2="784" x1="3296" />
+        </branch>
+        <iomarker fontsize="28" x="3328" y="784" name="GRUEN" orien="R0" />
+        <branch name="BLAU">
+            <wire x2="2912" y1="1056" y2="1056" x1="2864" />
+            <wire x2="3296" y1="1056" y2="1056" x1="2912" />
+            <wire x2="3328" y1="1056" y2="1056" x1="3296" />
+        </branch>
+        <iomarker fontsize="28" x="3328" y="1056" name="BLAU" orien="R0" />
+        <iomarker fontsize="28" x="3328" y="512" name="ROT" orien="R0" />
     </sheet>
 </drawing>

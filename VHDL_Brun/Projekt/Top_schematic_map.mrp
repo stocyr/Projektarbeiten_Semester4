@@ -1,4 +1,4 @@
-Release 14.2 Map P.28xd (nt64)
+Release 14.1 Map P.15xf (nt64)
 Xilinx Mapping Report File for Design 'Top_schematic'
 
 Design Information
@@ -9,7 +9,7 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu Apr 25 09:25:37 2013
+Mapped Date    : Fri Apr 26 14:45:28 2013
 
 Design Summary
 --------------
@@ -17,14 +17,14 @@ Number of errors:      0
 Number of warnings:    1
 Logic Utilization:
   Number of Slice Flip Flops:            86 out of   9,312    1%
-  Number of 4 input LUTs:               345 out of   9,312    3%
+  Number of 4 input LUTs:               349 out of   9,312    3%
 Logic Distribution:
-  Number of occupied Slices:            238 out of   4,656    5%
-    Number of Slices containing only related logic:     238 out of     238 100%
-    Number of Slices containing unrelated logic:          0 out of     238   0%
+  Number of occupied Slices:            241 out of   4,656    5%
+    Number of Slices containing only related logic:     241 out of     241 100%
+    Number of Slices containing unrelated logic:          0 out of     241   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:         429 out of   9,312    4%
-    Number used as logic:               345
+  Total Number of 4 input LUTs:         433 out of   9,312    4%
+    Number used as logic:               349
     Number used as a route-thru:         84
 
   The Slice Logic Distribution report is not meaningful if the design is
@@ -35,11 +35,11 @@ Logic Distribution:
   Number of BUFGMUXs:                     1 out of      24    4%
   Number of MULT18X18SIOs:                4 out of      20   20%
 
-Average Fanout of Non-Clock Nets:                2.53
+Average Fanout of Non-Clock Nets:                2.58
 
-Peak Memory Usage:  279 MB
-Total REAL time to MAP completion:  6 secs 
-Total CPU time to MAP completion:   1 secs 
+Peak Memory Usage:  258 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   3 secs 
 
 NOTES:
 
@@ -80,9 +80,6 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:Security:43 - No license file was found in the standard Xilinx license
-directory.
-WARNING:Security:44 - Since no license file was found,
 WARNING:Security:42 - Your software subscription period has lapsed. Your current
 version of Xilinx tools will continue to function, but you no longer qualify for
 Xilinx software updates or new releases.
@@ -91,9 +88,6 @@ WARNING:PhysDesignRules:367 - The signal <rot_c_IBUF> is incomplete. The signal
 
 Section 3 - Informational
 -------------------------
-INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
-INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
-'2100@lizsrvrekt'.
 INFO:Security:54 - 'xc3s500e' is a WebPack part.
 INFO:LIT:243 - Logical network rot_c_IBUF has no load.
 INFO:MapLib:562 - No environment variables are currently set.
@@ -123,14 +117,14 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| BLAU                               | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
 | BTN_EAST                           | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLDOWN | 0 / 0    |
 | BTN_NORTH                          | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLDOWN | 0 / 0    |
 | BTN_SOUTH                          | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLDOWN | 0 / 0    |
 | BTN_WEST                           | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLDOWN | 0 / 0    |
-| LED0                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LED1                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LED2                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| GRUEN                              | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
 | RESET                              | IBUF             | INPUT     | LVCMOS33             |       |          |      |              | PULLDOWN | 0 / 0    |
+| ROT                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
 | SYSTEM_CLK                         | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | rot_a                              | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLUP   | 0 / 0    |
 | rot_b                              | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLUP   | 0 / 0    |

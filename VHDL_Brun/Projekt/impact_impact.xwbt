@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=U:\VHDL\RGB\Projekt\impact.xsl
-OUTFILE=U:\VHDL\RGB\Projekt\impact.xsl
+INFILE=D:\BFH\Projektarbeiten_Semester4\VHDL_Brun\Projekt\impact.xsl
+OUTFILE=D:\BFH\Projektarbeiten_Semester4\VHDL_Brun\Projekt\impact.xsl
 FAMILY=Multiple
 PART=Multiple
-WORKINGDIR=U:\VHDL\RGB\Projekt
+WORKINGDIR=D:\BFH\Projektarbeiten_Semester4\VHDL_Brun\Projekt
 LICENSE=iMPACT
 USER_INFO=iMPACT

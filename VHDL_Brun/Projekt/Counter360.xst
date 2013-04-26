@@ -1,5 +1,0 @@
-set -tmpdir "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst/projnav.tmp"
-set -xsthdpdir "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/xst"
-elaborate
--ifn Counter360.prj
--ifmt mixed
