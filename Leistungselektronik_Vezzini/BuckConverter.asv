@@ -103,3 +103,17 @@ for I0_k = I0
 end
 
 display('Completed.'); 
+
+%% Darstellung Duty Cycle
+D = D .* ((V0_grid < Vin_grid));
+D = D - (V0_grid > Vin_grid);
+figure
+for I0_k = I0
+   contourf(D(:,:,find(I0 == I0_k)))
+   %surf(D(:,:,find(I0 == I0_k)));
+   axis equal
+   M(find(I0 == I0_k)) = getframe;
+   pause
+end
+
+%movie(M,10,10);
