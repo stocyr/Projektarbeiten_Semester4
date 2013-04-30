@@ -1,0 +1,144 @@
+
+%% Dokumenteinstellungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,oneside,12pt,ngerman]{scrartcl}
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+\usepackage{booktabs}	% schönere tabellen
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%Zum Laden von Grafiken
+%\usepackage{subfig} %%Teilabbildungen in einer Abbildung
+%\usepackage{tikz} %%Vektorgrafiken aus LaTeX heraus erstellen
+
+
+%% Packages für Formeln %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+
+%% Andere Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{a4wide} %%Kleinere Seitenränder = mehr Text pro Zeile.
+\usepackage{fancyhdr} %%Fancy Kopf- und Fußzeilen
+%\usepackage{longtable} %%Für Tabellen, die eine Seite überschreiten
+\usepackage{lastpage}
+\usepackage[raggedright]{subfigure}
+\usepackage[final]{pdfpages}
+\includepdfset{pages=-,noautoscale}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optionen / Modifikationen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Einstellungen}
+
+% Formeln römisch nummerieren
+\renewcommand{\theequation}{\Roman{equation}} 
+
+% "Formel" statt "Gleichung"
+\def\equationname{Formel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Projektarbeit: High Power RGB-LED}
+\date{\today}
+\author{Cyril Stoller, Marcel Bärtschi}
+\maketitle
+
+%% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents %Inhaltsverzeichnis
+
+\vfill
+
+\listoffigures
+
+%\pagestyle{fancy} %%Ab hier die Kopf-/Fusszeilen: headings / fancy / ...
+
+\newpage
+
+\begin{abstract}
+	
+\begin{center}	
+\textbf{Abstract}
+\vspace{0.3cm}
+
+	Um unsere Kentnisse in VHDL und im Entwerfen von elektronischen Schaltungen zu vertiefen, haben wir ein Projekt erarbeitet, wo wir beides gleichermassen üben konnten. Dabei ist das Projekt 40 Watt high power LED entstanden. 
+\end{center}
+	
+\end{abstract}
+
+\vspace{2cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                         %%
+%%         Kapitel / Hauptteil des Dokumentes              %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Ziel}
+\begin{quote}
+Es gibt nichts Praktischeres als eine gute Theorie.
+
+Immanuel Kant (1724 - 1804), deutscher Philosoph
+\end{quote}
+Um trozem mal selbst handanzulegen, ist ein Projekt zu erarbeiten, dass einen digitalen und einen analogen Teil enthält. Der Zeitliche Rahmen ist auf ein halbes Semester begrenzt. 
+Der digitale Teil soll mit mit einem Spartan 3E Board in VHDL realisiert werden und für den analogen Teil sind keine Vorgaben gemacht.
+
+
+
+\section{Schlussfolgerung}
+
+
+\vfill
+\begin{tabular}{rr}
+	\\
+	\\
+	\\
+	\\
+	\toprule
+	\scriptsize{Datum und Unterschrift}	\hspace{3cm}	&	\textsc{Marcel Bärtschi}	\\
+	\\
+	\\
+	\\
+	\\
+	\toprule
+	\scriptsize{Datum und Unterschrift}	\hspace{3cm}	&	\textsc{Cyril Stoller}
+\end{tabular}
+
+
+% Der Anhang kommt auf eine neue Zeile
+\newpage
+% Offizielle "A Anhang" Aufzählungsvariante
+\appendix
+% Nur im Inhaltsverzeichnis hinzufügen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
+\addcontentsline{toc}{section}{Anhang}
+
+% Quellenverzeichnis
+%\addcontentsline{toc}{section}{Quellenverzeichnis}
+\section{Quellenverzeichnis}
+\renewcommand\refname{}
+
+\vspace{-1cm}
+
+\bibliographystyle{amsplain}
+\bibliography{Bildquellen}
+
+\end{document}
