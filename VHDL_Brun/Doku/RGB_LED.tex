@@ -77,7 +77,7 @@
 \textbf{Abstract}
 \vspace{0.3cm}
 
-	Um unsere Kentnisse in VHDL und im Entwerfen von elektronischen Schaltungen zu vertiefen, haben wir ein Projekt erarbeitet, wo wir beides gleichermassen üben konnten. Dabei ist das Projekt 40 Watt high power LED entstanden. 
+	Um unsere Kentnisse in VHDL und im Entwerfen von elektronischen Schaltungen zu vertiefen, haben wir ein Projekt erarbeitet, in welchem wir beides gleichermassen üben können. Dabei ist das Projekt 40 Watt high power LED entstanden. 
 \end{center}
 	
 \end{abstract}
@@ -99,10 +99,29 @@ Es gibt nichts Praktischeres als eine gute Theorie.
 
 Immanuel Kant (1724 - 1804), deutscher Philosoph
 \end{quote}
-Um trozem mal selbst handanzulegen, ist ein Projekt zu erarbeiten, dass einen digitalen und einen analogen Teil enthält. Der Zeitliche Rahmen ist auf ein halbes Semester begrenzt. 
-Der digitale Teil soll mit mit einem Spartan 3E Board in VHDL realisiert werden und für den analogen Teil sind keine Vorgaben gemacht.
+Um trotzdem mal selbst Hand anzulegen, ist ein Projekt zu erarbeiten, dass einen digitalen und einen analogen Teil enthält. Der zeitliche Rahmen ist auf ein halbes Semester begrenzt. 
+Der digitale Teil soll mit einem Spartan 3E Board in VHDL realisiert werden. Für den analogen Teil sind keine Vorgaben vorhanden.
+
+\section{Einleitung}
+Wir haben uns dafür entschieden, eine RGB-LED im HSV-Farbraum\footnote{Siehe \url{https://de.wikipedia.org/wiki/HSV-Farbraum}} anzusteuern.
+
+Dazu soll mit dem Dreh-Encoder und vier Tastern die drei Werte \emph{Hue} (Farbwert), \emph{Value} (Dunkelstufe) und \emph{Saturation} (Sättigung) verändert werden können.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.70\textwidth]{images/Blockschaltbild_grob.pdf}
+	\caption{Grobes Blockschaltbild der Idee}
+	\label{fig:Blockschaltbild_grob}
+\end{figure}
 
 
+Der jeweilige Wert ist in 256 (acht Bit) Stufen einstellbar und wird im FPGA vom HSV- in den RGB-Farbraum umgerechnet. Danach werden diese drei Werte in Form eines PWM codierten Signals auf drei Ausgangspins ausgegeben und damit die rote, grüne und blaue LED angesteuert. Auf der Hardwareseite schaltet das PWM Signal dann eine Stromquelle, an welcher die LED angeschlossen ist. Das Blockschema ist dargestellt in \autoref{fig:Blockschaltbild_grob}.
+
+Im folgenden werden die beiden Teilprojekte \emph{Software} und \emph{Hardware} genauer erläutert.
+
+\section{Software}
+
+\section{Hardware}
 
 \section{Schlussfolgerung}
 

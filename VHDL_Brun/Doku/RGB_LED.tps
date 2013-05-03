@@ -24,15 +24,15 @@ Class=CLatexEdit
 Document=RGB_LED.tex
 
 [Frame0_Row0]
-cyCur=681
+cyCur=652
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1526
+cxCur=1543
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=102
-Cursor.column=134
-TopSubLine=78
+Cursor.row=123
+Cursor.column=17
+TopSubLine=96
 
