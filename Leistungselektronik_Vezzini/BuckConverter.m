@@ -8,7 +8,9 @@ V0  = 10:30;
 I0  = 1:10;
 
 %% Schaltungsspezifikationen
-f = 80000;
+f = 80000;          % Schaltfrequenz
+
+Udr = 10;           % Driver Voltage - 10V gewählt, damit wird der MOSFET gesteuert (übersteuert da im Schalterbetrieb)
 
 %% Bauteilspezifikationen
 % Diodenmodell:
@@ -24,12 +26,20 @@ R0  = 0.033;        % Verlustwiderstand Schottkydiode (angenommen)
 % MOSFET-Modell
 % MOSFET = IPB027N10N3
 Rdson = 0.0027;     % Verlustwiderstand MOSFET - aus DB (Driver Voltage = 10V)
+Rg = 1.9;           % Gatewiderstand MOSFET - aus DB
+tri = 58*10^(-9);   % Strom Risetime
+tfi = 28*10^(-9);   % Strom Falltime
+Cgd1 = 40*10^(-12); % Gate-drain capacitance 1
+Cgd2 = 1.15*10^(-9);% Gate-drain capacitance 2
+Uplateau = 4.3;     % Gate Plateau Voltage - aus DB
 
+L = 0.1;            % Zufälliger Wert für die Drossel angenommen
 Rl  = 0.01;         % Verlustwiderstand Drossel
 Rsh = 0.01;         % Schöntwiderstand
 
 %% Schaltverluste
 % todo
+
 
 %% Berechnung Duty Cycle
 [Vin_grid,V0_grid,I0_grid] = meshgrid(Vin, V0, I0); % Berechnung mit Matrix
@@ -47,7 +57,7 @@ Pl_MOSFET_Diode = 0 * Iin .* (1-D); % vernachlässigt (Uf * If + Rd * If^2)
 Pl_Diode = (1-D) .* I0_grid * Vf0;	% Modell: Vf0*I0 + RDiodeLinear*I0.^2;
 %           Shunt (immer)   --> I
 %           R drossel (immer)
-
+Pl = Pl_Diode+Pl_MOSFET_Diode+Pl_MOSFET;
 %% Berechnung Schaltverlustleistung
 % MOSFET application note
 % aus DB 
@@ -58,8 +68,28 @@ Pl_Diode = (1-D) .* I0_grid * Vf0;	% Modell: Vf0*I0 + RDiodeLinear*I0.^2;
 % Energien berechnen für EonM und EoffM (NICHT die Diodenleistungen, da schottkydiode)
 % Diese mit Schaltfrequenz multiplizieren
 
+Udd = V0_grid;                           % Udd ist maximale Spannung über dem MOSFET = V in
+
+dI = ((1-D).*V0_grid)/(L*f);              % Rippel in der Dorssel berechnen
+
+Idon = I0_grid - dI/2;
+Idoff = I0_grid + dI/2;
+
+tfu1 = (Udd-Rdson*Idon)*Rg*(Cgd1/(Udr-Uplateau));   % Voltage falltime 1
+tfu2 = (Udd-Rdson*Idon)*Rg*(Cgd2/(Udr-Uplateau));   % Voltage falltime 2
+tfu = (tfu1 + tfu2)/2;                              % Totoal Voltage falltime 
+
+tru1 = (Udd-Rdson*Idon)*Rg*(Cgd1/(Udr));            % Voltage risetime 1
+tru2 = (Udd-Rdson*Idon)*Rg*(Cgd2/(Udr));            % Voltage risetime 2
+tru = (tru1 + tru2)/2;                              % Totoal Voltage risetime 
+
+Eon_MOSFET = Udd.*Idon.*(tri+tfu)/2;                  % Switch on Energy
+Eoff_MOSFET = Udd.*Idoff.*(tru+tfi)/2;                % Switch off Energy
+
+Ps_MOSFET = (Eon_MOSFET + Eoff_MOSFET)*f;           % MOSFET Switching Losses
+Ps = Ps_MOSFET;
 %% Addition zu Eingangsleistung
-%Pin_tot = Pin + Pl + Ps;
+Pin_tot = Pin + Pl + Ps;
 
 %% Berechnung Ausgangsleistung
 Pout = I0_grid .* V0_grid;
