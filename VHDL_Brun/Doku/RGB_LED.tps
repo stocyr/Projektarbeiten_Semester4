@@ -24,11 +24,11 @@ Class=CLatexEdit
 Document=RGB_LED.tex
 
 [Frame0_Row0]
-cyCur=652
+cyCur=681
 cyMin=10
 
 [Frame0_Col0]
-cxCur=1543
+cxCur=1526
 cxMin=10
 
 [Frame0_View0,0]
