@@ -45,6 +45,16 @@ D = (V0_grid + (Rl + R0) * I0_grid + Vf0) ./ (Vin_grid - (Rdson + Rsh - R0) * I0
 % "unmögliche" Konfigurationen (V0 > Vin) auslöschen
 D = D .* (V0_grid < Vin_grid);
 
+% for I0_k = I0
+%     for V0_k = V0
+%         for Vin_k = Vin
+%             if V0_k > Vin_k
+%                 D(find(I0 == I0_k),find(V0 == V0_k),find(Vin == Vin_k)) = NaN;
+%             end
+%         end
+%     end
+% end
+
 %% Berechnung Eingangsstrom
 Iin = D .* I0_grid;
 

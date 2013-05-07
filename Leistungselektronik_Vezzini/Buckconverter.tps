@@ -16,12 +16,12 @@ MinPos.x=-1
 MinPos.y=-1
 MaxPos.x=-8
 MaxPos.y=-30
-NormalPos.left=50
-NormalPos.top=50
-NormalPos.right=1585
-NormalPos.bottom=457
+NormalPos.left=25
+NormalPos.top=25
+NormalPos.right=1343
+NormalPos.bottom=498
 Class=CLatexEdit
-Document=RGB_LED.tex
+Document=Buckconverter.tex
 
 [Frame0_Row0]
 cyCur=681
@@ -32,7 +32,7 @@ cxCur=1526
 cxMin=10
 
 [Frame0_View0,0]
-Cursor.row=170
-Cursor.column=20
-TopSubLine=159
+Cursor.row=99
+Cursor.column=52
+TopSubLine=63
 
