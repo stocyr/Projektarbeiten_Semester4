@@ -1,17 +1,16 @@
-Running: C:\Apps\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe -prj U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_beh.prj work.Top_schematic_Top_schematic_sch_tb 
-ISim P.28xd (signature 0xa0883be4)
+Running: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe -prj D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_beh.prj work.Top_schematic_Top_schematic_sch_tb 
+ISim P.15xf (signature 0xc3576ebc)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "U:/VHDL/RGB/Projekt/RotaryDecoder.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/RGBEncoder.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/PWMEncoder.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/Duplicater.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/Counter360.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/Counter256.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/AutoRepeat.vhd" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/Top_schematic.vhf" into library work
-Parsing VHDL file "U:/VHDL/RGB/Projekt/top_tb.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/AutoRepeat.vhd" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf" into library work
+Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/top_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -24,11 +23,11 @@ Compiling architecture behavioral of entity RGBEncoder [rgbencoder_default]
 Compiling architecture behavioral of entity RotaryDecoder [rotarydecoder_default]
 Compiling architecture behavioral of entity AutoRepeat [autorepeat_default]
 Compiling architecture behavioral of entity Counter384 [counter384_default]
-Compiling architecture behavioral of entity Duplicater [duplicater_default]
 Compiling architecture behavioral of entity Top_schematic [top_schematic_default]
 Compiling architecture behavioral of entity top_schematic_top_schematic_sch_...
 Time Resolution for simulation is 1ps.
-Compiled 21 VHDL Units
-Built simulation executable U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe
-Fuse Memory Usage: 48832 KB
-Fuse CPU Usage: 702 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 19 VHDL Units
+Built simulation executable D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe
+Fuse Memory Usage: 49932 KB
+Fuse CPU Usage: 1200 ms

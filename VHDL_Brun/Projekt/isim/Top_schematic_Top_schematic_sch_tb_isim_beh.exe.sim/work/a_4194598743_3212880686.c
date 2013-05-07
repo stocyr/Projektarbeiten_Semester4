@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xa0883be4 */
+/* This file is designed for use with ISim build 0xc3576ebc */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/Counter360.vhd";
+static const char *ng0 = "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -97,7 +97,7 @@ LAB3:    xsi_set_current_line(75, ng0);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(55, ng0);
-    t1 = (t0 + 6008);
+    t1 = (t0 + 6140);
     t6 = (t0 + 2288U);
     t7 = *((char **)t6);
     t6 = (t7 + 0);
@@ -167,8 +167,8 @@ LAB8:    goto LAB3;
 LAB7:    xsi_set_current_line(61, ng0);
     t1 = (t0 + 2288U);
     t7 = *((char **)t1);
-    t1 = (t0 + 5964U);
-    t8 = (t0 + 6017);
+    t1 = (t0 + 6096U);
+    t8 = (t0 + 6149);
     t18 = (t17 + 0U);
     t19 = (t18 + 0U);
     *((int *)t19) = 0;
@@ -190,7 +190,7 @@ LAB7:    xsi_set_current_line(61, ng0);
         goto LAB16;
 
 LAB18:    xsi_set_current_line(64, ng0);
-    t1 = (t0 + 6026);
+    t1 = (t0 + 6158);
     t5 = (t0 + 2288U);
     t6 = *((char **)t5);
     t5 = (t6 + 0);
@@ -215,7 +215,7 @@ LAB13:    t1 = (t0 + 1832U);
 LAB16:    xsi_set_current_line(62, ng0);
     t26 = (t0 + 2288U);
     t27 = *((char **)t26);
-    t26 = (t0 + 5964U);
+    t26 = (t0 + 6096U);
     t28 = (t0 + 2408U);
     t29 = *((char **)t28);
     t30 = *((int *)t29);
@@ -232,8 +232,8 @@ LAB16:    xsi_set_current_line(62, ng0);
 LAB19:    xsi_set_current_line(68, ng0);
     t1 = (t0 + 2288U);
     t7 = *((char **)t1);
-    t1 = (t0 + 5964U);
-    t8 = (t0 + 6035);
+    t1 = (t0 + 6096U);
+    t8 = (t0 + 6167);
     t18 = (t16 + 0U);
     t19 = (t18 + 0U);
     *((int *)t19) = 0;
@@ -251,7 +251,7 @@ LAB19:    xsi_set_current_line(68, ng0);
         goto LAB27;
 
 LAB29:    xsi_set_current_line(71, ng0);
-    t1 = (t0 + 6044);
+    t1 = (t0 + 6176);
     t5 = (t17 + 0U);
     t6 = (t5 + 0U);
     *((int *)t6) = 0;
@@ -295,7 +295,7 @@ LAB24:    t1 = (t0 + 1992U);
 LAB27:    xsi_set_current_line(69, ng0);
     t19 = (t0 + 2288U);
     t22 = *((char **)t19);
-    t19 = (t0 + 5964U);
+    t19 = (t0 + 6096U);
     t26 = (t0 + 2408U);
     t27 = *((char **)t26);
     t23 = *((int *)t27);

@@ -31,9 +31,9 @@ ARCHITECTURE behavioral OF Top_schematic_Top_schematic_sch_tb IS
           SYSTEM_CLK	:	IN	STD_LOGIC; 
           rot_a	:	IN	STD_LOGIC; 
           rot_b	:	IN	STD_LOGIC; 
-          LED0	:	OUT	STD_LOGIC; 
-          LED1	:	OUT	STD_LOGIC; 
-          LED2	:	OUT	STD_LOGIC);
+          ROT	:	OUT	STD_LOGIC; 
+          GRUEN	:	OUT	STD_LOGIC; 
+          BLAU	:	OUT	STD_LOGIC);
    END COMPONENT;
 
    SIGNAL RESET	:	STD_LOGIC := '0';
@@ -45,9 +45,9 @@ ARCHITECTURE behavioral OF Top_schematic_Top_schematic_sch_tb IS
    SIGNAL SYSTEM_CLK	:	STD_LOGIC := '0';
    SIGNAL rot_a	:	STD_LOGIC := '0';
    SIGNAL rot_b	:	STD_LOGIC := '0';
-   SIGNAL LED0	:	STD_LOGIC;
-   SIGNAL LED1	:	STD_LOGIC;
-   SIGNAL LED2	:	STD_LOGIC;
+   SIGNAL ROT	:	STD_LOGIC;
+   SIGNAL GRUEN	:	STD_LOGIC;
+   SIGNAL BLAU	:	STD_LOGIC;
 	
 	constant clk_period : time := 20 ns;
 
@@ -63,11 +63,13 @@ BEGIN
 		SYSTEM_CLK => SYSTEM_CLK, 
 		rot_a => rot_a, 
 		rot_b => rot_b, 
-		LED0 => LED0, 
-		LED1 => LED1, 
-		LED2 => LED2
+		ROT => ROT, 
+		GRUEN => GRUEN, 
+		BLAU => BLAU
    );
 
+
+-- künstlicher Drehencoder dreh - kontinuierlich
 process
 begin
 	wait for clk_period*10000;
@@ -80,23 +82,36 @@ begin
 	rot_b <= '0';
 end process;
 
+-- Systemclock: 50MHz Takt
 process
 begin
-	wait for clk_period/2;									-- Systemclock: 50MHz Takt
+	wait for clk_period/2;									
 	SYSTEM_CLK <= not SYSTEM_CLK;							-- alle halbe Periode toggeln	
 end process;
 
 tb : PROCESS
 BEGIN
-	RESET <= '1';											-- künstliches Reset
+	-- künstliches Reset
+	RESET <= '1';
 	wait for clk_period*4;								-- (80ns lang)
 	RESET <= '0';
 	
 	wait for clk_period*50;
 	
+	
+	-- Value - 3x runter, drei mal hoch
 	BTN_SOUTH <= '1';
-	wait for clk_period*5000000;
+	wait for clk_period*500000;
 	BTN_SOUTH <= '0';
+	wait for clk_period*100000;
+	
+	BTN_NORTH <= '1';
+	wait for clk_period*500000;
+	BTN_NORTH <= '0';
+	wait for clk_period*100000;
+	
+	
+	
 	
 	WAIT;														-- will wait forever
 END PROCESS;

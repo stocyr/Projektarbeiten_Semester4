@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xa0883be4 */
+/* This file is designed for use with ISim build 0xc3576ebc */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/PWMEncoder.vhd";
+static const char *ng0 = "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_1242562249;
 
@@ -75,13 +75,13 @@ LAB3:    t1 = (t0 + 3352);
 
 LAB1:    return;
 LAB2:    xsi_set_current_line(317, ng0);
-    t1 = (t0 + 6720);
+    t1 = (t0 + 6832);
     t6 = (t0 + 2048U);
     t7 = *((char **)t6);
     t6 = (t7 + 0);
     memcpy(t6, t1, 8U);
     xsi_set_current_line(318, ng0);
-    t1 = (t0 + 6728);
+    t1 = (t0 + 6840);
     t5 = (t0 + 1928U);
     t6 = *((char **)t5);
     t5 = (t6 + 0);
@@ -91,7 +91,7 @@ LAB2:    xsi_set_current_line(317, ng0);
 LAB5:    xsi_set_current_line(320, ng0);
     t2 = (t0 + 2048U);
     t5 = *((char **)t2);
-    t2 = (t0 + 5644U);
+    t2 = (t0 + 5756U);
     t6 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t8, t5, t2, 1);
     t7 = (t0 + 2048U);
     t9 = *((char **)t7);
@@ -103,8 +103,8 @@ LAB5:    xsi_set_current_line(320, ng0);
     xsi_set_current_line(322, ng0);
     t1 = (t0 + 2048U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5644U);
-    t5 = (t0 + 6736);
+    t1 = (t0 + 5756U);
+    t5 = (t0 + 6848);
     t7 = (t8 + 0U);
     t9 = (t7 + 0U);
     *((int *)t9) = 0;
@@ -127,7 +127,7 @@ LAB8:    goto LAB3;
 LAB7:    xsi_set_current_line(323, ng0);
     t9 = (t0 + 1928U);
     t10 = *((char **)t9);
-    t9 = (t0 + 5628U);
+    t9 = (t0 + 5740U);
     t15 = ieee_p_1242562249_sub_1919365254_1035706684(IEEE_P_1242562249, t14, t10, t9, 1);
     t16 = (t0 + 1928U);
     t17 = *((char **)t16);
@@ -139,8 +139,8 @@ LAB7:    xsi_set_current_line(323, ng0);
     xsi_set_current_line(325, ng0);
     t1 = (t0 + 1928U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5628U);
-    t5 = (t0 + 6744);
+    t1 = (t0 + 5740U);
+    t5 = (t0 + 6856);
     t7 = (t8 + 0U);
     t9 = (t7 + 0U);
     *((int *)t9) = 0;
@@ -161,12 +161,12 @@ LAB12:
 LAB11:    xsi_set_current_line(329, ng0);
     t1 = (t0 + 1928U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5628U);
+    t1 = (t0 + 5740U);
     t5 = (t0 + 1808U);
     t6 = *((char **)t5);
     t5 = (t0 + 1032U);
     t7 = *((char **)t5);
-    t5 = (t0 + 5596U);
+    t5 = (t0 + 5708U);
     t13 = ieee_p_1242562249_sub_1657552908_1035706684(IEEE_P_1242562249, t7, t5);
     t19 = (t13 - 0);
     t11 = (t19 * 1);
@@ -191,7 +191,7 @@ LAB15:    xsi_set_current_line(332, ng0);
 LAB14:    goto LAB8;
 
 LAB10:    xsi_set_current_line(326, ng0);
-    t9 = (t0 + 6752);
+    t9 = (t0 + 6864);
     t15 = (t0 + 1928U);
     t16 = *((char **)t15);
     t15 = (t16 + 0);

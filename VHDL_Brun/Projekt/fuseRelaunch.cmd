@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe" -prj "U:/VHDL/RGB/Projekt/Top_schematic_Top_schematic_sch_tb_beh.prj" "work.Top_schematic_Top_schematic_sch_tb" 
+-intstyle "ise" -incremental -o "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe" -prj "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_beh.prj" "work.Top_schematic_Top_schematic_sch_tb" 

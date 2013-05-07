@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xa0883be4 */
+/* This file is designed for use with ISim build 0xc3576ebc */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "//boiler.bfh.ch/stolc2/VHDL/RGB/Projekt/RotaryDecoder.vhd";
+static const char *ng0 = "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd";
 extern char *IEEE_P_2592010699;
 
 unsigned char ieee_p_2592010699_sub_1744673427_503743352(char *, char *, unsigned int , unsigned int );
@@ -153,22 +153,22 @@ LAB6:    t12 = (t0 + 5432);
     xsi_set_current_line(60, ng0);
     t1 = (t0 + 2472U);
     t3 = *((char **)t1);
-    t1 = (t0 + 8436);
+    t1 = (t0 + 8644);
     t17 = xsi_mem_cmp(t1, t3, 2U);
     if (t17 == 1)
         goto LAB8;
 
-LAB13:    t6 = (t0 + 8438);
+LAB13:    t6 = (t0 + 8646);
     t18 = xsi_mem_cmp(t6, t3, 2U);
     if (t18 == 1)
         goto LAB9;
 
-LAB14:    t12 = (t0 + 8440);
+LAB14:    t12 = (t0 + 8648);
     t19 = xsi_mem_cmp(t12, t3, 2U);
     if (t19 == 1)
         goto LAB10;
 
-LAB15:    t14 = (t0 + 8442);
+LAB15:    t14 = (t0 + 8650);
     t20 = xsi_mem_cmp(t14, t3, 2U);
     if (t20 == 1)
         goto LAB11;

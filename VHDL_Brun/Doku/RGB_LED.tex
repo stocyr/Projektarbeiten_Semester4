@@ -105,7 +105,7 @@ Der digitale Teil soll mit einem Spartan 3E Board in VHDL realisiert werden. Für
 \section{Einleitung}
 Wir haben uns dafür entschieden, eine RGB-LED im HSV-Farbraum\footnote{Siehe \url{https://de.wikipedia.org/wiki/HSV-Farbraum}} anzusteuern.
 
-Dazu soll mit dem Dreh-Encoder und vier Tastern die drei Werte \emph{Hue} (Farbwert), \emph{Value} (Dunkelstufe) und \emph{Saturation} (Sättigung) verändert werden können.
+Dazu sollen mit dem Dreh-Encoder und vier Tastern die drei Werte \emph{Hue} (Farbwert), \emph{Value} (Dunkelstufe) und \emph{Saturation} (Sättigung) verändert werden können.
 
 \begin{figure}[ht]
 	\centering
@@ -117,11 +117,80 @@ Dazu soll mit dem Dreh-Encoder und vier Tastern die drei Werte \emph{Hue} (Farbw
 
 Der jeweilige Wert ist in 256 (acht Bit) Stufen einstellbar und wird im FPGA vom HSV- in den RGB-Farbraum umgerechnet. Danach werden diese drei Werte in Form eines PWM codierten Signals auf drei Ausgangspins ausgegeben und damit die rote, grüne und blaue LED angesteuert. Auf der Hardwareseite schaltet das PWM Signal dann eine Stromquelle, an welcher die LED angeschlossen ist. Das Blockschema ist dargestellt in \autoref{fig:Blockschaltbild_grob}.
 
-Im folgenden werden die beiden Teilprojekte \emph{Software} und \emph{Hardware} genauer erläutert.
+Im folgenden werden die beiden Teilprojekte \emph{Digitalteil} und \emph{Analogteil} genauer erläutert.
 
-\section{Software}
+\section{Digitalteil}
 
-\section{Hardware}
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.70\textwidth]{images/Software-Hardware.pdf}
+	\caption{Beschreibung der Ein- und Ausgänge auf dem Digitalteil}
+	\label{fig:Software-Hardware}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1.00\textwidth]{images/Software.pdf}
+	\caption{Blockschaltbild des Digitalteils}
+	\label{fig:Software}
+\end{figure}
+
+
+\subsection{HSV-RGB-Encoder}
+
+- basics - bilder von rgb und hsv\\
+- bild von den dreiecksfunktionen (trapez) welche die umrechnung visualisieren\\
+- erklärung, warum beim hue wert nicht 8 bit sondern 9 bit (und 384 schritte) gewählt wurden: damit der hue wert auf 6 teil bereiche mit jeweils einer breite mit einer zweierpotenz zerlegbar ist (division durch 64 -> 6 bit nach rechts geschoben)
+- system nach fallunterscheidung (6 teilbereiche)
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{images/RGB-HSV.png}
+	\caption{HSV-RGB Konvertierung}
+	\label{fig:RGB-HSV}
+\end{figure}
+
+
+\subsection{Inkremental-Decoder}
+
+- Darstellung der beiden Eingagnssignale (mit schön dasrgestelter phasenverschiebung) -> aus spartan pdf\\
+- Softeware erklärung (evtl. mit state event diagramm)\\
+- bild vom drehencoder -> CCW und CW erklären, wieviele steps pro 1 umdrehung -> wieviele umdrehungen für ganzer HSV farbraum\\
+- Darstellung vom simulator
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{images/Rotary_signals.png}
+	\caption{Ausgangssignale des Dreh-Encoders}
+	\label{fig:Rotary_signals}
+\end{figure}
+
+
+\subsection{Up-Down Counter}
+
+- counter erklären\\
+- erklären, wieso es 256 und 384 gibt, auch warum der 256 NICHT überlaufen darf aber der 384 überlaufen MUSS\\
+- Darstellung vom simulator	
+
+\subsection{PWM-Encoder}
+
+- basics eines PWM signals\\
+- berechnung der maximalen / minimalen PWM grundtaktfrequenz (argumente: schnell schalten = mehr schaltverluste am FET; langsam schalten = flackern vom auge sichtbar)\\
+- basics für look-up-table - formel von Mikrocontroller.net: \url{http://www.mikrocontroller.net/articles/LED-Fading}\\
+- array in vhdl
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics{images/Logarithmiktabelle.png}
+	\caption{Logarithmik Umrechnung}
+	\label{fig:Logarithmiktabelle}
+\end{figure}
+
+
+\section{Analogteil}
+
+\subsection{}
+
 
 \section{Schlussfolgerung}
 
