@@ -1,0 +1,5 @@
+*.aux
+*.log
+*.out
+*.toc
+RGB_LED.pdf
