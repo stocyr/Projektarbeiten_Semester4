@@ -19,7 +19,7 @@ x1 = 0.4; y1 = 1; x2 = 0.88; y2 = 10;
 dx = x2-x1; dy = y2-y1;
 a = dy/dx;
 b = y1 - a*x1;
-Vf0 = -b/a;         % Diode Vorwärtsspannung (wurst-käse szenario)
+Vf0 = -b/a;         % Diode Vorwärtsspannung (wurst-chäs Szenario)
 RDiodeLinear = a;
 R0  = 0.033;        % Verlustwiderstand Schottkydiode (angenommen)
 
@@ -37,13 +37,13 @@ L = 0.1;            % Zufälliger Wert für die Drossel angenommen
 Rl  = 0.01;         % Verlustwiderstand Drossel
 Rsh = 0.01;         % Schöntwiderstand
 
-%% Schaltverluste
-% todo
-
+%% Berechnung mit Matrix
+[Vin_grid,V0_grid,I0_grid] = meshgrid(Vin, V0, I0);
 
 %% Berechnung Duty Cycle
-[Vin_grid,V0_grid,I0_grid] = meshgrid(Vin, V0, I0); % Berechnung mit Matrix
 D = (V0_grid + (Rl + R0) * I0_grid + Vf0) ./ (Vin_grid - (Rdson + Rsh - R0) * I0_grid + Vf0);
+% "unmögliche" Konfigurationen (V0 > Vin) auslöschen
+D = D .* (V0_grid < Vin_grid);
 
 %% Berechnung Eingangsstrom
 Iin = D .* I0_grid;
@@ -57,7 +57,7 @@ Pl_MOSFET_Diode = 0 * Iin .* (1-D); % vernachlässigt (Uf * If + Rd * If^2)
 Pl_Diode = (1-D) .* I0_grid * Vf0;	% Modell: Vf0*I0 + RDiodeLinear*I0.^2;
 %           Shunt (immer)   --> I
 %           R drossel (immer)
-Pl = Pl_Diode+Pl_MOSFET_Diode+Pl_MOSFET;
+Pl = Pl_Diode + Pl_MOSFET_Diode + Pl_MOSFET;
 %% Berechnung Schaltverlustleistung
 % MOSFET application note
 % aus DB 
@@ -88,7 +88,7 @@ Eoff_MOSFET = Udd.*Idoff.*(tru+tfi)/2;                % Switch off Energy
 
 Ps_MOSFET = (Eon_MOSFET + Eoff_MOSFET)*f;           % MOSFET Switching Losses
 Ps = Ps_MOSFET;
-%% Addition zu Eingangsleistung
+%% Addition von zu Eingangsleistung
 Pin_tot = Pin + Pl + Ps;
 
 %% Berechnung Ausgangsleistung
