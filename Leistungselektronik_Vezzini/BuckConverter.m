@@ -43,17 +43,25 @@ Rsh = 0.01;         % Schöntwiderstand
 %% Berechnung Duty Cycle
 D = (V0_grid + (Rl + R0) * I0_grid + Vf0) ./ (Vin_grid - (Rdson + Rsh - R0) * I0_grid + Vf0);
 % "unmögliche" Konfigurationen (V0 > Vin) auslöschen
-D = D .* (V0_grid < Vin_grid);
+% D = D .* (V0_grid < Vin_grid);
 
-% for I0_k = I0
-%     for V0_k = V0
-%         for Vin_k = Vin
-%             if V0_k > Vin_k
-%                 D(find(I0 == I0_k),find(V0 == V0_k),find(Vin == Vin_k)) = NaN;
-%             end
-%         end
-%     end
-% end
+for I0_k = I0
+    for V0_k = V0
+        for Vin_k = Vin
+            if V0_k > Vin_k
+                D(find(V0 == V0_k),find(Vin == Vin_k),find(I0 ==I0_k)) = NaN;
+            end
+            if D(find(V0 == V0_k),find(Vin == Vin_k),find(I0 ==I0_k))>1
+                D(find(V0 == V0_k),find(Vin == Vin_k),find(I0 ==I0_k)) = NaN;
+            end
+        end
+    end
+end
+
+
+surf(D(:,:,1));
+figure
+
 
 %% Berechnung Eingangsstrom
 Iin = D .* I0_grid;
