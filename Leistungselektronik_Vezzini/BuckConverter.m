@@ -58,11 +58,6 @@ for I0_k = I0
     end
 end
 
-
-surf(D(:,:,1));
-figure
-
-
 %% Berechnung Eingangsstrom
 Iin = D .* I0_grid;
 
@@ -126,6 +121,23 @@ n = n .* (V0_grid < Vin_grid);
 %% Darstellung
 display('Efficiency factor calculation completed.');
 display('Drawing and saving of graph plots in progress...'); 
+
+% D-Matrix anzeigen
+surf(D(:,:,1));
+title(['Duty Cycle bei I0 = 1A']);
+ylabel('V0 [V]');
+xlabel('Vin [V]');
+zlabel('Duty Cycle');
+figure
+
+% Rippel anzeigen
+surf(dI(:,:,10));
+title(['Rippel \Deltai bei I0 = 1A']);
+ylabel('V0 [V]');
+xlabel('Vin [V]');
+zlabel('\Deltai');
+figure
+
 % Konturliniendiagramm von jedem I0 erstellen und alle in files speichern
 load('MyColorMap', 'mycolormap')
 if not(exist('pics', 'dir'))
