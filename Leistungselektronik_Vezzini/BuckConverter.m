@@ -32,8 +32,11 @@ tfi = 28*10^(-9);   % Strom Falltime
 Cgd1 = 40*10^(-12); % Gate-drain capacitance 1
 Cgd2 = 1.15*10^(-9);% Gate-drain capacitance 2
 Uplateau = 4.3;     % Gate Plateau Voltage - aus DB
+% MOSFET Reverse Diode
+Vf0_MFET = 0.6;
+RdiodeMFET = (0.75-0.6)/(10-1);
 
-L = 0.1;            % Zufälliger Wert für die Drossel angenommen
+L = 0.01;            % Zufälliger Wert für die Drossel angenommen
 Rl  = 0.01;         % Verlustwiderstand Drossel
 Rsh = 0.01;         % Schöntwiderstand
 
@@ -66,11 +69,11 @@ Pin = Iin .* Vin_grid;
 
 %% Berechnung Leitverluste
 Pl_MOSFET = Iin.^2 .* D * Rdson;
-Pl_MOSFET_Diode = 0 * Iin .* (1-D); % vernachlässigt (Uf * If + Rd * If^2)
+Pl_MOSFET_Diode = Vf0_MFET * I0_grid .* (1-D) + RdiodeMFET * I0_grid.^2 .* (1-D); % Leistung durch Antiparallele Diode (Uf * If + Rd * If^2)
 Pl_Diode = (1-D) .* I0_grid * Vf0;	% Modell: Vf0*I0 + RDiodeLinear*I0.^2;
-%           Shunt (immer)   --> I
-%           R drossel (immer)
-Pl = Pl_Diode + Pl_MOSFET_Diode + Pl_MOSFET;
+Pl_Shunt = Rsh * I0_grid.^2;        % Shunt (immer)   --> I
+Pl_Drossel = Rl * I0_grid.^2;       % R drossel, nur Wirkleistung beachtet (immer)
+Pl = Pl_Drossel + Pl_Shunt + Pl_Diode + Pl_MOSFET_Diode + Pl_MOSFET;
 %% Berechnung Schaltverlustleistung
 % MOSFET application note
 % aus DB 
@@ -124,8 +127,8 @@ display('Drawing and saving of graph plots in progress...');
 
 % D-Matrix anzeigen
 figure
-surf(D(:,:,1));
-title(['Duty Cycle bei I0 = 1A']);
+surf(D(:,:,10));
+title(['Duty Cycle bei I0 = 10A']);
 ylabel('Ausgangsspannung [V]');
 xlabel('Eingangsspannung [V]');
 zlabel('Duty Cycle (t_{on} / T)');
@@ -133,7 +136,7 @@ zlabel('Duty Cycle (t_{on} / T)');
 % Rippel anzeigen
 figure
 surf(dI(:,:,10));
-title(['Rippel \Deltai bei I0 = 1A']);
+title(['Rippel \Deltai bei I0 = 10A']);
 ylabel('V0 [V]');
 xlabel('Vin [V]');
 zlabel('\Deltai');

@@ -56,32 +56,13 @@
 
 \title{Projektarbeit: Buckconverter (Step-Down)}
 \date{\today}
-\author{Cyril Stoller, Marcel Bärtschi}
+\author{Cyril Stoller, Jascha Haldemann, Marcel Bärtschi, Nicola Käser}
 \maketitle
 
-%% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tableofcontents %Inhaltsverzeichnis
-
-\vfill
-
-\listoffigures
 
 %\pagestyle{fancy} %%Ab hier die Kopf-/Fusszeilen: headings / fancy / ...
 
-\newpage
-
-\begin{abstract}
-	
-\begin{center}	
-\textbf{Abstract}
-\vspace{0.3cm}
-
-Es soll ein Step-Down Wandler dimensioniert werden und davon den Wirkungsgrad  bei verschiedenen Ein-/Ausgangsbedingungen berechnet werden.
-\end{center}
-	
-\end{abstract}
-
-\vspace{2cm}
+\vspace{1cm}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,19 +72,27 @@ Es soll ein Step-Down Wandler dimensioniert werden und davon den Wirkungsgrad  b
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ziel}
-Mithilfe der im Unterricht erarbeiteten Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden. 
-\section{Dimensionierung Drossel}
+Mithilfe der im Unterricht erarbeiteten Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden und eine Drossel und ein Kondensator dimmensioniert werden. 
 
-\section{Dimensionierung Kondensator}
+\section{Schema}
+Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachhietshalber weggelassen.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.90\textwidth]{pics/schema.pdf}
+	\caption{Schema Stepdown Converter}
+	\label{fig:schema}
+\end{figure}
 
 \section{Wirkungsgrad}
-Um den Wirkungsgrad der Schaltung zu berechnen haben wir ein Matlab Skript geschrieben, welches alle Berechnungen enthält. 
+Um den Wirkungsgrad zu bestimmen muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies enthält die Schalt-und Leitverluste. Die Leckverluste werden vernachlässigt. 
 \subsection{Leitverluste}
-
+Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wird z.B. beim MOSFET nur der Drain-Source Widerstand bestimmt und mit dem Quadrat des Effektivwerts des durchfliessenden Stromes multipliziert. 
 \subsection{Schaltverluste}
 
 
+\section{Dimensionierung Drossel}
 
+\section{Dimensionierung Kondensator}
 
 % Der Anhang kommt auf eine neue Zeile
 \newpage
