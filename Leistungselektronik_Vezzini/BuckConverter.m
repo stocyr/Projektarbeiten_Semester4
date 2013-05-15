@@ -123,20 +123,20 @@ display('Efficiency factor calculation completed.');
 display('Drawing and saving of graph plots in progress...'); 
 
 % D-Matrix anzeigen
+figure
 surf(D(:,:,1));
 title(['Duty Cycle bei I0 = 1A']);
-ylabel('V0 [V]');
-xlabel('Vin [V]');
-zlabel('Duty Cycle');
-figure
+ylabel('Ausgangsspannung [V]');
+xlabel('Eingangsspannung [V]');
+zlabel('Duty Cycle (t_{on} / T)');
 
 % Rippel anzeigen
+figure
 surf(dI(:,:,10));
 title(['Rippel \Deltai bei I0 = 1A']);
 ylabel('V0 [V]');
 xlabel('Vin [V]');
 zlabel('\Deltai');
-figure
 
 % Konturliniendiagramm von jedem I0 erstellen und alle in files speichern
 load('MyColorMap', 'mycolormap')
@@ -146,9 +146,11 @@ end
 % Spannungsoffsets hinzufügen
 n_offset = zeros(max(V0), max(Vin), max(I0));
 n_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = n;
+minimum = floor(min(n(1,end,:))*100)/100;
 
+figure
 for I0_k = I0
-   [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), 0.9:0.01:1);
+   [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), minimum:0.01:1);
    %surf(n(:,:,find(I0 == I0_k)), 0.9:0.005:1);
    %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
    %V0 der Wirkungsgrad auch wieder sinkt
