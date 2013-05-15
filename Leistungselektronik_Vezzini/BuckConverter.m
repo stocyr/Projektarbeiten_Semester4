@@ -126,8 +126,13 @@ display('Efficiency factor calculation completed.');
 display('Drawing and saving of graph plots in progress...'); 
 
 % D-Matrix anzeigen
+D_offset = zeros(max(V0), max(Vin), max(I0));
+D_offset(:,:,:) = NaN;
+D_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = D;
 figure
-surf(D(:,:,10));
+surf(D_offset(:,:,10));
+colorbar;
+set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
 title(['Duty Cycle bei I0 = 10A']);
 ylabel('Ausgangsspannung [V]');
 xlabel('Eingangsspannung [V]');
@@ -135,7 +140,12 @@ zlabel('Duty Cycle (t_{on} / T)');
 
 % Rippel anzeigen
 figure
-surf(dI(:,:,10));
+dI_offset = zeros(max(V0), max(Vin), max(I0));
+dI_offset(:,:,:) = NaN;
+dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI;
+surf(dI_offset(:,:,10));
+colorbar;
+set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
 title(['Rippel \Deltai bei I0 = 10A']);
 ylabel('V0 [V]');
 xlabel('Vin [V]');
@@ -164,7 +174,7 @@ for I0_k = I0
    title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);
    set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
    filename = ['pics/grafik_' int2str(I0_k) 'A.png'];
-   print('-dpng', filename);
+   %print('-dpng', filename);
 end
 
 display('Completed.'); 
