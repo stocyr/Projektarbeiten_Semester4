@@ -71,17 +71,34 @@
 %%                                                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ziel}
-Mithilfe der im Unterricht erarbeiteten Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden und eine Drossel und ein Kondensator dimmensioniert werden. 
+\section{Ziel/Anforderungen}
+Mithilfe der im Unterricht erarbeiteten Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden und eine Drossel und ein Kondensator dimmensioniert werden. Die Diode und der MOSFET sind vorgegeben. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-10 Volt und einen Ausgangsstrom von 0-10 Ampère berechnet werden.
 
 \section{Schema}
 Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachhietshalber weggelassen.
+
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.90\textwidth]{pics/schema.pdf}
 	\caption{Schema Stepdown Converter}
 	\label{fig:schema}
 \end{figure}
+
+\section{Duty Cycle}
+Um den Duty Cycle zu bestimmen sind wir nach folgender Fomel vorgegangen. Im Matlabsktipt haben wir für alle Werte, welche in einem gewissen Bereich variieren Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Loops zu arbeiten. Dies ist viel anschaulicher und besser lesbar. 
+\begin{align}
+	D =\frac{(V_0 + (R_l + R_0) \cdot I_0 + V_{f0})}{(V_{in} - (R_{DSon} + R_{sh} - R_0) \cdot I_0 + V_{f0})} 
+\end{align}
+
+Aus dieser Formel ergibt sich für die Ein- bzw. Ausgangsspannung bei 10 Ampere folgende Grafik:
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{pics/DutyCycle.png}
+	\caption{Duty Cycle bei 10A}
+	\label{fig:Duty Cycle}
+\end{figure}
+Man erkennt gut, dass dort wo die Ausgangsspannung praktisch gleichgross ist wie die Eingangsspannung der Duty Cycle beinahe eins wird. Dies macht ja auch Sinn, denn in diesem Fall muss der FET immer leiten.
 
 \section{Wirkungsgrad}
 Um den Wirkungsgrad zu bestimmen muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies enthält die Schalt-und Leitverluste. Die Leckverluste werden vernachlässigt. 
@@ -92,23 +109,32 @@ Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wir
 
 \section{Dimensionierung Drossel}
 
+\subsection{Rippel des Stromes $\Delta$i}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{pics/Rippel10A.png}
+	\caption{Rippel bei 10A}
+	\label{fig:Rippel}
+\end{figure}
+
 \section{Dimensionierung Kondensator}
 
-% Der Anhang kommt auf eine neue Zeile
-\newpage
-% Offizielle "A Anhang" Aufzählungsvariante
-\appendix
-% Nur im Inhaltsverzeichnis hinzufï¿½gen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
-\addcontentsline{toc}{section}{Anhang}
-
-% Quellenverzeichnis
-%\addcontentsline{toc}{section}{Quellenverzeichnis}
-\section{Quellenverzeichnis}
-\renewcommand\refname{}
-
-\vspace{-1cm}
-
-\bibliographystyle{amsplain}
-\bibliography{Bildquellen}
+%% Der Anhang kommt auf eine neue Zeile
+%\newpage
+%% Offizielle "A Anhang" Aufzählungsvariante
+%\appendix
+%% Nur im Inhaltsverzeichnis hinzufï¿½gen (mit richtiger Seite, da vorher "\newpage"), aber kein Text
+%\addcontentsline{toc}{section}{Anhang}
+%
+%% Quellenverzeichnis
+%%\addcontentsline{toc}{section}{Quellenverzeichnis}
+%\section{Quellenverzeichnis}
+%\renewcommand\refname{}
+%
+%\vspace{-1cm}
+%
+%\bibliographystyle{amsplain}
+%\bibliography{Bildquellen}
 
 \end{document}
