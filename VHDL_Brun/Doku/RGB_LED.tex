@@ -30,6 +30,12 @@
 \usepackage[final]{pdfpages}
 \includepdfset{pages=-,noautoscale}
 
+\usepackage{listings}
+\definecolor{bg}{rgb}{0.98,0.98,0.98}
+\lstset{language=C,basicstyle=\small,keywordstyle=\color{violet},%
+tabsize=2,backgroundcolor=\color{bg},numbers=left,%
+basicstyle=\scriptsize\ttfamily,breaklines=true,breakatwhitespace=true}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,12 +127,20 @@ Im folgenden werden die beiden Teilprojekte \emph{Digitalteil} und \emph{Analogt
 
 \section{Digitalteil}
 
+Für den Digitalteil nutzen wir das Entwicklungsboard Spartan-3E Starterkit. Darauf benötigen wir wie schon erwähnt den Drehencoder, die vier Taster darum herum und drei I/O Pins rechts unten. Die Position der Elemente ist auf \autoref{fig:Software-Hardware} sichtbar.
+
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.70\textwidth]{images/Software-Hardware.pdf}
 	\caption{Beschreibung der Ein- und Ausgänge auf dem Digitalteil}
 	\label{fig:Software-Hardware}
 \end{figure}
+
+\subsection{Grobe Datenverarbeitung}
+
+Der VHDL Code ist ein klassischer Fall von einem Input$\rightarrow$Processing$\rightarrow$Output System (\autoref{fig:Software}. Als Eingang fungieren drei einstellbare Werte - der Hue-Wert, der Saturation-Wert und der Value-Wert.
+
+Der Hue-Wert wird mit dem Drehencoder schrittweise zwischen 0 und 383 verändert. Die vier Taster dienen je zu zweit ebenfalls der Einstellung je eines Wertes. Jedoch wurde hier die Entscheidung getroffen, vor dem Zählermodul noch ein Autorepeat einzufügen (in der Grafik nicht dargestellt), da es kaum nötig sein wird, die Sättigung oder die Helligkeit in einzelnen Schritten von 0 bis 255 zu ändern.
 
 \begin{figure}[ht]
 	\centering
@@ -135,20 +149,116 @@ Im folgenden werden die beiden Teilprojekte \emph{Digitalteil} und \emph{Analogt
 	\label{fig:Software}
 \end{figure}
 
+Die drei Zählermodule benötigen am Eingang jeweils einen UP- und einen DOWN-Trigger. Im Falle der Taster (Saturation und Value Werte) kommen diese Signale dann auf ein Autorepeat-Modul. Dieses schaut am Eingang ob einer der beiden Triggersignale 1 ist. Wenn dies der Fall ist, fängt es nach einer gewissen Zeit ($2.6ms$) an, den jeweiligen Ausgang zu toggeln, welcher dann den Zähler kontinuierlich erhöht oder verringern. Im Fall des Drehencoders haben wir uns entschieden, die Schritte direkt zum Zählermodul zu führen. Jedoch müssen natürlich die beiden Eingangspins des Drehencoders zuerst decodiert werden.
+
+Danach werden die drei Werte in einem Modul vom HSV in dn RGB Farbraum konvertiert und anschliessend über je ein PWM Encoder Modul auf die drei Ausgangspins gesendet.
 
 \subsection{HSV-RGB-Encoder}
 
-- basics - bilder von rgb und hsv\\
-- bild von den dreiecksfunktionen (trapez) welche die umrechnung visualisieren\\
-- erklärung, warum beim hue wert nicht 8 bit sondern 9 bit (und 384 schritte) gewählt wurden: damit der hue wert auf 6 teil bereiche mit jeweils einer breite mit einer zweierpotenz zerlegbar ist (division durch 64 -> 6 bit nach rechts geschoben)
-- system nach fallunterscheidung (6 teilbereiche)
+Der HSV-Farbraum (Abbildung \ref{fig:HSV}) und der RGB-Farbraum (Abbildung \ref{fig:RGB}) sind verwandt und dadurch relativ einfach umrechenbar.
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics{images/RGB-HSV.png}
+		\subfigure[HSV Farbraum]{
+			\includegraphics{images/HSV.png}
+			\label{fig:HSV}
+		}
+		\subfigure[RGB Farbraum]{
+			\includegraphics{images/RGB.png}
+			\label{fig:RGB}
+		}
+\end{figure}
+
+Eine grafische Darstellung der Umrechnung ist in \autoref{fig:RGB-HSV} dargestellt. 
+Die Formeln dazu sind in Formel \ref{formel:a}, \ref{formel:b} und \ref{formel:c} ersichtlich.
+
+Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Darum haben wir uns entschieden, die "`Breite"' des HSV-Wertes von $360^\circ$ auf $384^\circ$ erhöht. Somit sind die sechs Teilbereiche die in Formel \ref{formel:c} dargestellt sind, jeweils 64 lang. Also kann mit 64 dividiert werden, was in VHDL einem schieben nach rechts um sechs Bit gleichkommt.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.6\textwidth]{images/RGB-HSV.png}
 	\caption{HSV-RGB Konvertierung}
 	\label{fig:RGB-HSV}
 \end{figure}
+
+\begin{align}
+	\label{formel:a}
+	h_\mathrm{i} &:= \left \lfloor { \frac{H}{60^\circ} } \right \rfloor;\;\;\;f:= \left(\frac{H}{60^\circ} - h_\mathrm{i}\right) \\
+	%
+	\label{formel:b}
+	p &:= V \cdot (1 - S);\quad q:= V \cdot (1 - S \cdot f );\quad t:= V \cdot \left( 1 - S \cdot (1 - f) \right) \\
+	%
+	\label{formel:c}
+	(R,G,B) &:=
+    \begin{cases}
+        (V,t,p), \text{falls } h_\mathrm{i} \in \{0,6\} \\
+        (q,V,p), \text{falls } h_\mathrm{i} = 1 \\
+        (p,V,t), \text{falls } h_\mathrm{i} = 2 \\
+        (p,q,V), \text{falls } h_\mathrm{i} = 3 \\
+        (t,p,V), \text{falls } h_\mathrm{i} = 4 \\
+        (V,p,q), \text{falls } h_\mathrm{i} = 5
+    \end{cases}
+\end{align}
+
+Der Code ist in einem einzigen Prozess enthalten, welcher laufend die drei Eingangswerte umrechnet und auf die drei Ausgangsvektoren schreibt:
+
+\begin{lstlisting}[frame=single]
+if SAT = "00000000" then
+	R <= VAL;
+	G <= VAL;
+	B <= VAL;
+else
+	base := (("11111111" - unsigned(SAT)) * unsigned(VAL)) srl 8;
+	switch := unsigned(HUE) srl 6;
+	case switch(2 downto 0) is
+		when "000" =>
+			R <= VAL;
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * unsigned(HUE)) srl 6) + base(7 downto 0);
+			G <= std_logic_vector(led_value(7 downto 0));
+			B <= std_logic_vector(base(7 downto 0));
+		
+		when "001" =>
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
+			R <= std_logic_vector(led_value(7 downto 0));
+			G <= VAL;
+			B <= std_logic_vector(base(7 downto 0));
+		
+		when "010" =>
+			R <= std_logic_vector(base(7 downto 0));
+			G <= VAL;
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 6) + base(7 downto 0);
+			B <= std_logic_vector(led_value(7 downto 0));
+		
+		when "011" =>
+			R <= std_logic_vector(base(7 downto 0));
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
+			G <= std_logic_vector(led_value(7 downto 0));
+			B <= VAL;
+		
+		when "100" =>
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * (unsigned(HUE) mod "001000000")) srl 6) + base(7 downto 0);
+			R <= std_logic_vector(led_value(7 downto 0));
+			G <= std_logic_vector(base(7 downto 0));
+			B <= VAL;
+		
+		when "101" =>
+			R <= VAL;
+			G <= std_logic_vector(base(7 downto 0));
+			led_value := (((unsigned(VAL) - base(7 downto 0)) * ("001000000"-(unsigned(HUE) mod "001000000"))) srl 6) + base(7 downto 0);
+			B <= std_logic_vector(led_value(7 downto 0));
+			
+		when others =>
+			R <= "00000000";
+			G <= "00000000";
+			B <= "00000000";
+	end case;
+end if;
+\end{lstlisting}
+
+
+- erklärung, warum beim hue wert nicht 8 bit sondern 9 bit (und 384 schritte) gewählt wurden: damit der hue wert auf 6 teil bereiche mit jeweils einer breite mit einer zweierpotenz zerlegbar ist (division durch 64 -> 6 bit nach rechts geschoben)
+- system nach fallunterscheidung (6 teilbereiche)
+
 
 
 \subsection{Inkremental-Decoder}

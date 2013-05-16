@@ -1,7 +1,9 @@
 \select@language {ngerman}
-\contentsline {figure}{\numberline {1}{\ignorespaces Grobes Blockschaltbild der Idee}}{2}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Beschreibung der Ein- und Ausg\"ange auf dem Digitalteil}}{3}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Blockschaltbild des Digitalteils}}{4}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces HSV-RGB Konvertierung}}{5}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Ausgangssignale des Dreh-Encoders}}{6}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Logarithmik Umrechnung}}{7}{figure.6}
+\contentsline {figure}{\numberline {1}{\ignorespaces Grobes Blockschaltbild der Idee}}{3}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Beschreibung der Ein- und Ausg\"ange auf dem Digitalteil}}{4}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Blockschaltbild des Digitalteils}}{5}{figure.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HSV Farbraum}}}{10}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RGB Farbraum}}}{10}{subfigure.4.2}
+\contentsline {figure}{\numberline {4}{\ignorespaces HSV-RGB Konvertierung}}{11}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Ausgangssignale des Dreh-Encoders}}{11}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Logarithmik Umrechnung}}{12}{figure.6}
