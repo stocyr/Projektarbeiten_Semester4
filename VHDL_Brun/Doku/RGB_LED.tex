@@ -32,9 +32,10 @@
 
 \usepackage{listings}
 \definecolor{bg}{rgb}{0.98,0.98,0.98}
-\lstset{language=C,basicstyle=\small,keywordstyle=\color{violet},%
+\lstset{language=C,basicstyle=\small,keywordstyle=\color{blue}\bfseries,%
 tabsize=2,backgroundcolor=\color{bg},numbers=left,%
-basicstyle=\scriptsize\ttfamily,breaklines=true,breakatwhitespace=true}
+basicstyle=\scriptsize\ttfamily,breaklines=true,breakatwhitespace=true,%
+stringstyle=\color{violet}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TODO
@@ -200,9 +201,9 @@ Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Dar
     \end{cases}
 \end{align}
 
-Der Code ist in einem einzigen Prozess enthalten, welcher laufend die drei Eingangswerte umrechnet und auf die drei Ausgangsvektoren schreibt:
+Der Code ist in einem einzigen Prozess enthalten, welcher laufend die drei Eingangswerte umrechnet und auf die drei Ausgangsvektoren schreibt. Die Codestruktur ist eine simple Fallunterscheidung nach den sechs unterschiedlichen Teilbereichen im Hue-Spektrum (welches nun eben $384^\circ$ breit ist). Das Listing der wichtigsten Codeausschnitts ist in \autoref{lst:rgbencoder} sichtbar.
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \emph{RGBEncoder.hdl}},label=lst:rgbencoder]
 if SAT = "00000000" then
 	R <= VAL;
 	G <= VAL;
@@ -256,11 +257,6 @@ end if;
 \end{lstlisting}
 
 
-- erklärung, warum beim hue wert nicht 8 bit sondern 9 bit (und 384 schritte) gewählt wurden: damit der hue wert auf 6 teil bereiche mit jeweils einer breite mit einer zweierpotenz zerlegbar ist (division durch 64 -> 6 bit nach rechts geschoben)
-- system nach fallunterscheidung (6 teilbereiche)
-
-
-
 \subsection{Inkremental-Decoder}
 
 - Darstellung der beiden Eingagnssignale (mit schön dasrgestelter phasenverschiebung) -> aus spartan pdf\\
@@ -270,7 +266,7 @@ end if;
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics{images/Rotary_signals.png}
+		\includegraphics[width=1\textwidth]{images/Rotary_signals.png}
 	\caption{Ausgangssignale des Dreh-Encoders}
 	\label{fig:Rotary_signals}
 \end{figure}

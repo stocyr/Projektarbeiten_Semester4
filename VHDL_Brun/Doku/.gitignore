@@ -2,4 +2,6 @@
 *.log
 *.out
 *.toc
+*.lof
+*.tps
 RGB_LED.pdf
