@@ -36,7 +36,7 @@ Uplateau = 4.3;     % Gate Plateau Voltage - aus DB
 Vf0_MFET = 0.6;
 RdiodeMFET = (0.75-0.6)/(10-1);
 
-L = 0.01;            % Zufälliger Wert für die Drossel angenommen
+L = 0.0001;            % Zufälliger Wert für die Drossel angenommen
 Rl  = 0.01;         % Verlustwiderstand Drossel
 Rsh = 0.01;         % Schöntwiderstand
 
@@ -86,7 +86,11 @@ Pl = Pl_Drossel + Pl_Shunt + Pl_Diode + Pl_MOSFET_Diode + Pl_MOSFET;
 
 Udd = V0_grid;                           % Udd ist maximale Spannung über dem MOSFET = V in
 
-dI = ((1-D).*V0_grid)/(L*f);              % Rippel in der Dorssel berechnen
+
+dI = 0.2 * max(I0);                         % Typisch sind 10-40% von I0max
+L = (max(Vin) - max(V0) - ((Rsh + Rdson)*max(I0)))*max(D(1,1,:))*(1/f)/dI;
+dI0 = ((Vin_grid) - (V0_grid) - ((Rsh + Rdson).*(I0_grid))).*(D)*(1/f)/L;
+dI0f = ((1-D).*V0_grid)/(L*f);              % Rippel in der Dorssel berechnen
 
 Idon = I0_grid - dI/2;
 Idoff = I0_grid + dI/2;
@@ -142,7 +146,7 @@ zlabel('Duty Cycle (t_{on} / T)');
 figure
 dI_offset = zeros(max(V0), max(Vin), max(I0));
 dI_offset(:,:,:) = NaN;
-dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI;
+dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI0;
 surf(dI_offset(:,:,10));
 colorbar;
 set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
@@ -150,6 +154,9 @@ title(['Rippel \Deltai bei I0 = 10A']);
 ylabel('V0 [V]');
 xlabel('Vin [V]');
 zlabel('\Deltai');
+hold on
+dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI0f;
+surf(dI_offset(:,:,10));
 
 % Konturliniendiagramm von jedem I0 erstellen und alle in files speichern
 load('MyColorMap', 'mycolormap')
@@ -160,21 +167,21 @@ end
 n_offset = zeros(max(V0), max(Vin), max(I0));
 n_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = n;
 minimum = floor(min(n(1,end,:))*100)/100;
-
-figure
-for I0_k = I0
-   [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), minimum:0.01:1);
-   %surf(n(:,:,find(I0 == I0_k)), 0.9:0.005:1);
-   %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
-   %V0 der Wirkungsgrad auch wieder sinkt
-   colormap(mycolormap);
-   colorbar;
-   xlabel('V_{in}');
-   ylabel('V_{out}');
-   title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);
-   set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
-   filename = ['pics/grafik_' int2str(I0_k) 'A.png'];
-   %print('-dpng', filename);
-end
+% 
+% figure
+% for I0_k = I0
+%    [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), minimum:0.01:1);
+%    %surf(n(:,:,find(I0 == I0_k)), 0.9:0.005:1);
+%    %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
+%    %V0 der Wirkungsgrad auch wieder sinkt
+%    colormap(mycolormap);
+%    colorbar;
+%    xlabel('V_{in}');
+%    ylabel('V_{out}');
+%    title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);
+%    set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
+%    filename = ['pics/grafik_' int2str(I0_k) 'A.png'];
+%    %print('-dpng', filename);
+% end
 
 display('Completed.'); 
