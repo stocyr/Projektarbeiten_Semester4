@@ -108,6 +108,21 @@ Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wir
 
 
 \section{Dimensionierung Drossel}
+Die Spule kann berechnet werden, indem man beim maximalen Rippel $\Delta$i (20\% von $I_{0max}$ gewählt) die Spannung über der Spule bestimmt. 
+\begin{align}
+	U_L=L\cdot\frac{di}{dt} 
+\end{align}
+Diese Formel kann für kleine $\Delta$i folgendermassen approximiert werden:
+\begin{align}
+	U_L=L\cdot\frac{\Delta i}{D\cdot T} 
+\end{align}
+Wobei D der Duty Cycle und T die Periodendauer sind.
+Stellt man die Gleichung nach L um und berechnet die Spannung $U_L$ nach Kirchhofschem Maschensatz, ehält man die Gleichung:
+\begin{align}
+L = \frac{(V_{IN}-V_{0}-(R_{SH}+R_{DSon})\cdot I_0)\cdot D \cdot T}{\Delta i} 
+\end{align}
+
+
 
 \subsection{Rippel des Stromes $\Delta$i}
 
