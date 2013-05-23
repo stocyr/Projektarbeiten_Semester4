@@ -88,9 +88,10 @@ Udd = V0_grid;                           % Udd ist maximale Spannung über dem MO
 
 
 dI = 0.2 * max(I0);                         % Typisch sind 10-40% von I0max
-L = (max(Vin) - max(V0) - ((Rsh + Rdson)*max(I0)))*max(D(1,1,:))*(1/f)/dI;
-dI0 = ((Vin_grid) - (V0_grid) - ((Rsh + Rdson).*(I0_grid))).*(D)*(1/f)/L;
-dI0f = ((1-D).*V0_grid)/(L*f);              % Rippel in der Dorssel berechnen
+L = (max(Vin) - max(V0) - ((Rsh + Rdson)*max(I0)))*D(find(V0 == max(V0)),find(Vin == max(Vin)),find(I0 == max(I0)))*(1/f)/dI;
+L
+
+dI0 = ((1-D).*V0_grid)/(L*f);              % Rippel in der Dorssel berechnen
 
 Idon = I0_grid - dI/2;
 Idoff = I0_grid + dI/2;
@@ -154,9 +155,6 @@ title(['Rippel \Deltai bei I0 = 10A']);
 ylabel('V0 [V]');
 xlabel('Vin [V]');
 zlabel('\Deltai');
-hold on
-dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI0f;
-surf(dI_offset(:,:,10));
 
 % Konturliniendiagramm von jedem I0 erstellen und alle in files speichern
 load('MyColorMap', 'mycolormap')

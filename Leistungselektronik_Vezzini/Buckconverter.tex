@@ -112,14 +112,17 @@ Die Spule kann berechnet werden, indem man beim maximalen Rippel $\Delta$i (20\%
 \begin{align}
 	U_L=L\cdot\frac{di}{dt} 
 \end{align}
-Diese Formel kann für kleine $\Delta$i folgendermassen approximiert werden:
+Diese Formel kann für kleine $\Delta$i und kurze Zeiten folgendermassen approximiert werden:
 \begin{align}
 	U_L=L\cdot\frac{\Delta i}{D\cdot T} 
 \end{align}
 Wobei D der Duty Cycle und T die Periodendauer sind.
 Stellt man die Gleichung nach L um und berechnet die Spannung $U_L$ nach Kirchhofschem Maschensatz, ehält man die Gleichung:
 \begin{align}
-L = \frac{(V_{IN}-V_{0}-(R_{SH}+R_{DSon})\cdot I_0)\cdot D \cdot T}{\Delta i} 
+	\begin{split}
+		L &= \frac{(V_{IN}-V_{0}-(R_{SH}+R_{DSon})\cdot I_0)\cdot D \cdot T}{\Delta i} \\
+		&=\frac{(75V-30V-(10m\Omega+2.7m\Omega)\cdot 10A)\cdot 0.4074 \cdot 12.5\mu s}{2A} = 114\mu H
+	\end{split}
 \end{align}
 
 
