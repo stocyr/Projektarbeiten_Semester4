@@ -161,11 +161,11 @@ Der HSV-Farbraum (Abbildung \ref{fig:HSV}) und der RGB-Farbraum (Abbildung \ref{
 \begin{figure}[ht]
 	\centering
 		\subfigure[HSV Farbraum]{
-			\includegraphics{images/HSV.png}
+			\includegraphics[width=0.3\textwidth]{images/HSV.png}
 			\label{fig:HSV}
 		}
 		\subfigure[RGB Farbraum]{
-			\includegraphics{images/RGB.png}
+			\includegraphics[width=0.3\textwidth]{images/RGB.png}
 			\label{fig:RGB}
 		}
 \end{figure}
@@ -295,13 +295,37 @@ end if;
 
 \section{Analogteil}
 Im analogen Teil des Projekts gings darum, eine high power RGB LED mit einer möglichst effizienten Schaltung anzusteuern.
-\subsection{Bauteilspezifikation}
-Bei der Evaluation der LED war die Leistung unser Hauptkriterium. 
-\subsubsection{RGB-LED}
+\subsection{Schema}
+Das Schema für den Analogteil beinhaltet im Wesentlichen die drei Stromquellen für die drei Farben der LED.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{images/schema.pdf}
+	\caption{Schema}
+	\label{fig:Schema}
+\end{figure}
 
+\subsection{Bauteilspezifikation}
+
+\subsubsection{RGB-LED}
+Bei der Evaluation der LED war die Leistung unser Hauptkriterium. 
 \subsubsection{Stromquelle}
 
 \subsection{Kühlkörperdimensionierung}
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{images/Rth_schema.pdf}
+	\caption{Wärmeersatzschaltbild}
+	\label{fig:Wärmeersatzschaltbild}
+\end{figure}
+
+$R_{\vartheta JC} = 0.7K/W, R_{\vartheta CB} = 0.8K/W, R_{\vartheta BK} = 0.5K/W$
+\begin{equation}
+\begin{split}
+		R_{KAmax} &= \frac{\vartheta _{Junction} - \vartheta _{Ambient}}{P_V}-(R_{\vartheta JC}+ R_{\vartheta CB}+ R_{\vartheta BK})\\
+		&= \frac{150^\circ C - 25^\circ C}{40W}-(0.7K/W + 0.8K/W + 0.5K/W) = 1.125K/W
+\end{split}
+\end{equation}
 
 \subsection{Hardwareaufbau}
 
