@@ -165,21 +165,21 @@ end
 n_offset = zeros(max(V0), max(Vin), max(I0));
 n_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = n;
 minimum = floor(min(n(1,end,:))*100)/100;
-% 
-% figure
-% for I0_k = I0
-%    [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), minimum:0.01:1);
-%    %surf(n(:,:,find(I0 == I0_k)), 0.9:0.005:1);
-%    %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
-%    %V0 der Wirkungsgrad auch wieder sinkt
-%    colormap(mycolormap);
-%    colorbar;
-%    xlabel('V_{in}');
-%    ylabel('V_{out}');
-%    title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);
-%    set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
-%    filename = ['pics/grafik_' int2str(I0_k) 'A.png'];
-%    %print('-dpng', filename);
-% end
+
+figure
+for I0_k = I0
+   [CS,H] = contourf(n_offset(:,:,find(I0 == I0_k)), minimum:0.01:1);
+   %surf(n(:,:,find(I0 == I0_k)), 0.9:0.005:1);
+   %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
+   %V0 der Wirkungsgrad auch wieder sinkt
+   colormap(mycolormap);
+   colorbar;
+   xlabel('V_{in}');
+   ylabel('V_{out}');
+   title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);
+   set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
+   filename = ['pics/grafik_' int2str(I0_k) 'A.png'];
+   %print('-dpng', filename);
+end
 
 display('Completed.'); 

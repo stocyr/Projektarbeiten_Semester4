@@ -71,11 +71,16 @@
 %%                                                         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ziel/Anforderungen}
-Mithilfe der im Unterricht erarbeiteten Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden und eine Drossel und ein Kondensator dimmensioniert werden. Die Diode und der MOSFET sind vorgegeben. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-10 Volt und einen Ausgangsstrom von 0-10 Ampère berechnet werden.
+\section{Ziel/Einleitung}
+Anhand eines Stepdown (Buck) Converters soll die erarbeitete Theorie über Leistungselektronik angewendet werden. Die Diode und der MOSFET sind vorgegeben und die Drossel und der Kondensator müssen dimmensioniert werden.
+Mithilfe der Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-30 Volt und einen Ausgangsstrom von 1-10 Ampère berechnet werden. 
+
+Dieser Bericht erläutert die Funktionsweise des Buckconverters, zeitg die Berechnung und die Auswertung der Wirkungsgrade und noch die Dimmensionierung der passiven Komponenten (Drossel und Kondensator). Die Funktionsweise des Regel-IC's (PWM-Generator) wird weggelassen.
+
+Alle Berechnungen wurden in einem Matlab Skript (Buckconverter.m) durchgeführt, welches diesem Bericht beiliegt. Auf die genaue implementierung wird in diesem Bericht nicht eingegangen. Es wird vorausgesetzt, dass ein grundlegendes Verständnis der Matlab Skriptsprache vorhanden ist. Somit ist der Code (mit dem Komentar) selbsterklärend.
 
 \section{Schema}
-Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachhietshalber weggelassen.
+Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachhietshalber weggelassen. Zudem nehmen wir an, dass der Wandler immer im kontinuierlichen Betrieb arbeitet. Das heisst, der Strom am Ausgang $I_0$ wird nie null. Somit wird in der On-Phase (MOSFET leitet) der Strom durch die Spule nach dem Induktionsgesetz ansteigen. Schaltet nun der MOSFET ab, liegt über der Spule im wesentlichen die Ausgangsspannung, wodurch damach der Strom $I_L$ linear abfällt. Damit ergibt sich am Ausgang gemittelt über die Zeit eine konstante Spannung $U_0$, welche mit dem Kondensator noch etwas geglättet wird.
 
 \begin{figure}[ht]
 	\centering
@@ -85,34 +90,53 @@ Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PW
 \end{figure}
 
 \section{Duty Cycle}
-Um den Duty Cycle zu bestimmen sind wir nach folgender Fomel vorgegangen. Im Matlabsktipt haben wir für alle Werte, welche in einem gewissen Bereich variieren Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Loops zu arbeiten. Dies ist viel anschaulicher und besser lesbar. 
+Um den Duty Cycle zu bestimmen sind wir nach Fomel \ref{formel:DutyCycle} vorgegangen. Im Matlabsktipt haben wir für alle Werte, welche in einem gewissen Bereich variieren Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Loops zu arbeiten. Dies ist viel anschaulicher und intuitiv lesbar. 
+
 \begin{align}
-	D =\frac{(V_0 + (R_l + R_0) \cdot I_0 + V_{f0})}{(V_{in} - (R_{DSon} + R_{sh} - R_0) \cdot I_0 + V_{f0})} 
+	\label{formel:DutyCycle}
+		D =\frac{(V_0 + (R_l + R_0) \cdot I_0 + V_{f0})}{(V_{in} - (R_{DSon} + R_{sh} - R_0) \cdot I_0 + V_{f0})} 
 \end{align}
 
 Aus dieser Formel ergibt sich für die Ein- bzw. Ausgangsspannung bei 10 Ampere folgende Grafik:
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=1\textwidth]{pics/DutyCycle.png}
+		\includegraphics[width=1\textwidth]{pics/DutyCycle.pdf}
 	\caption{Duty Cycle bei 10A}
 	\label{fig:Duty Cycle}
 \end{figure}
-Man erkennt gut, dass dort wo die Ausgangsspannung praktisch gleichgross ist wie die Eingangsspannung der Duty Cycle beinahe eins wird. Dies macht ja auch Sinn, denn in diesem Fall muss der FET immer leiten.
+Man erkennt gut, dass dort wo die Ausgangsspannung praktisch gleichgross ist wie die Eingangsspannung der Duty Cycle beinahe eins wird. Dies macht ja auch Sinn, denn in diesem Fall muss beinahe die gesamte Eingangsleistung an den Ausgang weitergegeben werden. 
 
 \section{Wirkungsgrad}
 Um den Wirkungsgrad zu bestimmen muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies enthält die Schalt-und Leitverluste. Die Leckverluste werden vernachlässigt. 
 \subsection{Leitverluste}
 Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wird z.B. beim MOSFET nur der Drain-Source Widerstand bestimmt und mit dem Quadrat des Effektivwerts des durchfliessenden Stromes multipliziert. 
-\subsection{Schaltverluste}
 
+\subsection{Schaltverluste}
+Diese Berechnung war wohl der aufwändigste Teil unseres Projekts. Um die Schaltverluste zu berechnen müssen einige Werte aus Datenblättern ausgelesen werden und danach richtig in die Formel eingesetzt werden. 
+
+Erstaundlich ist, dass die Schaltverluste (bei $I_0$ fix) linear zur Ausgangsspannung und total unabhängig von der Eingangsspanung sind. Ebenso erstaundlich ist die Tatsache dass es sich bei den Schaltverlusten um recht grosse Leistungen ($P_{Smax} = 1.105W$) handelt.
+\subsection{Auswertung Wirkungsgrad}
+Berechnen wir nun den Wirkungsgrad ergibt sich für $I_0$ folgendes Bild:
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.61\textwidth]{pics/grafik_10A.png}
+	\caption{Wirkungsgrad bei 10A}
+	\label{fig:Wirkungsgrad}
+\end{figure}
+
+Das Matlabskript erstellt automatisch Bilder des Wirkungsgrades für 1..10A und speichert diese im Ordner \textit{pics}.
+
+Man erkannt hier einen Worst-Case Wirkungsgrad bei $V_{IN}$, $V_0$ und $I_0$ von etwa 93\%. Dieses Resultat erscheint realistisch und ist etwa in der Grössenordnung wo wir es haben möchten. 
 
 \section{Dimensionierung Drossel}
 Die Spule kann berechnet werden, indem man beim maximalen Rippel $\Delta$i (20\% von $I_{0max}$ gewählt) die Spannung über der Spule bestimmt. 
 \begin{align}
+	\label{formel:b}
 	U_L=L\cdot\frac{di}{dt} 
 \end{align}
-Diese Formel kann für kleine $\Delta$i und kurze Zeiten folgendermassen approximiert werden:
+Die Formel \ref{formel:b} kann für kleine $\Delta$i und kurze Zeiten folgendermassen approximiert werden:
 \begin{align}
 	U_L=L\cdot\frac{\Delta i}{D\cdot T} 
 \end{align}
@@ -131,7 +155,7 @@ Stellt man die Gleichung nach L um und berechnet die Spannung $U_L$ nach Kirchho
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=1\textwidth]{pics/Rippel10A.png}
+		\includegraphics[width=1\textwidth]{pics/Rippel10A_3.pdf}
 	\caption{Rippel bei 10A}
 	\label{fig:Rippel}
 \end{figure}
