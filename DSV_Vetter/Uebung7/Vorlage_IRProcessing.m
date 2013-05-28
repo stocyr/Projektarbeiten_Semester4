@@ -1,11 +1,11 @@
 
 close all
 clear
-%-------------------------Daten einlesen-----------------------------------
+%% -----------------------Daten einlesen-----------------------------------
 load DataPulsEar 
 fs=21;
 
-% ----------------------Anzeige von Signalen-------------------------------
+%% ---------------------Anzeige von Signalen-------------------------------
 tacc=[0:length(Acc)-1]/fs;
 
 figure
@@ -18,7 +18,7 @@ plot(tacc,IR)
 xlabel('t [s]')
 ylabel('IR')
 
-% ----------------------Anzeige der Spektrogramme--------------------------
+%% ---------------------Anzeige der Spektrogramme--------------------------
 nfft=2*256;
 window=hann(nfft);
 noverlap=round(nfft*0.9);
@@ -37,7 +37,7 @@ caxis([cax(2)-40 cax(2)])
 title('Acc')
 
 
-%------------------- Signalverarbeitung-----------------------------------
+%% ----------------- Signalverarbeitung-----------------------------------
 % Das Signal wird Segment um Segment bearbeitet
 Threshold_acc=40;   % Wenn keine Beschleunigung vorhanden ist
                     % wird das Signal nicht verarbeitet
@@ -50,7 +50,7 @@ z=zeros(2,1);       % Zustandsvariablen des Filters
 for n=len:step:length(Acc(:,1))
     if std(Acc(n-len+1:n,1))>Threshold_acc
         % ------Bestimmung der Bewegungsfrequenz mit einem AR-Modell-----
-         ahat = arburg(Acc(n-len+1:n,1),Ordnung)
+         ahat = arburg(Acc(n-len+1:n,1),Ordnung);
          fo=acos(-ahat(2)/2)/(2*pi);
          
         % Hier sollen Sie ein ARMA/IIR Filter durch das Platzieren der 
@@ -58,9 +58,11 @@ for n=len:step:length(Acc(:,1))
         % Die Frequenz der Störung ist durch fo(k) gegeben. Wählen Sie die
         % Radien der Pol-/Nullstellen so, dass der Puls klar zu sehen ist
         % und die Störung sehr strak abgeschwächt sind.
+        radius_null = 1;
+        radius_pol = 0.93;
        
-        b0=[1 0 0]; %...???
-        a0=[1 0 0]; %...???
+        b0=poly([radius_null*exp(i*fo*(2*pi)) radius_null*exp(-i*fo*(2*pi))]); %...???
+        a0=poly([radius_pol*exp(i*fo*(2*pi)) radius_pol*exp(-i*fo*(2*pi))]); %...???
     else
         a0=[1 0 0];
         b0=[1 0 0];
@@ -71,13 +73,14 @@ end
 
 
 
-% ----------------------Nachfilterung-------------------------------------
+%% ---------------------Nachfilterung-------------------------------------
 [b,a]=butter(4,2*[0.5 3]/fs);                           
 IR_enh=filtfilt(b,a,IR_enh);
 
-% ----------------- Anzeige von verarbeiteten Signalen--------------------
+%% ---------------- Anzeige von verarbeiteten Signalen--------------------
 figure
-spectrogram(IR_enh,window,noverlap,nfft,fs,'yaxis')
+[S F T] = spectrogram(IR_enh,window,noverlap,nfft,fs,'yaxis');
+spectrogram(IR_enh,window,noverlap,nfft,fs,'yaxis');
 set(gca,'ylim',[0.5 3])
 cax=caxis;
 caxis([cax(2)-26 cax(2)])
@@ -90,5 +93,8 @@ title('Polar')
 xlabel('t [s]')
 ylabel('HR [bps]')
 
-
-r
+%% ------------------ Vergleich gefiltertes Signal mit POLAR --------------
+figure
+[max_v max_f] = max(S);
+plot(T, F(max_f), tHR_pol, HR_pol/60);
+legend('filtered', 'POLAR');
