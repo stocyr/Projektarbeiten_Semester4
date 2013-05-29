@@ -72,15 +72,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ziel/Einleitung}
-Anhand eines Stepdown (Buck) Converters soll die erarbeitete Theorie über Leistungselektronik angewendet werden. Die Diode und der MOSFET sind vorgegeben und die Drossel und der Kondensator müssen dimmensioniert werden.
-Mithilfe der Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-30 Volt und einen Ausgangsstrom von 1-10 Ampère berechnet werden. 
+Anhand eines Stepdown (Buck) Converters soll die erarbeitete Theorie über Leistungselektronik angewendet werden. Die Diode und der MOSFET sind vorgegeben und die Drossel und der Kondensator müssen dimensioniert werden.
+Mithilfe der Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-30 Volt und einen Ausgangsstrom von 1-10 Ampere berechnet werden. 
 
-Dieser Bericht erläutert die Funktionsweise des Buckconverters, zeitg die Berechnung und die Auswertung der Wirkungsgrade und noch die Dimmensionierung der passiven Komponenten (Drossel und Kondensator). Die Funktionsweise des Regel-IC's (PWM-Generator) wird weggelassen.
+Dieser Bericht erläutert die Funktionsweise des Buckconverters, zeigt die Berechnung und die Auswertung der Wirkungsgrade und noch die Dimensionierung der passiven Komponenten (Drossel und Kondensator). Die Funktionsweise des Regel-IC's (PWM-Generator) wird weggelassen.
 
-Alle Berechnungen wurden in einem Matlab Skript (Buckconverter.m) durchgeführt, welches diesem Bericht beiliegt. Auf die genaue implementierung wird in diesem Bericht nicht eingegangen. Es wird vorausgesetzt, dass ein grundlegendes Verständnis der Matlab Skriptsprache vorhanden ist. Somit ist der Code (mit dem Komentar) selbsterklärend.
+Alle Berechnungen wurden in einem Matlab Skript (Buckconverter.m) durchgeführt, welches diesem Bericht beiliegt. Auf die genaue Implementierung wird in diesem Bericht nicht eingegangen. Es wird vorausgesetzt, dass ein grundlegendes Verständnis der Matlab Skriptsprache vorhanden ist. Somit ist der Code (mit dem Komentar) selbsterklärend.
 
 \section{Schema}
-Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachhietshalber weggelassen. Zudem nehmen wir an, dass der Wandler immer im kontinuierlichen Betrieb arbeitet. Das heisst, der Strom am Ausgang $I_0$ wird nie null. Somit wird in der On-Phase (MOSFET leitet) der Strom durch die Spule nach dem Induktionsgesetz ansteigen. Schaltet nun der MOSFET ab, liegt über der Spule im wesentlichen die Ausgangsspannung, wodurch damach der Strom $I_L$ linear abfällt. Damit ergibt sich am Ausgang gemittelt über die Zeit eine konstante Spannung $U_0$, welche mit dem Kondensator noch etwas geglättet wird.
+Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PWM-Ansteuerung des MOSFET wurde hier einfachheitshalber weggelassen. Zudem nehmen wir an, dass der Wandler immer im kontinuierlichen Betrieb arbeitet. Das heisst, der Strom am Ausgang $I_0$ wird nie Null. Somit wird in der On-Phase (MOSFET leitet) der Strom durch die Spule nach dem Induktionsgesetz ansteigen. Schaltet nun der MOSFET ab, liegt über der Spule im wesentlichen die Ausgangsspannung, wodurch demach der Strom $I_L$ linear abfällt. Damit ergibt sich am Ausgang gemittelt über die Zeit eine konstante Spannung $U_0$, welche mit dem Kondensator noch etwas geglättet wird.
 
 \begin{figure}[ht]
 	\centering
@@ -90,7 +90,7 @@ Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PW
 \end{figure}
 
 \section{Duty Cycle}
-Um den Duty Cycle zu bestimmen sind wir nach Fomel \ref{formel:DutyCycle} vorgegangen. Im Matlabsktipt haben wir für alle Werte, welche in einem gewissen Bereich variieren Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Loops zu arbeiten. Dies ist viel anschaulicher und intuitiv lesbar. 
+Um den Duty Cycle zu bestimmen, sind wir nach Fomel \ref{formel:DutyCycle} vorgegangen. Im Matlabskript haben wir für alle Werte, welche in einem gewissen Bereich variieren, Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Schleifen zu arbeiten. Dies ist viel anschaulicher und intuitiv lesbar. 
 
 \begin{align}
 	\label{formel:DutyCycle}
@@ -105,19 +105,20 @@ Aus dieser Formel ergibt sich für die Ein- bzw. Ausgangsspannung bei 10 Ampere f
 	\caption{Duty Cycle bei 10A}
 	\label{fig:Duty Cycle}
 \end{figure}
-Man erkennt gut, dass dort wo die Ausgangsspannung praktisch gleichgross ist wie die Eingangsspannung der Duty Cycle beinahe eins wird. Dies macht ja auch Sinn, denn in diesem Fall muss beinahe die gesamte Eingangsleistung an den Ausgang weitergegeben werden. 
+
+Man erkennt gut, dass dort, wo die Ausgangsspannung praktisch gleich gross ist wie die Eingangsspannung, der Duty Cycle beinahe eins wird. Dies macht ja auch Sinn, denn in diesem Fall muss beinahe die gesamte Eingangsleistung an den Ausgang weitergegeben werden. 
 
 \section{Wirkungsgrad}
-Um den Wirkungsgrad zu bestimmen muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies enthält die Schalt-und Leitverluste. Die Leckverluste werden vernachlässigt. 
+Um den Wirkungsgrad zu bestimmen, muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies besteht aus den Schalt-und Leitverlusten. Die Leckverluste werden vernachlässigt. 
 \subsection{Leitverluste}
-Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wird z.B. beim MOSFET nur der Drain-Source Widerstand bestimmt und mit dem Quadrat des Effektivwerts des durchfliessenden Stromes multipliziert. 
+Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wird z.B. beim MOSFET nur der Drain-Source Widerstand bestimmt und mit dem Quadrat des Effektivwertes des durchfliessenden Stromes multipliziert.
 
 \subsection{Schaltverluste}
-Diese Berechnung war wohl der aufwändigste Teil unseres Projekts. Um die Schaltverluste zu berechnen müssen einige Werte aus Datenblättern ausgelesen werden und danach richtig in die Formel eingesetzt werden. 
+Diese Berechnung war wohl der aufwändigste Teil unseres Projekts. Um die Schaltverluste zu berechnen, müssen einige Werte aus Datenblättern ausgelesen werden und danach richtig in die Formel eingesetzt werden.
 
-Erstaundlich ist, dass die Schaltverluste (bei $I_0$ fix) linear zur Ausgangsspannung und total unabhängig von der Eingangsspanung sind. Ebenso erstaundlich ist die Tatsache dass es sich bei den Schaltverlusten um recht grosse Leistungen ($P_{Smax} = 1.105W$) handelt.
+Erstaunlich ist, dass die Schaltverluste (bei $I_0$ fix) linear zur Ausgangsspannung und total unabhängig von der Eingangsspanung sind. Ebenso erstaunlich ist die Tatsache, dass es sich bei den Schaltverlusten um recht hohe Leistungen ($P_{Smax} = 1.105W$) handelt.
 \subsection{Auswertung Wirkungsgrad}
-Berechnen wir nun den Wirkungsgrad ergibt sich für $I_0$ folgendes Bild:
+Berechnen wir nun den Wirkungsgrad, ergibt sich für $I_0 = 10A$ folgendes Bild:
 
 \begin{figure}[ht]
 	\centering
@@ -126,29 +127,36 @@ Berechnen wir nun den Wirkungsgrad ergibt sich für $I_0$ folgendes Bild:
 	\label{fig:Wirkungsgrad}
 \end{figure}
 
-Das Matlabskript erstellt automatisch Bilder des Wirkungsgrades für 1..10A und speichert diese im Ordner \textit{pics}.
+Das Matlabskript erstellt automatisch Bilder des Wirkungsgrades für 1 bis 10 Ampere und speichert diese im Ordner \textit{./pics}.
 
-Man erkannt hier einen Worst-Case Wirkungsgrad bei $V_{IN}$, $V_0$ und $I_0$ von etwa 93\%. Dieses Resultat erscheint realistisch und ist etwa in der Grössenordnung wo wir es haben möchten. 
+Man erkannt hier einen Worst-Case Wirkungsgrad bei $V_{IN}$, $V_0$ und $I_0$ von etwa 93\%. Dieses Resultat erscheint realistisch und ist etwa in der Grössenordnung wo wir es vermutet haben. 
 
 \section{Dimensionierung Drossel}
-Die Spule kann berechnet werden, indem man beim maximalen Rippel $\Delta$i (20\% von $I_{0max}$ gewählt) die Spannung über der Spule bestimmt. 
+Die Spule kann berechnet werden, indem man bei maximalem Rippel $\Delta$i (20\% von $I_{0max}$ gewählt) die Spannung über der Spule bestimmt. 
+
 \begin{align}
 	\label{formel:b}
 	U_L=L\cdot\frac{di}{dt} 
 \end{align}
+
 Die Formel \ref{formel:b} kann für kleine $\Delta$i und kurze Zeiten folgendermassen approximiert werden:
+
 \begin{align}
 	U_L=L\cdot\frac{\Delta i}{D\cdot T} 
 \end{align}
+
 Wobei D der Duty Cycle und T die Periodendauer sind.
-Stellt man die Gleichung nach L um und berechnet die Spannung $U_L$ nach Kirchhofschem Maschensatz, ehält man die Gleichung:
+Stellt man die Gleichung nach L um und berechnet die Spannung $U_L$ nach dem Kirchhofschen Maschensatz, erhält man die Gleichung:
+
 \begin{align}
 	\begin{split}
 		L &= \frac{(V_{IN}-V_{0}-(R_{SH}+R_{DSon})\cdot I_0)\cdot D \cdot T}{\Delta i} \\
 		&=\frac{(75V-30V-(10m\Omega+2.7m\Omega)\cdot 10A)\cdot 0.4074 \cdot 12.5\mu s}{2A} = 114\mu H
 	\end{split}
 \end{align}
-Hat man den Rippel des Stromes für den Maximalwert bestimmt, kann man mit der gewählten Spule den Rippel für alle anderen Konditionen berechnen, was zu nachstehendem Plot führt.
+
+Hat man den Rippel des Stromes für den Maximalwert bestimmt, kann man mit der gewählten Spule den Rippel für alle anderen Konditionen berechnen, was zu nachstehendem Plot führt:
+
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{pics/Rippel10A_3.pdf}
@@ -156,21 +164,21 @@ Hat man den Rippel des Stromes für den Maximalwert bestimmt, kann man mit der ge
 	\label{fig:Rippel}
 \end{figure}
 
-Nun ist die Spule vom Wert für die Induktivität vorgegeben. Um nun eine geeignete Drossel auszuwählen kann das Toos \textit{Ferrite Magnetic Design Tool} verwendet werden. Da wir möglichst kleine Kernverluste wollen, ist es empfehlenswert ein Material für den Kern auszuwählen, welches eine schmale Hysterese aufweist. 
+Nun ist die Spule vom Wert für die Induktivität vorgegeben. Um nun eine geeignete Drossel auszuwählen, kann das Tool \textit{Ferrite Magnetic Design Tool} verwendet werden. Da wir möglichst kleine Kernverluste wollen, ist es empfehlenswert, ein Material für den Kern auszuwählen, welches eine schmale Hysterese aufweist. 
 
-Aufgrund von fehlenden Informationen und der Tatsache, dass der Zeitliche Aufwand, sich in dieses einigermassen komplexe Thema zu vertiefen, zu gross erschien, haben wir die weitere Dimmensionierung der Drossel hier nicht weiter aufgeführt. 
+Aufgrund von fehlenden Informationen und der Tatsache, dass der zeitliche Aufwand, sich in dieses einigermassen komplexe Thema zu vertiefen, zu gross erschien, haben wir die weitere Dimensionierung der Drossel hier nicht weiter ausgeführt.
 
 
 
 \section{Dimensionierung Kondensator}
-Als Kondensator haben wir mit Hilfe des Onlinetools von \textit{TDK EPCOS} folgenden ausgewählt: TDK B41231. Er hat eine Käpazität von 4.7mF bei 30 Volt und eine Lebensdauer von 2000 Stunden. Ob diese Wahl wirklich gut ist, sind wir uns nicht sicher.
+Als Kondensator haben wir mit Hilfe des Onlinetools von \textit{TDK EPCOS} folgenden ausgewählt: TDK B41231. Er hat eine Kapazität von 4.7mF bei 30 Volt und eine Lebensdauer von 2000 Stunden. Uns fehlt hier aber die Erfahrung, um abschätzen zu können, ob diese Wahl geeignet ist.
 
 \section{Auswertung}
-Das Projekt war für uns eine gute Übung, die Leistungselektronik anzuwenden. Jedoch waren einige Punkte Unklar, insbesondere war die Aufgabenstellung aus unserer Sicht etwas schwammig definiert. Dazu ist unser Vorschlag für nächstes Jahr: Ein eigenes PDF mit der Aufgabenstellung, wo auch die angaben gemacht werden und die Aufgabenstellung nicht irgendwo in den Slides zu integrieren. Denn das kann zu Verwirrung führen, insbesondere wenn es in mehreren Slides ähnliche Aufgabenstellungen hat.
+Das Projekt war für uns eine gute Übung, die Leistungselektronik anzuwenden. Jedoch waren einige Punkte unklar, insbesondere war die Aufgabenstellung aus unserer Sicht etwas schwammig definiert. Dazu ist unser Vorschlag für nächstes Jahr: Ein eigenes Dokument mit der Aufgabenstellung, wo auch die Angaben gemacht werden statt die Aufgabenstellung in die Slides der Vorlesungspräsentation zu integrieren. Denn das kann zu Verwirrung führen, insbesondere wenn es in mehreren Slides ähnliche Aufgabenstellungen hat.
 
 
-Ansonsten war vorallem der gute Wirkungsgrad des Wandlers und der Einfluss der Schaltverluste beeindruckend. 
-Schwierigkeiten hatten wir bei der Dimmensionierung der Drossel und des Kondensators, was wir schlussendlich weggelassen haben. Trozdem sind wir mit dem Ergebnis des Berichts zufrieden.
+Ansonsten war vor allem der gute Wirkungsgrad des Wandlers und der Einfluss der Schaltverluste beeindruckend. 
+Schwierigkeiten hatten wir bei der Dimensionierung der Drossel und des Kondensators, was wir schlussendlich weggelassen haben. Trotzdem sind wir mit dem Ergebnis des Berichts zufrieden.
 
 %% Der Anhang kommt auf eine neue Zeile
 %\newpage
