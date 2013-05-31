@@ -96,5 +96,8 @@ ylabel('HR [bps]')
 %% ------------------ Vergleich gefiltertes Signal mit POLAR --------------
 figure
 [max_v max_f] = max(S);
-plot(T, F(max_f), tHR_pol, HR_pol/60);
-legend('filtered', 'POLAR');
+HR_pol_2 = resample(HR_pol, 519, 1267) / 60;    % normieren auf gefiltertes signal
+plot(T, F(max_f));
+hold all
+plotyy(T, HR_pol_2, T, F(max_f)-HR_pol_2);
+legend('filtered', 'POLAR', 'Differenz');
