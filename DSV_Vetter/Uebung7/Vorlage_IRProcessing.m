@@ -99,5 +99,5 @@ figure
 HR_pol_2 = resample(HR_pol, 519, 1267) / 60;    % normieren auf gefiltertes signal
 plot(T, F(max_f));
 hold all
-plotyy(T, HR_pol_2, T, F(max_f)-HR_pol_2);
+plotyy(T, HR_pol_2, T, F(max_f)-HR_pol_2, 'plot', 'bar');
 legend('filtered', 'POLAR', 'Differenz');
