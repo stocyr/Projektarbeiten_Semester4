@@ -135,8 +135,10 @@ D_offset = zeros(max(V0), max(Vin), max(I0));
 D_offset(:,:,:) = NaN;
 D_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = D;
 figure
-surf(D_offset(:,:,10));
-colorbar;
+surf(100*D_offset(:,:,10));
+cb = colorbar('vert'); 
+zlab = get(cb,'ylabel'); 
+set(zlab,'String','Duty Cycle [%]');
 set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
 title(['Duty Cycle bei I0 = 10A']);
 ylabel('Ausgangsspannung [V]');
@@ -149,7 +151,10 @@ dI_offset = zeros(max(V0), max(Vin), max(I0));
 dI_offset(:,:,:) = NaN;
 dI_offset(min(V0):max(V0), min(Vin):max(Vin), min(I0):max(I0)) = dI0;
 surf(dI_offset(:,:,10));
-colorbar;
+cb = colorbar('vert'); 
+zlab = get(cb,'ylabel'); 
+set(zlab,'String','\Deltai [A]'); 
+
 set(gca, 'xlim', [min(Vin) max(Vin)], 'ylim', [min(V0) max(V0)]);
 title(['Rippel \Deltai bei I0 = 10A']);
 ylabel('V0 [V]');
