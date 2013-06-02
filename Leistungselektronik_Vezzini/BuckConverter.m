@@ -178,7 +178,9 @@ for I0_k = I0
    %clabel(CS, H, 0.97:0.01:1); % sieht komisch aus weil beim Bereich Vin ~
    %V0 der Wirkungsgrad auch wieder sinkt
    colormap(mycolormap);
-   colorbar;
+   cb = colorbar('vert'); 
+    zlab = get(cb,'ylabel'); 
+    set(zlab,'String','Wirkungsgrad [%]'); 
    xlabel('V_{in}');
    ylabel('V_{out}');
    title(['Wirkungsgrad bei ' int2str(I0_k) 'A']);

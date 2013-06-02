@@ -75,7 +75,7 @@
 Anhand eines Stepdown (Buck) Converters soll die erarbeitete Theorie über Leistungselektronik angewendet werden. Die Diode und der MOSFET sind vorgegeben, die Drossel und der Kondensator müssen dimensioniert werden.
 Mithilfe der Theorie und der Application Note von Infineon sollen alle Berechnungen für die Verluste durchgeführt werden. Alle Werte sollen für einen Eingangsspannungsbereich von 12-75 Volt, eine Ausgangsspannung von 10-30 Volt und einen Ausgangsstrom von 1-10 Ampere berechnet werden. 
 
-Dieser Bericht erläutert die Funktionsweise des Buckconverters, zeigt die Berechnung und die Auswertung der Wirkungsgrade und noch die Dimensionierung der passiven Komponenten (Drossel und Kondensator). Die Funktionsweise des Regel-IC's (PWM-Generator) wird weggelassen.
+Dieser Bericht erläutert die Funktionsweise des Buckconverters, zeigt die Berechnung und die Auswertung der Wirkungsgrade und die Dimensionierung der passiven Komponenten (Drossel und Kondensator). Die Funktionsweise des Regel-IC's (PWM-Generator) wird weggelassen.
 
 Alle Berechnungen wurden in einem Matlab Skript (Buckconverter.m) durchgeführt, welches diesem Bericht beiliegt. Auf die genaue Implementierung wird in diesem Bericht nicht eingegangen. Es wird vorausgesetzt, dass ein grundlegendes Verständnis der Matlab Skriptsprache vorhanden ist. Somit ist der Code (mit Kommentar) selbsterklärend.
 
@@ -90,7 +90,7 @@ Ein Buckconverter oder Abwärtswandler funktioniert nach folgendem Schema. Die PW
 \end{figure}
 
 \section{Duty Cycle}
-Um den Duty Cycle zu bestimmen, sind wir nach Fomel (\ref{formel:DutyCycle}) vorgegangen. Im Matlabskript haben wir für alle Werte, welche in einem gewissen Bereich variieren, Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Schleifen zu arbeiten. Dies ist viel anschaulicher und intuitiv lesbar. 
+Um den Duty Cycle zu bestimmen, sind wir nach Fomel (\ref{formel:DutyCycle}) vorgegangen. Im Matlabskript haben wir für alle Werte, welche in einem gewissen Bereich variieren, Matrizen erstellt. Somit können wir einfach elementweise alle Werte berechnen, ohne mit Schleifen zu arbeiten. Dies macht den Code anschaulicher und intuitiv lesbar.
 
 \begin{align}
 	\label{formel:DutyCycle}
@@ -109,27 +109,27 @@ Aus dieser Formel ergibt sich für die Ein- bzw. Ausgangsspannung bei 10 Ampere f
 Man erkennt gut, dass dort, wo die Ausgangsspannung fast gleich gross ist wie die Eingangsspannung, der Duty Cycle beinahe $1$ wird. Dies macht ja auch Sinn, denn in diesem Fall muss beinahe die gesamte Eingangsleistung an den Ausgang weitergegeben werden. 
 
 \section{Wirkungsgrad}
-Um den Wirkungsgrad zu bestimmen, muss zuerst die gesamte Verlustleistung ausgerechnet werden. Dies besteht aus den Schalt-und Leitverlusten. Die Leckverluste werden vernachlässigt. 
+Um den Wirkungsgrad zu bestimmen, muss zuerst die gesamte Verlustleistung ausgerechnet werden. Diese besteht aus den Schalt-und Leitverlusten. Die Leckverluste werden vernachlässigt. 
 \subsection{Leitverluste}
 Die Leitverluste werden mit einfachen Modellen der Bauteile berechnet. Dabei wird z.B. beim MOSFET nur der Drain-Source Widerstand bestimmt und mit dem quadrierten Effektivwert des durchfliessenden Stromes multipliziert.
 
 \subsection{Schaltverluste}
 Diese Berechnung war wohl der aufwändigste Teil unseres Projekts. Um die Schaltverluste zu berechnen, müssen einige Werte aus Datenblättern ausgelesen werden und danach richtig in die Formel eingesetzt werden.
 
-Erstaunlich ist, dass die Schaltverluste (bei $I_0$ fix) linear zur Ausgangsspannung und total unabhängig von der Eingangsspanung sind. Ebenso erstaunlich ist die Tatsache, dass es sich bei den Schaltverlusten um recht hohe Leistungen ($P_{Smax} = 1.105W$) handelt.
+Erstaunlich ist, dass die Schaltverluste (bei $I_0$ fix) linear zur Ausgangsspannung und vollkommen unabhängig von der Eingangsspanung sind. Ebenso erstaunlich ist die Tatsache, dass es sich bei den Schaltverlusten um recht hohe Leistungen ($P_{Smax} = 1.105W$) handelt.
 \subsection{Auswertung Wirkungsgrad}
 Berechnen wir nun den Wirkungsgrad, ergibt sich für $I_0 = 10A$ folgendes Bild:
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.61\textwidth]{pics/grafik_10A.png}
+		\includegraphics[width=1\textwidth]{pics/Wirkungsgrad10A.pdf}
 	\caption{Wirkungsgrad bei 10A}
 	\label{fig:Wirkungsgrad}
 \end{figure}
 
 Das Matlabskript erstellt automatisch Bilder des Wirkungsgrades für 1 bis 10 Ampere und speichert diese im Ordner \textit{./pics}.
 
-Man erkennt hier einen Worst-Case Wirkungsgrad bei $V_{IN}$, $V_0$ und $I_0$ von etwa 93\%. Dieses Resultat erscheint realistisch und ist etwa in der Grössenordnung wo wir es vermutet haben. 
+Man erkennt hier einen Worst-Case Wirkungsgrad bei $V_{IN}$, $V_0$ und $I_0$ von etwa 93\%. Dieses Resultat erscheint realistisch und ist etwa in der Grössenordnung die wir vermutet haben. 
 
 \section{Dimensionierung Drossel}
 Die Spule kann berechnet werden, indem man bei maximalem Rippel $\Delta$i (20\% von $I_{0max}$ gewählt) die Spannung über der Spule bestimmt. 
@@ -164,21 +164,21 @@ Hat man den Rippel des Stromes für den Maximalwert bestimmt, kann man mit der ge
 	\label{fig:Rippel}
 \end{figure}
 
-Nun ist die Spule vom Wert für die Induktivität vorgegeben. Um nun eine geeignete Drossel auszuwählen, kann das Tool \textit{Ferrite Magnetic Design Tool} verwendet werden. Da wir möglichst kleine Kernverluste wollen, ist es empfehlenswert, ein Material für den Kern auszuwählen, welches eine schmale Hysterese aufweist. 
+Um nun eine geeignete Drossel mit der oben berechneten Induktivität auszuwählen, kann das Tool \textit{Ferrite Magnetic Design Tool} verwendet werden. Da wir möglichst kleine Kernverluste wollen, ist es empfehlenswert, ein Material für den Kern auszuwählen, welches eine schmale Hysterese aufweist. 
 
-Aufgrund von fehlenden Informationen und der Tatsache, dass der zeitliche Aufwand, sich in dieses einigermassen komplexe Thema zu vertiefen, zu gross erschien, haben wir die weitere Dimensionierung der Drossel hier nicht weiter ausgeführt.
+Angesichts fehlenden Informationen und der Tatsache, dass der zeitliche Aufwand, sich in dieses einigermassen komplexe Thema zu vertiefen, zu gross erschien, haben wir die weitere Dimensionierung der Drossel hier nicht weiter ausgeführt.
 
 
 
 \section{Dimensionierung Kondensator}
-Als Kondensator haben wir mit Hilfe des Onlinetools von \textit{TDK EPCOS} folgenden ausgewählt: TDK B41231. Er hat eine Kapazität von 4.7mF bei 30 Volt und eine Lebensdauer von 2000 Stunden. Uns fehlt hier aber die Erfahrung, um abschätzen zu können, ob diese Wahl geeignet ist.
+Als Kondensator haben wir mit Hilfe des Onlinetools von \textit{TDK EPCOS} folgenden ausgewählt: TDK B41231. Er hat eine Kapazität von 4.7mF bei 30 Volt und eine Lebensdauer von 2000 Stunden. Uns fehlt hier aber die Erfahrung, um abschätzen oder ausrechnen zu können, ob diese Wahl geeignet ist.
 
 \section{Auswertung}
-Das Projekt war für uns eine gute Übung, die Leistungselektronik anzuwenden. Jedoch waren einige Punkte unklar, insbesondere war die Aufgabenstellung aus unserer Sicht etwas schwammig definiert. Dazu ist unser Vorschlag für nächstes Jahr: Ein eigenes Dokument mit der Aufgabenstellung, wo auch die Angaben gemacht werden statt die Aufgabenstellung in die Slides der Vorlesungspräsentation zu integrieren. Denn das kann zu Verwirrung führen, insbesondere wenn es in mehreren Slides ähnliche Aufgabenstellungen hat.
+Das Projekt war für uns eine gute Übung, die Leistungselektronik anzuwenden. Jedoch waren einige Punkte unklar, insbesondere war die Aufgabenstellung aus unserer Sicht etwas zu schwammig definiert. Dazu ist unser Vorschlag für nächstes Jahr: Ein eigenes Dokument mit der Aufgabenstellung, wo auch die Angaben gemacht werden statt die Aufgabenstellung in die Slides der Vorlesungspräsentation zu integrieren. Denn das kann zu Verwirrung führen, insbesondere wenn es in mehreren Slides ähnliche Aufgabenstellungen hat.
 
 
 Ansonsten war vor allem der gute Wirkungsgrad des Wandlers und der Einfluss der Schaltverluste beeindruckend. 
-Schwierigkeiten hatten wir bei der Dimensionierung der Drossel und des Kondensators, was wir schlussendlich weggelassen haben. Trotzdem sind wir mit dem Ergebnis des Berichts zufrieden.
+Schwierigkeiten hatten wir bei der Dimensionierung der Drossel und des Kondensators, was wir schlussendlich fast vollständig weglassen mussten. Trotzdem sind wir mit dem Ergebnis des Berichts zufrieden.
 
 %% Der Anhang kommt auf eine neue Zeile
 %\newpage
