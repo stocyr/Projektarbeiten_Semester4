@@ -53,9 +53,5 @@ freqz(filterGefenstert, 1, 1024, 1)
 title('Filter im Spektrum (mit freqz');
 
 %% Filterqualität beurteilen aufgrund der Bandspezifikationen
-%ripple_durchlassband = 20*log10(filterkern(find(f == f_grenz_soll)))
-%daempfung_stopband = 20*log10(filterkern(find(f == f_grenz_soll + 0.1)))
-
-% geht nicht aus folgenden gründen:
-% 1. es existiert kein frequenz-y-vektor-element mit exakt dem wert 0.1
-% 2. beim stopband ist der erste nebenlappen nicht bei genau 0.2
+ripple_durchlassband = min(real(20*log10(filterkern(find(abs(f) <= f_grenz_soll)))))
+daempfung_stopband = max(real(20*log10(filterkern(find(abs(f) >= f_grenz_soll + 0.1)))))
