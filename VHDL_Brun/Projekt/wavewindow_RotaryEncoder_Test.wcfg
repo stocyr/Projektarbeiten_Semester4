@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="top_schematic_top_schematic_sch_tb" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="group30" type="group">
+      <obj_property name="label">module_inputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rot_b" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rot_b</obj_property>
+         <obj_property name="ObjectShortName">rot_b</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rot_a" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rot_a</obj_property>
+         <obj_property name="ObjectShortName">rot_a</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group29" type="group">
+      <obj_property name="label">rotary_inputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_b_in" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rotary_b_in</obj_property>
+         <obj_property name="ObjectShortName">rotary_b_in</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_a_in" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rotary_a_in</obj_property>
+         <obj_property name="ObjectShortName">rotary_a_in</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rotary_in[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rotary_in[1:0]</obj_property>
+      <obj_property name="Reversed">false</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_q1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rotary_q1</obj_property>
+      <obj_property name="ObjectShortName">rotary_q1</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_q2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rotary_q2</obj_property>
+      <obj_property name="ObjectShortName">rotary_q2</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff0000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/delay_rotary_q1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">delay_rotary_q1</obj_property>
+      <obj_property name="ObjectShortName">delay_rotary_q1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/rotary_event" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rotary_event</obj_property>
+      <obj_property name="ObjectShortName">rotary_event</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ff00ff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/up" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">up</obj_property>
+      <obj_property name="ObjectShortName">up</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_34/down" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">down</obj_property>
+      <obj_property name="ObjectShortName">down</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffff00</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,3 @@
+INFO:HDLCompiler:1061 - Parsing VHDL file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/top_tb.vhd" into library work
+INFO:ProjectMgmt - Parsing design hierarchy completed successfully.
+WARNING:ProjectMgmt - File D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.prj is missing.

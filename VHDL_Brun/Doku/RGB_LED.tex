@@ -104,7 +104,7 @@ stringstyle=\color{violet}}
 \begin{quote}
 Es gibt nichts Praktischeres als eine gute Theorie.
 
-Immanuel Kant (1724 - 1804), deutscher Philosoph
+\emph{Immanuel Kant (1724 - 1804), deutscher Philosoph}
 \end{quote}
 Um trotzdem mal selbst Hand anzulegen, ist ein Projekt zu erarbeiten, dass einen digitalen und einen analogen Teil enthält. Der zeitliche Rahmen ist auf ein halbes Semester begrenzt. 
 Der digitale Teil soll mit einem Spartan 3E Board in VHDL realisiert werden. Für den analogen Teil sind keine Vorgaben vorhanden.
@@ -139,9 +139,9 @@ Für den Digitalteil nutzen wir das Entwicklungsboard Spartan-3E Starterkit. Dara
 
 \subsection{Grobe Datenverarbeitung}
 
-Der VHDL Code ist ein klassischer Fall von einem Input$\rightarrow$Processing$\rightarrow$Output System (\autoref{fig:Software}. Als Eingang fungieren drei einstellbare Werte - der Hue-Wert, der Saturation-Wert und der Value-Wert.
+Der VHDL Code ist ein klassischer Fall von einem Input$\rightarrow$Processing$\rightarrow$Output System (\autoref{fig:Software}). Als Eingang fungieren drei einstellbare Werte --- der Hue-Wert, der Saturation-Wert und der Value-Wert.
 
-Der Hue-Wert wird mit dem Drehencoder schrittweise zwischen 0 und 383 verändert. Die vier Taster dienen je zu zweit ebenfalls der Einstellung je eines Wertes. Jedoch wurde hier die Entscheidung getroffen, vor dem Zählermodul noch ein Autorepeat einzufügen (in der Grafik nicht dargestellt), da es kaum nötig sein wird, die Sättigung oder die Helligkeit in einzelnen Schritten von 0 bis 255 zu ändern.
+Der Hue-Wert wird mit dem Drehencoder schrittweise zwischen 0 und 383 verändert. Die vier Taster dienen je zu zweit ebenfalls der Einstellung je eines Wertes. Jedoch wurde hier die Entscheidung getroffen, vor dem Zählermodul noch ein "`Autorepeat"' einzufügen, da es kaum nötig sein wird, die Sättigung oder die Helligkeit in einzelnen Schritten von 0 bis 255 zu ändern.
 
 \begin{figure}[ht]
 	\centering
@@ -150,9 +150,9 @@ Der Hue-Wert wird mit dem Drehencoder schrittweise zwischen 0 und 383 verändert.
 	\label{fig:Software}
 \end{figure}
 
-Die drei Zählermodule benötigen am Eingang jeweils einen UP- und einen DOWN-Trigger. Im Falle der Taster (Saturation und Value Werte) kommen diese Signale dann auf ein Autorepeat-Modul. Dieses schaut am Eingang ob einer der beiden Triggersignale 1 ist. Wenn dies der Fall ist, fängt es nach einer gewissen Zeit ($2.6ms$) an, den jeweiligen Ausgang zu toggeln, welcher dann den Zähler kontinuierlich erhöht oder verringern. Im Fall des Drehencoders haben wir uns entschieden, die Schritte direkt zum Zählermodul zu führen. Jedoch müssen natürlich die beiden Eingangspins des Drehencoders zuerst decodiert werden.
+Die drei Zählermodule benötigen am Eingang jeweils einen UP- und einen DOWN-Trigger. Im Falle der Taster (\emph{Saturation} und \emph{Value} Werte) kommen diese Signale dann auf ein Autorepeat-Modul. Dieses schaut am Eingang, ob einer der beiden Triggersignale 1 ist. Wenn dies der Fall ist, fängt es nach einer gewissen Zeit ($2.6ms$) an, den jeweiligen Ausgang mit einer gewissen Frequenz zu toggeln, welcher dann den Zähler kontinuierlich erhöht oder verringern. Im Fall des Drehencoders haben wir uns entschieden, die Schritte direkt zum Zählermodul zu führen. Jedoch müssen natürlich die beiden Eingangspins des Drehencoders zuerst decodiert werden.
 
-Danach werden die drei Werte in einem Modul vom HSV in dn RGB Farbraum konvertiert und anschliessend über je ein PWM Encoder Modul auf die drei Ausgangspins gesendet.
+Nach den Zählern werden die drei Werte dann in einem Modul vom HSV in den RGB Farbraum konvertiert und anschliessend über je ein PWM Encoder Modul auf die drei Ausgangspins gesendet.
 
 \subsection{HSV-RGB-Encoder}
 
@@ -168,12 +168,13 @@ Der HSV-Farbraum (Abbildung \ref{fig:HSV}) und der RGB-Farbraum (Abbildung \ref{
 			\includegraphics[width=0.3\textwidth]{images/RGB.png}
 			\label{fig:RGB}
 		}
+		\caption{Vergleich der beiden Farbräume}
 \end{figure}
 
 Eine grafische Darstellung der Umrechnung ist in \autoref{fig:RGB-HSV} dargestellt. 
 Die Formeln dazu sind in Formel \ref{formel:a}, \ref{formel:b} und \ref{formel:c} ersichtlich.
 
-Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Darum haben wir uns entschieden, die "`Breite"' des HSV-Wertes von $360^\circ$ auf $384^\circ$ erhöht. Somit sind die sechs Teilbereiche die in Formel \ref{formel:c} dargestellt sind, jeweils 64 lang. Also kann mit 64 dividiert werden, was in VHDL einem schieben nach rechts um sechs Bit gleichkommt.
+Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Darum haben wir uns entschieden, die "`Breite"' des \emph{Hue} Wertes von $360^\circ$ auf $384^\circ$ zu erhöhen. Dadurch sind die sechs Teilbereiche, die in Formel \ref{formel:c} dargestellt sind, jeweils 64 Schritte breit. Der \emph{Hue} Wert kann also durch 64 dividiert werden, was in VHDL einem Schieben nach rechts um sechs Bit gleichkommt und somit schnell und einfach zu implementieren ist.
 
 \begin{figure}[ht]
 	\centering
@@ -203,7 +204,7 @@ Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Dar
 
 Der Code ist in einem einzigen Prozess enthalten, welcher laufend die drei Eingangswerte umrechnet und auf die drei Ausgangsvektoren schreibt. Die Codestruktur ist eine simple Fallunterscheidung nach den sechs unterschiedlichen Teilbereichen im Hue-Spektrum (welches nun eben $384^\circ$ breit ist). Das Listing der wichtigsten Codeausschnitts ist in \autoref{lst:rgbencoder} sichtbar.
 
-\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \emph{RGBEncoder.hdl}},label=lst:rgbencoder]
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{RGBEncoder.hdl}},label=lst:rgbencoder]
 if SAT = "00000000" then
 	R <= VAL;
 	G <= VAL;
@@ -256,13 +257,30 @@ else
 end if;
 \end{lstlisting}
 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1.00\textwidth]{images/RGBEncoder2.png}
+	\caption{Testbench des RGB-HSV Encoder Moduls}
+	\label{fig:RGBEncoder2}
+\end{figure}
+
+In einer Testbench wurde der \emph{Hue} Wert kontinuiertlich von 0 bis 383 inkrementiert und dabei die drei Ausgangswerte des RGB-HSV Encoders analysiert. In \autoref{fig:RGBEncoder2} ist der Signalverlauf dargestellt. Bei dieser Abbildung wurden anschliessend noch grafisch die Wertverläufe der drei Ausgangsvektoren veranschaulicht. Der Verlauf stimmt mit dem in \autoref{fig:RGB-HSV} überein.
+
 
 \subsection{Inkremental-Decoder}
 
-- Darstellung der beiden Eingagnssignale (mit schön dasrgestelter phasenverschiebung) -> aus spartan pdf\\
-- Softeware erklärung (evtl. mit state event diagramm)\\
-- bild vom drehencoder -> CCW und CW erklären, wieviele steps pro 1 umdrehung -> wieviele umdrehungen für ganzer HSV farbraum\\
-- Darstellung vom simulator
+Der Dreh-Eecoder (\autoref{fig:rotary})auf dem Spartan 3E Board hat 20 Raster pro Umdrehung. Damit könnte der gesamte HSV Farbraum in ca. 19 Umdrehungen durchlaufen werden. Wir haben uns aber entschieden, den entsprechenden Up-Down-Counter für den \emph{Hue} Wert in Viererschritten zählen zu lassen. So decken wir den Farbraum mit ca. 5 Undrehungen ab.
+
+Mit zwei der drei Ausgangspins können Drehereignisse inklusive der Drehrichtung erkannt werden. Uhrzeigersinn entspricht "`CW"' --- "`Clock-Wise"' und Gegenuhrzeigersinn entspricht "`CCW"' --- "`Counter-Clock-Wise"'. Der dritte Pin ist für den Taster, der im Knopf eingebaut ist, mit welchem man auch noch ein Druck-Ereigniss auslösen könnte. Diese Funktion haben wir aber bisher nicht benötigt.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.30\textwidth]{images/rotary.png}
+	\caption{Drehencoder}
+	\label{fig:rotary}
+\end{figure}
+
+Für das VHDL Inkremental-Decoder-Modul haben wir uns auf eine Code-Vorlage von Xilinx selbst gestützt. Die beiden Eingangssignale müssen auf ihre Phasen überprüft werden. In \autoref{fig:Rotary_signals} wird dies erklärt.
 
 \begin{figure}[ht]
 	\centering
@@ -271,19 +289,173 @@ end if;
 	\label{fig:Rotary_signals}
 \end{figure}
 
+Im Code werden die beiden Eingangssignale in einem ersten Prozess jeweils zuerst gefiltert und dann dem zweiten Prozess, dem eigentlichen Phasendetektor, zugeführt. Dieser hat als Ausgangssignale einerseits einen CW Trigger (Uhrzeigersinn, im Code \texttt{up}) , einen CCW Trigger (Gegenuhrzeigersinn, im Code \texttt{down}) und ein Signal, mit welchem ein Trigger Ereignis angezeigt wird (\texttt{rotary\_event}).
+
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{RotaryEncoder.hdl}},label=lst:rotaryencoder]
+rotary_a_in <= ROT_A;
+rotary_b_in <= ROT_B;
+
+filter: process(CLK)
+begin
+	if rising_edge(CLK) then
+		rotary_in <= rotary_b_in & rotary_a_in;	-- beide eingänge zusammenkleben
+		case rotary_in is
+			when "00" => rotary_q1 <= '0';
+			when "01" => rotary_q2 <= '0';
+			when "10" => rotary_q2 <= '1';
+			when "11" => rotary_q1 <= '1';
+			when others =>
+		end case;
+	end if;
+end process filter;
+
+decoder: process(CLK)
+begin
+	if rising_edge(CLK) then
+		delay_rotary_q1 <= rotary_q1;
+		if rotary_q1 = '1' and delay_rotary_q1 = '0' then
+			rotary_event <= '1';
+			if rotary_q2 = '1' then
+				DOWN <= '1';
+			else
+				UP <= '1';
+			end if;
+		else
+			rotary_event <= '0';
+			DOWN <= '0';
+			UP <= '0';
+		end if;
+	end if;
+end process decoder;
+\end{lstlisting}
+
+Die Testbench ist in \autoref{fig:RotaryEncoder} dargestellt.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.8\textwidth]{images/RotaryEncoder.png}
+	\caption{Testbench des Moduls RotaryEncoder}
+	\label{fig:RotaryEncoder}
+\end{figure}
+
 
 \subsection{Up-Down Counter}
 
-- counter erklären\\
-- erklären, wieso es 256 und 384 gibt, auch warum der 256 NICHT überlaufen darf aber der 384 überlaufen MUSS\\
-- Darstellung vom simulator	
+Wir haben zwei unterschiedliche Up-Down Counter. Einer für den \emph{Value} und den \emph{Saturation} Wert, der in acht Bit (also 256 Schritten) zählt und \emph{nicht} überläuft und einer für den \emph{Hue} Wert, der in 384 Schritten zählt und überlaufen darf.
+
+Im Code werden bei beiden Countern die beiden Eingangssignale \texttt{UP} und \texttt{DOWN} auf positive Flanke geprüft und bei einer Flanke der Zählerwert inkrementiert bzw. dekrementiert. Der Unterschied besteht in der Abfrage des Endwerts (also entweder 0 und 255 beim \autoref{lst:counter256} oder 0 und 383 beim \autoref{lst:counter384}).
+
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{Counter256.hdl}},label=lst:counter256]
+process(RESET, CLK)
+begin
+	if RESET = '1' then
+		cnt <= "11111111";
+	elsif rising_edge(CLK) then 
+		UP_old <= UP;
+		DOWN_old <= DOWN;
+		
+		if (UP='1' and UP_old='0' and DOWN='0') then
+			if cnt /= "11111111" then
+				cnt <= cnt + 1;
+			end if;
+			
+		elsif (DOWN='1' and DOWN_old='0' and UP='0') then  
+			if cnt /= "00000000" then
+				cnt <= cnt - 1;
+			end if;
+		end if;
+	end if;
+end process;
+
+VALUE <= std_logic_vector(cnt);
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{Counter384.hdl}},label=lst:counter384]
+process(RESET, CLK)
+	variable cnt : unsigned(8 downto 0);
+	constant step : integer := 4;
+begin
+	if RESET = '1' then
+		cnt := "000000000";
+	elsif rising_edge(CLK) then 
+		UP_old <= UP;
+		DOWN_old <= DOWN;
+
+		if (UP='1' and UP_old='0' and DOWN='0') then
+			if cnt /= ("110000000" - step) then
+				cnt := cnt + step;
+			else
+				cnt := "000000000";
+			end if;
+
+		elsif (DOWN='1' and DOWN_old='0' and UP='0') then  
+			if cnt /= "000000000" then
+				cnt := cnt - step;
+			else
+				cnt := ("110000000" - step);
+			end if;
+		end if;
+	end if;
+	VALUE <= std_logic_vector(cnt);
+end process;
+\end{lstlisting}
 
 \subsection{PWM-Encoder}
 
-- basics eines PWM signals\\
-- berechnung der maximalen / minimalen PWM grundtaktfrequenz (argumente: schnell schalten = mehr schaltverluste am FET; langsam schalten = flackern vom auge sichtbar)\\
-- basics für look-up-table - formel von Mikrocontroller.net: \url{http://www.mikrocontroller.net/articles/LED-Fading}\\
-- array in vhdl
+Der PWM Encoder wurde ebenfalls als Zähler implementiert, der das Ausgangssignal einschaltet, von 0 bis 255 zählt und bei einem gewissen Zählerwert wieder ausschaltet.
+
+Die einzige Entscheidung, die wir treffen mussten, war die Taktfrequenz des PWM-Zählers. Diese darf nicht zu hoch sein, da die Schaltverluste am FET dann recht hoch werden. Andererseits wird bei zu tiefer Schaltfrequenz ein Flackern bei der LED sichtbar werden.
+
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{PWMEncoder.hdl} (PWM Code)},label=lst:pwmencoder]
+process(CLK, RESET)
+	variable PWM_period : unsigned(7 downto 0);
+	variable clock_divider : unsigned(7 downto 0);
+begin
+	if RESET = '1' then
+		clock_divider := "00000000";
+		PWM_period := "00000000";
+	elsif rising_edge(CLK) then
+		clock_divider := unsigned(clock_divider) + 1;
+		
+		if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
+			PWM_period := PWM_period + 1;
+			
+			if PWM_period = "11111111" then	-- nur bis 2^n - 2 gehen: weil es n möglichkeiten (statt n-1) gibt
+				PWM_period := "00000000";
+			end if;
+			
+			if PWM_period < log_table(to_integer(unsigned(VALUE))) then
+				PWM <= '1';
+			else
+				PWM <= '0';
+			end if;
+		end if;
+	end if;
+end process;
+\end{lstlisting}
+
+Wir haben uns dafür entschieden, eine möglichst tiefe Frequenz gerade noch ohne sichtbares Flackern zu wählen. Wir teilen die Systemclock Frequenz von 50MHz mit einem 8 Bit Zähler auf 195kHz herunter. Dann ist ja der PWM-Zähler selber 8 Bit gross, das heisst, eine PWM-Periode ist dann $20ns \cdot 256 \cdot 256 = 1.31ms$ lang und hat somit eine Frequenz von ca. 760Hz.
+
+Danach haben wir noch eine Look-Up-Table eingefügt, welche den eigentlichen Ausgangswert logarithmiert (siehe dazu \url{http://www.mikrocontroller.net/articles/LED-Fading} und \autoref{fig:Logarithmiktabelle}).
+
+\begin{lstlisting}[frame=single,caption={Ausschnitt aus dem VHDL-Code \texttt{PWMEncoder.hdl} (Look-Up-Table)},label=lst:pwmencoder2]
+type nums is array(0 to 255) of integer;
+constant log_table : nums := (
+	0      => 0,
+	1      => 0,
+	2      => 0,
+	3      => 0,
+	
+...
+
+ 252    => 241,
+ 253    => 246,
+ 254    => 250,
+ 255    => 255
+ );
+\end{lstlisting}
+
+Der Code für diese Tabelle ist in \autoref{lst:pwmencoder2} angegeben. Man kann dann die Tabelle wie einen Vektor benutzen und den gewünschten Wert mit einem Index anwählen: \texttt{log\_table(to\_integer(unsigned(VALUE)))}.
 
 \begin{figure}[ht]
 	\centering
@@ -291,6 +463,10 @@ end if;
 	\caption{Logarithmik Umrechnung}
 	\label{fig:Logarithmiktabelle}
 \end{figure}
+
+Die Testbench dazu ist in \autoref{} ersichtlich.
+
+<bild>
 
 
 \section{Analogteil}

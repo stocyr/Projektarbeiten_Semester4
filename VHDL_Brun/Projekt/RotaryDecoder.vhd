@@ -56,15 +56,13 @@ rotary_b_in <= ROT_B;
 filter: process(CLK)
 begin
 	if rising_edge(CLK) then
-		rotary_in <= rotary_b_in & rotary_a_in;
+		rotary_in <= rotary_b_in & rotary_a_in;	-- beide eingänge zusammenkleben
 		case rotary_in is
 			when "00" => rotary_q1 <= '0';
 			when "01" => rotary_q2 <= '0';
 			when "10" => rotary_q2 <= '1';
 			when "11" => rotary_q1 <= '1';
 			when others =>
-				rotary_q1 <= rotary_q1;
-				rotary_q2 <= rotary_q2;
 		end case;
 	end if;
 end process filter;
@@ -73,9 +71,9 @@ decoder: process(CLK)
 begin
 	if rising_edge(CLK) then
 		delay_rotary_q1 <= rotary_q1;
-		if rotary_q1='1' and delay_rotary_q1='0' then
+		if rotary_q1 = '1' and delay_rotary_q1 = '0' then
 			rotary_event <= '1';
-			if rotary_q2='1' then
+			if rotary_q2 = '1' then
 				DOWN <= '1';
 			else
 				UP <= '1';
