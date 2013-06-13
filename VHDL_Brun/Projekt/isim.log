@@ -12,7 +12,8 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
-# run 300ms
+# run 1ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-Stopped at time : 63091810 ns : File "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" Line 72
+# run 10ms
+Stopped at time : 7916030 ns : File "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" Line 67

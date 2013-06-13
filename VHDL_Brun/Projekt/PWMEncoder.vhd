@@ -322,7 +322,7 @@ begin
 		if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
 			PWM_period := PWM_period + 1;
 			
-			if PWM_period = "11111111" then	-- nur bis 2^n - 2 gehen: weil es n möglichkeiten (statt n-1) gibt
+			if PWM_period = "11111111" then	-- nur bis 2^n - 1 gehen: weil es n möglichkeiten (statt n-1) gibt
 				PWM_period := "00000000";
 			end if;
 			

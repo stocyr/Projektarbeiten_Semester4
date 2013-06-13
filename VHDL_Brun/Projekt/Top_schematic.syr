@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.19 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: Top_schematic.prj
 
@@ -107,7 +107,8 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter256.vhd" in Library work.
 Architecture behavioral of Entity counter256 is up to date.
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/PWMEncoder.vhd" in Library work.
-Architecture behavioral of Entity pwmencoder is up to date.
+Entity <pwmencoder> compiled.
+Entity <pwmencoder> (Architecture <behavioral>) compiled.
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" in Library work.
 Architecture behavioral of Entity rgbencoder is up to date.
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" in Library work.
@@ -117,8 +118,7 @@ Architecture behavioral of Entity autorepeat is up to date.
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd" in Library work.
 Architecture behavioral of Entity counter384 is up to date.
 Compiling vhdl file "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic.vhf" in Library work.
-Entity <top_schematic> compiled.
-Entity <top_schematic> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity top_schematic is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -160,7 +160,6 @@ WARNING:Xst:1610 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncode
 Entity <RGBEncoder> analyzed. Unit <RGBEncoder> generated.
 
 Analyzing Entity <RotaryDecoder> in library <work> (Architecture <behavioral>).
-INFO:Xst:1561 - "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd" line 64: Mux is complete : default of case is discarded
 Entity <RotaryDecoder> analyzed. Unit <RotaryDecoder> generated.
 
 Analyzing Entity <AutoRepeat> in library <work> (Architecture <behavioral>).
@@ -624,7 +623,7 @@ Offset:              4.283ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.26 secs
+Total CPU time to Xst completion: 16.23 secs
  
 --> 
 
@@ -632,5 +631,5 @@ Total memory usage is 290672 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   10 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
 

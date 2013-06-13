@@ -12,6 +12,16 @@
 -- edit the user defined section below, adding code to generate the 
 -- stimulus for your design.
 --
+
+
+-- 
+-- Simulate for:
+-- 1.3us
+-- 
+
+
+
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -69,16 +79,16 @@ BEGIN
    );
 
 
--- künstlicher Drehencoder dreh - kontinuierlich
+-- künstlicher Drehencoder - kontinuierlich
 process
 begin
 	wait for clk_period*10000;
 	rot_a <= '1';
-	wait for clk_period*10;
+	wait for clk_period*20;
 	rot_b <= '1';
-	wait for clk_period*10;
+	wait for clk_period*20;
 	rot_a <= '0';
-	wait for clk_period*10;
+	wait for clk_period*20;
 	rot_b <= '0';
 end process;
 
@@ -100,15 +110,15 @@ BEGIN
 	
 	
 	-- Value - 3x runter, drei mal hoch
-	BTN_SOUTH <= '1';
-	wait for clk_period*500000;
-	BTN_SOUTH <= '0';
-	wait for clk_period*100000;
+	--BTN_SOUTH <= '1';
+	--wait for clk_period*500000;
+	--BTN_SOUTH <= '0';
+	--wait for clk_period*100000;
 	
-	BTN_NORTH <= '1';
-	wait for clk_period*500000;
-	BTN_NORTH <= '0';
-	wait for clk_period*100000;
+	--BTN_NORTH <= '1';
+	--wait for clk_period*500000;
+	--BTN_NORTH <= '0';
+	--wait for clk_period*100000;
 	
 	
 	

@@ -29,5 +29,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 19 VHDL Units
 Built simulation executable D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.exe
-Fuse Memory Usage: 49932 KB
-Fuse CPU Usage: 1200 ms
+Fuse Memory Usage: 50112 KB
+Fuse CPU Usage: 2402 ms

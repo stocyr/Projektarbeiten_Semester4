@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="top_schematic_top_schematic_sch_tb" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_43/value" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">value[8:0]</obj_property>
+      <obj_property name="ObjectShortName">value[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#ffffff</obj_property>
+      <obj_property name="label">HUE-Value</obj_property>
+   </wvobject>
+   <wvobject fp_name="group34" type="group">
+      <obj_property name="label">After RGB Encoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/r" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">r[7:0]</obj_property>
+         <obj_property name="ObjectShortName">r[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#ff0000</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/g" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">g[7:0]</obj_property>
+         <obj_property name="ObjectShortName">g[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#00ff00</obj_property>
+      </wvobject>
+      <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_31/b" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">b[7:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

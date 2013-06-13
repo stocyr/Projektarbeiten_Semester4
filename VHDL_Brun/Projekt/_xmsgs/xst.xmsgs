@@ -23,9 +23,6 @@
 <msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd</arg>&quot; line <arg fmt="%d" index="2">97</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">led_value</arg>&gt; has a width of <arg fmt="%d" index="4">16</arg> bits but assigned expression is <arg fmt="%d" index="5">17</arg>-bit wide.
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RotaryDecoder.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Mux is complete : default of case is discarded
-</msg>
-
 <msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Counter360.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">cnt</arg>&gt; has a width of <arg fmt="%d" index="4">9</arg> bits but assigned expression is <arg fmt="%d" index="5">10</arg>-bit wide.
 </msg>
 
