@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/Top_schematic_Top_schematic_sch_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="top_schematic_top_schematic_sch_tb" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_4/value" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">value[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_schematic_top_schematic_sch_tb/UUT/XLXI_4/pwm" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pwm</obj_property>
+      <obj_property name="ObjectShortName">pwm</obj_property>
+   </wvobject>
+</wave_config>

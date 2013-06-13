@@ -349,7 +349,7 @@ Im Code werden bei beiden Countern die beiden Eingangssignale \texttt{UP} und \t
 process(RESET, CLK)
 begin
 	if RESET = '1' then
-		cnt <= "11111111";
+		cnt <= "00000000";
 	elsif rising_edge(CLK) then 
 		UP_old <= UP;
 		DOWN_old <= DOWN;
@@ -464,15 +464,12 @@ Der Code für diese Tabelle ist in \autoref{lst:pwmencoder2} angegeben. Man kann 
 	\label{fig:Logarithmiktabelle}
 \end{figure}
 
-Die Testbench dazu ist in \autoref{} ersichtlich.
-
-<bild>
-
-
 \section{Analogteil}
-Im analogen Teil des Projekts gings darum, eine high power RGB LED mit einer möglichst effizienten Schaltung anzusteuern.
+Im analogen Teil des Projekts ging es darum, eine High Power RGB LED mit einer möglichst effizienten Schaltung anzusteuern.
+
 \subsection{Schema}
-Das Schema für den Analogteil beinhaltet im Wesentlichen die drei Stromquellen für die drei Farben der LED.
+Das Schema für den Analogteil beinhaltet im Wesentlichen die drei Stromquellen für die drei Farben der LED. Es ist in \autoref{fig:Schema} dargestellt.
+
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{images/schema.pdf}
@@ -483,8 +480,12 @@ Das Schema für den Analogteil beinhaltet im Wesentlichen die drei Stromquellen f
 \subsection{Bauteilspezifikation}
 
 \subsubsection{RGB-LED}
-Bei der Evaluation der LED war die Leistung unser Hauptkriterium. 
+Bei der Evaluation der LED war die Leistung unser Hauptkriterium. Wir haben uns schlussendlich für das Modell LZC-00MC40 von LedEngin Inc entschieden. Das Datenblatt ist im Anhang zu finden.
+
+Die LED hat eine Gesamtleistung von 40W und je vier LEDs für jede der drei Farben rot, grün und blau. Die Vorwärtsspannungen variieren je nach Durchflussstrom aber die ungefähren Werte sind: $V_{F rot} \approx 9V$, $V_{F rot} \approx 9V$, $V_{F rot} \approx 9V$, 
+
 \subsubsection{Stromquelle}
+Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor entschieden - den CAT4101. Er hat 
 
 \subsection{Kühlkörperdimensionierung}
 

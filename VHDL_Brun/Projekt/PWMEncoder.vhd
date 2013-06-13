@@ -319,7 +319,7 @@ begin
 	elsif rising_edge(CLK) then
 		clock_divider := unsigned(clock_divider) + 1;
 		
-		if clock_divider = "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
+		if "00000000" then -- bei überlauf: PWM periodenzähler erhöhen
 			PWM_period := PWM_period + 1;
 			
 			if PWM_period = "11111111" then	-- nur bis 2^n - 1 gehen: weil es n möglichkeiten (statt n-1) gibt

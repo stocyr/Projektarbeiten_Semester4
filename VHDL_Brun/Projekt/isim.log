@@ -11,9 +11,13 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 # restart
 # run 1ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 10ms
-Stopped at time : 7916030 ns : File "D:/BFH/Projektarbeiten_Semester4/VHDL_Brun/Projekt/RGBEncoder.vhd" Line 67
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_3/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_4/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 90 ns(1), Instance /top_schematic_top_schematic_sch_tb/UUT/XLXI_5/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

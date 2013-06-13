@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Thu Jun 06 15:15:01 2013">
+  <application stringID="par" timeStamp="Thu Jun 13 08:46:40 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.1\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.1\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\lib\nt64;C:\Xilinx\Vivado\2012.1\bin;C:\Xilinx\14.1\ISE_DS\PlanAhead\bin;C:\Xilinx\14.1\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.1\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.1\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\arm\nt64\bin;C:\Xilinx\14.1\ISE_DS\common\bin\nt64;C:\Xilinx\14.1\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Code Laboratories\CL-Eye Platform SDK\Bin;C:\Program Files (x86)\Java\jre6\bin;D:\Programmieren\OpenCV2.4\install\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex/bin\"/>
+          <item stringID="value" value="C:\Xilinx\14.1\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.1\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\lib\nt64;C:\Xilinx\Vivado\2012.1\bin;C:\Xilinx\14.1\ISE_DS\PlanAhead\bin;C:\Xilinx\14.1\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.1\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.1\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\arm\nt64\bin;C:\Xilinx\14.1\ISE_DS\common\bin\nt64;C:\Xilinx\14.1\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Code Laboratories\CL-Eye Platform SDK\Bin;C:\Program Files (x86)\Java\jre6\bin;D:\Programmieren\OpenCV2.4\install\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex/bin\;C:\Program Files (x86)\Graphviz 2.28\bin;D:\Programmieren\Java\Graphs\UmlGraph"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -68,12 +68,12 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="44 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="43 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="1 mins 4 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="1 mins "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="44 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="44 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="1 mins 5 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="1 mins 1 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">

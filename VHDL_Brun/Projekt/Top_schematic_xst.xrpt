@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Thu Jun 06 15:14:22 2013">
+  <application stringID="Xst" timeStamp="Thu Jun 13 08:45:34 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.1\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.1\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\lib\nt64;C:\Xilinx\Vivado\2012.1\bin;C:\Xilinx\14.1\ISE_DS\PlanAhead\bin;C:\Xilinx\14.1\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.1\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.1\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\arm\nt64\bin;C:\Xilinx\14.1\ISE_DS\common\bin\nt64;C:\Xilinx\14.1\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Code Laboratories\CL-Eye Platform SDK\Bin;C:\Program Files (x86)\Java\jre6\bin;D:\Programmieren\OpenCV2.4\install\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex/bin\"/>
+          <item stringID="value" value="C:\Xilinx\14.1\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.1\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.1\ISE_DS\ISE\lib\nt64;C:\Xilinx\Vivado\2012.1\bin;C:\Xilinx\14.1\ISE_DS\PlanAhead\bin;C:\Xilinx\14.1\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.1\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.1\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.1\ISE_DS\EDK\gnu\arm\nt64\bin;C:\Xilinx\14.1\ISE_DS\common\bin\nt64;C:\Xilinx\14.1\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Code Laboratories\CL-Eye Platform SDK\Bin;C:\Program Files (x86)\Java\jre6\bin;D:\Programmieren\OpenCV2.4\install\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Git\bin;C:\Program Files (x86)\MiKTeX 2.9\miktex/bin\;C:\Program Files (x86)\Graphviz 2.28\bin;D:\Programmieren\Java\Graphs\UmlGraph"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -180,9 +180,8 @@
         <item dataType="int" stringID="XST_FLIPFLOPSLATCHES" value="86">
           <item dataType="int" stringID="XST_FD" value="5"/>
           <item dataType="int" stringID="XST_FDC" value="17"/>
-          <item dataType="int" stringID="XST_FDCE" value="37"/>
+          <item dataType="int" stringID="XST_FDCE" value="53"/>
           <item dataType="int" stringID="XST_FDE" value="9"/>
-          <item dataType="int" stringID="XST_FDPE" value="16"/>
           <item dataType="int" stringID="XST_FDRE" value="2"/>
         </item>
         <item dataType="int" stringID="XST_RAMS" value="2">
