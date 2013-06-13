@@ -498,7 +498,7 @@ Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor 
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.40\textwidth]{images/Stromregler.png}
+		\includegraphics[width=0.30\textwidth]{images/Stromregler.png}
 	\caption{Stromregler}
 	\label{fig:Stromregler}
 \end{figure}
@@ -506,11 +506,11 @@ Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor 
 Für die interne Logik wird eine Speisespannung von $5V$ benötigt. Die Dropout Spannung (Spannung die über dem Regler verloren geht) beträgt $0.5V$. Mit diesen Angaben haben wir die Speisespannungen für die drei RGB LED Anschlüsse folgendermassen festgelegt: Die erwartete Vorwärtsspannung der entsprechenden Farbe plus mindestens $0.5V$. Dies ergab folgende Speisespannungen (im Schema bei \autoref{fig:Schema} auch so bezeichnet): $V_{Rot} = 10.5V$, $V_{Gruen} = 17.5$ und $V_{Blau} = 14.5V$.
 
 \subsection{Kühlkörperdimensionierung}
-Die beiden Bauteile, welche betroffen sind, sind der Stromregler und die RGB LED. Der Stromregler benötigt keine spezielle Kühlung. Dies hat sich auch nach mehreren Testdurchgängen bestätigt.
+Die beiden Bauteile, welche betroffen sind, sind der Stromregler und die RGB LED. Der Stromregler hat jedoch im Datenblatt nur Wärmewiderstandsangaben für eine Printmontage bei der die Erdungsfahne auf einer mindestens $2Inch^2$ grossen Kupferfläche angelötet ist. Aufgrund des guten Wirkungsgrades des Reglers haben wir vermutet, dass keine spezielle Kühlung nötig ist. Dies hat sich schlussendlich auch nach mehreren Testdurchgängen bestätigt.
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=1\textwidth]{images/Rth_schema.pdf}
+		\includegraphics[width=0.6\textwidth]{images/Rth_schema.pdf}
 	\caption{Wärmeersatzschaltbild der RGB LED}
 	\label{fig:Wärmeersatzschaltbild}
 \end{figure}
@@ -519,13 +519,13 @@ Die RGB LED jedoch schon. Im Datenblatt finden sich für die verschiedenen Wärmew
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.60\textwidth]{images/AufbauLED.pdf}
+		\includegraphics[width=0.40\textwidth]{images/AufbauLED.pdf}
 	\caption{Kühlkörperaufbau}
 	\label{fig:AufbauLED}
 \end{figure}
 
 
-Nun wollen wir wissen, wie tief der Wärmewiderstand des Kühlkörpers an die Umgebung sein muss, um bei einer Umgebungstemperatur von $20^\circ C$ eine Halbleitertemperatur von höchstens $125^\circ C$ zu erreichen. Wir rechnen dabei mit der maximalen Leistung der RGB LED von $40W$.
+Nun wollen wir wissen, wie tief der Wärmewiderstand $R_{\vartheta KA}$ des Kühlkörpers an die Umgebung sein muss, um bei einer Umgebungstemperatur von $25^\circ C$ eine Halbleitertemperatur von höchstens $125^\circ C$ zu erreichen. Wir rechnen dabei mit der maximalen Leistung der RGB LED von $40W$.
 
 \begin{equation}
 \begin{split}
@@ -534,16 +534,25 @@ Nun wollen wir wissen, wie tief der Wärmewiderstand des Kühlkörpers an die Umgeb
 \end{split}
 \end{equation}
 
-Bei Farnell haben wir einen Kühlkörper gefunden mit einem Wärmewiderstand von $0.7K/W$, welcher nur $60x60mm$ gross ist (\autoref{fig:Kuehlkoerper}).
+Bei Farnell haben wir einen Kühlkörper gefunden mit einem Wärmewiderstand von $R_{\vartheta KA} = 0.7K/W$, welcher nur $60x60mm$ gross ist (\autoref{fig:Kuehlkoerper}).
 
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.40\textwidth]{images/Kuehlkoerper.png}
+		\includegraphics[width=0.30\textwidth]{images/Kuehlkoerper.png}
 	\caption{Kühlkörper für RGB LED}
 	\label{fig:Kuehlkoerper}
 \end{figure}
 
+Dieser hat einen besseren Wer als erwartet und wir werden voraussichtlich höchstens folgende Halbleitertemperatur erreichen:
 
+\begin{equation}
+\begin{split}
+		\vartheta _{Junction} &= \vartheta _{Ambient} + P_V \cdot (R_{\vartheta JC} + R_{\vartheta CB} + R_{\vartheta BK} + R_{\vartheta KA})\\
+		&= 25^\circ + 40W \cdot (0.7K/W + 0.8K/W + 0.5K/W + 0.7K/W) = 133^\circ C
+\end{split}
+\end{equation}
+
+Dies ist zwar immer noch recht hoch, wird aber in der Praxis höchst wahrscheinlich nie vorkommen, da die Farbe Weiss mit unserer ganzen Vorschaltung und HSV-RGB Umwandlung relativ uninteressant ist.
 
 \subsection{Hardwareaufbau}
 
