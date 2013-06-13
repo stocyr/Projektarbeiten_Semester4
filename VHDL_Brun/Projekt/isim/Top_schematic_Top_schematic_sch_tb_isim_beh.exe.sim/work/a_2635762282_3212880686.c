@@ -49,7 +49,7 @@ LAB2:    xsi_set_current_line(85, ng0);
     t2 = (t0 + 3088U);
     t3 = *((char **)t2);
     t4 = *((int64 *)t3);
-    t5 = (t4 * 10000);
+    t5 = (t4 * 4000);
     t2 = (t0 + 3880);
     xsi_process_wait(t2, t5);
 
@@ -68,7 +68,7 @@ LAB4:    xsi_set_current_line(86, ng0);
     t2 = (t0 + 3088U);
     t3 = *((char **)t2);
     t4 = *((int64 *)t3);
-    t5 = (t4 * 20);
+    t5 = (t4 * 10);
     t2 = (t0 + 3880);
     xsi_process_wait(t2, t5);
 
@@ -91,7 +91,7 @@ LAB8:    xsi_set_current_line(88, ng0);
     t2 = (t0 + 3088U);
     t3 = *((char **)t2);
     t4 = *((int64 *)t3);
-    t5 = (t4 * 20);
+    t5 = (t4 * 10);
     t2 = (t0 + 3880);
     xsi_process_wait(t2, t5);
 
@@ -114,7 +114,7 @@ LAB12:    xsi_set_current_line(90, ng0);
     t2 = (t0 + 3088U);
     t3 = *((char **)t2);
     t4 = *((int64 *)t3);
-    t5 = (t4 * 20);
+    t5 = (t4 * 10);
     t2 = (t0 + 3880);
     xsi_process_wait(t2, t5);
 

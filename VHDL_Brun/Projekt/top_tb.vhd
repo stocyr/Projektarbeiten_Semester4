@@ -16,7 +16,7 @@
 
 -- 
 -- Simulate for:
--- 1.3us
+-- 384us
 -- 
 
 
@@ -82,13 +82,13 @@ BEGIN
 -- künstlicher Drehencoder - kontinuierlich
 process
 begin
-	wait for clk_period*10000;
+	wait for clk_period*4000;	-- 10000
 	rot_a <= '1';
-	wait for clk_period*20;
+	wait for clk_period*10;
 	rot_b <= '1';
-	wait for clk_period*20;
+	wait for clk_period*10;
 	rot_a <= '0';
-	wait for clk_period*20;
+	wait for clk_period*10;
 	rot_b <= '0';
 end process;
 

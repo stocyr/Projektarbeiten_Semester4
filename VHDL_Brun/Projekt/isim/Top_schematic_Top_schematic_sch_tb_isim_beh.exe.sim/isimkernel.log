@@ -2,12 +2,12 @@ Command line:
    Top_schematic_Top_schematic_sch_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  7398
+     -socket  3122
 
-Thu Jun 06 12:11:20 2013
+Thu Jun 13 09:40:13 2013
 
 
- Elaboration Time: 0.093601 sec
+ Elaboration Time: 0.0936 sec
 
  Current Memory Usage: 515.015 Meg
 
@@ -22,9 +22,9 @@ Thu Jun 06 12:11:20 2013
 Total Line Count : 172
 Total Line Count : 172
 
- Total Simulation Time: 46.2855 sec
+ Total Simulation Time: 9.37566 sec
 
  Current Memory Usage: 515.015 Meg
 
-Thu Jun 06 12:13:26 2013
+Thu Jun 13 09:41:16 2013
 

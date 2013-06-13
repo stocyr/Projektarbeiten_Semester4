@@ -50,7 +50,7 @@ begin
 process(RESET, CLK)
 begin
 	if RESET = '1' then
-		cnt <= "11111111";
+		cnt <= "00000000";
 	elsif rising_edge(CLK) then 
 		UP_old <= UP;
 		DOWN_old <= DOWN;
