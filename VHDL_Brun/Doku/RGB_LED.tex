@@ -480,29 +480,70 @@ Das Schema für den Analogteil beinhaltet im Wesentlichen die drei Stromquellen f
 \subsection{Bauteilspezifikation}
 
 \subsubsection{RGB-LED}
-Bei der Evaluation der LED war die Leistung unser Hauptkriterium. Wir haben uns schlussendlich für das Modell LZC-00MC40 von LedEngin Inc entschieden. Das Datenblatt ist im Anhang zu finden.
+Bei der Evaluation der LED war die Leistung unser Hauptkriterium. Wir haben uns schlussendlich für das Modell LZC-00MC40 von LedEngin Inc entschieden (\autoref{fig:RGB-LED}). Das Datenblatt ist im Anhang zu finden.
 
-Die LED hat eine Gesamtleistung von 40W und je vier LEDs für jede der drei Farben rot, grün und blau. Die Vorwärtsspannungen variieren je nach Durchflussstrom aber die ungefähren Werte sind: $V_{F rot} \approx 9V$, $V_{F rot} \approx 9V$, $V_{F rot} \approx 9V$, 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.50\textwidth]{images/RGB-LED.png}
+	\caption{RGB LED}
+	\label{fig:RGB-LED}
+\end{figure}
+
+Die LED hat eine Gesamtleistung von $40W$ und je vier LEDs für jede der drei Farben rot, grün und blau. Die Farbgruppen sind jeweils seriell geschaltet und haben je einen maximalen Durchflussstrom von $1A$. Wir haben uns jedoch auf einen maximalen Strom von $800mA$ festgelegt.
+
+Die Vorwärtsspannungen variieren je nach Durchflussstrom. Für einen Strom von je $800mA$ sind die ungefähren Werte: $V_{F-Rot} \approx 9.5V$, $V_{F-Gruen} \approx 14V$ und $V_{F-Blau} \approx 16.5V$.
 
 \subsubsection{Stromquelle}
-Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor entschieden - den CAT4101. Er hat 
+Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor entschieden - den CAT4101 (\autoref{fig:Stromregler}). Der Strom ist mittels einer Widerstandsbeschaltung eines Pins bis zu $1A$ einstellbar. Um diesen Strom einzustellen, mussten wir einen $680 \Omega$-Widerstand beschalten. Der Stromregler besitzt ausserdem einen PWM-Eingang der es erlaubt, die Stromquelle mit einem hochfrequenzen PWM Signal zu steuern.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.40\textwidth]{images/Stromregler.png}
+	\caption{Stromregler}
+	\label{fig:Stromregler}
+\end{figure}
+
+Für die interne Logik wird eine Speisespannung von $5V$ benötigt. Die Dropout Spannung (Spannung die über dem Regler verloren geht) beträgt $0.5V$. Mit diesen Angaben haben wir die Speisespannungen für die drei RGB LED Anschlüsse folgendermassen festgelegt: Die erwartete Vorwärtsspannung der entsprechenden Farbe plus mindestens $0.5V$. Dies ergab folgende Speisespannungen (im Schema bei \autoref{fig:Schema} auch so bezeichnet): $V_{Rot} = 10.5V$, $V_{Gruen} = 17.5$ und $V_{Blau} = 14.5V$.
 
 \subsection{Kühlkörperdimensionierung}
+Die beiden Bauteile, welche betroffen sind, sind der Stromregler und die RGB LED. Der Stromregler benötigt keine spezielle Kühlung. Dies hat sich auch nach mehreren Testdurchgängen bestätigt.
 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{images/Rth_schema.pdf}
-	\caption{Wärmeersatzschaltbild}
+	\caption{Wärmeersatzschaltbild der RGB LED}
 	\label{fig:Wärmeersatzschaltbild}
 \end{figure}
 
-$R_{\vartheta JC} = 0.7K/W, R_{\vartheta CB} = 0.8K/W, R_{\vartheta BK} = 0.5K/W$
+Die RGB LED jedoch schon. Im Datenblatt finden sich für die verschiedenen Wärmewiderstände (Wärmeersatzschaltbild: \autoref{fig:Wärmeersatzschaltbild}, Aufbau grafisch: \autoref{fig:AufbauLED}) die folgenden Werte: $R_{\vartheta JC} = 0.7K/W$ und $R_{\vartheta CB} = 0.8K/W$. Wir haben zwischen der RGB LED und dem Kühlkörper noch eine wärmeleitende Klebefolie angebracht und schätzen für diese einen Wärmewiderstand von $R_{\vartheta BK} = 0.5K/W$.
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.60\textwidth]{images/AufbauLED.pdf}
+	\caption{Kühlkörperaufbau}
+	\label{fig:AufbauLED}
+\end{figure}
+
+
+Nun wollen wir wissen, wie tief der Wärmewiderstand des Kühlkörpers an die Umgebung sein muss, um bei einer Umgebungstemperatur von $20^\circ C$ eine Halbleitertemperatur von höchstens $125^\circ C$ zu erreichen. Wir rechnen dabei mit der maximalen Leistung der RGB LED von $40W$.
+
 \begin{equation}
 \begin{split}
 		R_{KAmax} &= \frac{\vartheta _{Junction} - \vartheta _{Ambient}}{P_V}-(R_{\vartheta JC}+ R_{\vartheta CB}+ R_{\vartheta BK})\\
 		&= \frac{150^\circ C - 25^\circ C}{40W}-(0.7K/W + 0.8K/W + 0.5K/W) = 1.125K/W
 \end{split}
 \end{equation}
+
+Bei Farnell haben wir einen Kühlkörper gefunden mit einem Wärmewiderstand von $0.7K/W$, welcher nur $60x60mm$ gross ist (\autoref{fig:Kuehlkoerper}).
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.40\textwidth]{images/Kuehlkoerper.png}
+	\caption{Kühlkörper für RGB LED}
+	\label{fig:Kuehlkoerper}
+\end{figure}
+
+
 
 \subsection{Hardwareaufbau}
 
