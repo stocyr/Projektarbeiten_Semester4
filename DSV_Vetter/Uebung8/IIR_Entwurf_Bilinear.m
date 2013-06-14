@@ -12,10 +12,21 @@ Ordnung_toleranzschema=buttord(fpass,fstop,Apass,Astop,'s');
 Ordnung_aufgabenstellung = 2;
 %-------------------Bestimmung der Koeffizienten des analogen Filters---------------
 [b,a]=butter(Ordnung_aufgabenstellung,2*pi*fpass,'s');
+tf(b,a)
 %-------------------Bilinear-Transformation-----------------------------------------
 [bd,ad]=bilinear(b,a,fa); 
 %-------------------Überprüfung und Anzeige-----------------------------------------
 nfft=4*256;
 [H,f]=freqz(bd,ad,nfft,fa);
-plot(f,20*log10(abs(H)),'Linewidth',2)
+plot(f,20*log10(abs(H)),'r', 'Linewidth',4)
 set(gca,'ylim',[-Astop-5 3]);grid minor;ylabel('|H(f)|');xlabel('f [Hz]')
+
+%-------------------Bilinear-Transformation für digitales Filter-----
+[bd,ad]=butter(Ordnung_aufgabenstellung,fdpass/(fa/2));
+hold all 
+grid on
+[H,f]=freqz(bd,ad,nfft,fa);
+plot(f,20*log10(abs(H)),'Linewidth',2)
+legend('Butterworth analog Entwurf', 'Butterworth digital Entwurf')
+
+
