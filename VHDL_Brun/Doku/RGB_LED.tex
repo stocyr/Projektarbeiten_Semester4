@@ -505,6 +505,23 @@ $R_{\vartheta JC} = 0.7K/W, R_{\vartheta CB} = 0.8K/W, R_{\vartheta BK} = 0.5K/W
 \end{equation}
 
 \subsection{Hardwareaufbau}
+Um unsere Hardware zu testen und zu schauen, ob die Stromregler überhaupt funktionieren, haben wir zuerst ein Aufbau auf einer Steckplatte realisiert (siehe \autoref{fig:Aufbau Steckplatte}.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.71\textwidth]{images/Steckplatte2.jpg}
+	\caption{Aufbau Steckplatte}
+	\label{fig:Aufbau Steckplatte}
+\end{figure}
+
+Um zu verhindern, dass die LED beim ersten Einschalten zerstört wird, haben wir den Widerstand $R_{SET}$ zuerst $1k\Omega$ gewählt, was einen Strom durch den Regler von etwa $500mA$ ergibt. Als dies funktioneirte, haben wir den Widerstand mit einem $680\Omega$ Widerstand ersetzt, so dass er nun auf 800mA eingestellt ist. Diesen Wert haben wir auch auf dem Veroboardaufbau eingesetzt. Jedoch haben wir natürlich aus Neugier schon auch mal die LED mit einem Ampere pro Farbe betrieben. Der Unterschied von $800mA$ zu $1A$ war doch recht deutlich zu sehen. Da wir aber die gesamte Schaltung auf $800mA$ ausgelegt haben, haben wir schlussendlich den Widerstand nicht mer definitiv ersetzt auf dem Prototypaufbau.
+
+
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{images/Print.jpg}
+	\caption{Aufbau Veroboard}
+	\label{fig:Aufbau Veroboard}
+\end{figure}
 
 \section{Inbetriebnahme}
 
