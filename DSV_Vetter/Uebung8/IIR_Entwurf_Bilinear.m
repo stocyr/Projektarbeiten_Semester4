@@ -28,5 +28,6 @@ grid on
 [H,f]=freqz(bd,ad,nfft,fa);
 plot(f,20*log10(abs(H)),'Linewidth',2)
 legend('Butterworth analog Entwurf', 'Butterworth digital Entwurf')
+plot(2000, -3, 'rO', 'linewidth', 3)
 
 
