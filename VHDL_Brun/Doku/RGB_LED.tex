@@ -555,7 +555,9 @@ Dieser hat einen besseren Wer als erwartet und wir werden voraussichtlich höchst
 Dies ist zwar immer noch recht hoch, wird aber in der Praxis höchst wahrscheinlich nie vorkommen, da die Farbe Weiss mit unserer ganzen Vorschaltung und HSV-RGB Umwandlung relativ uninteressant ist.
 
 \subsection{Hardwareaufbau}
-Um unsere Hardware zu testen und zu schauen, ob die Stromregler überhaupt funktionieren, haben wir zuerst ein Aufbau auf einer Steckplatte realisiert (siehe \autoref{fig:Aufbau Steckplatte}.
+Um unsere Hardware zu testen und zu schauen, ob die Stromregler überhaupt funktionieren, haben wir zuerst ein Aufbau auf einer Steckplatte realisiert (siehe \autoref{fig:Aufbau Steckplatte}) und erst danach noch einen Prototypaufbau auf einer Veroboardplatte (siehe \autoref{fig:Aufbau Veroboard}) gemacht.
+\subsubsection{Steckplatte}
+Um zu verhindern, dass die LED beim ersten Einschalten zerstört wird, haben wir den Widerstand $R_{SET}$ zuerst $1k\Omega$ gewählt, was einen Strom durch den Regler von etwa $500mA$ ergibt.
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.71\textwidth]{images/Steckplatte2.jpg}
@@ -563,17 +565,30 @@ Um unsere Hardware zu testen und zu schauen, ob die Stromregler überhaupt funkti
 	\label{fig:Aufbau Steckplatte}
 \end{figure}
 
-Um zu verhindern, dass die LED beim ersten Einschalten zerstört wird, haben wir den Widerstand $R_{SET}$ zuerst $1k\Omega$ gewählt, was einen Strom durch den Regler von etwa $500mA$ ergibt. Als dies funktioneirte, haben wir den Widerstand mit einem $680\Omega$ Widerstand ersetzt, so dass er nun auf 800mA eingestellt ist. Diesen Wert haben wir auch auf dem Veroboardaufbau eingesetzt. Jedoch haben wir natürlich aus Neugier schon auch mal die LED mit einem Ampere pro Farbe betrieben. Der Unterschied von $800mA$ zu $1A$ war doch recht deutlich zu sehen. Da wir aber die gesamte Schaltung auf $800mA$ ausgelegt haben, haben wir schlussendlich den Widerstand nicht mer definitiv ersetzt auf dem Prototypaufbau.
+Als dies funktioneirte, haben wir den Widerstand mit einem $680\Omega$ Widerstand ersetzt, so dass der Strom nun auf 800mA eingestellt ist. Diesen Wert haben wir auch auf dem Veroboardaufbau eingesetzt. Jedoch haben wir natürlich aus Neugier die LED auch einmal mit einem Ampere pro Farbe betrieben. Der Unterschied von $800mA$ zu $1A$ war doch recht deutlich zu sehen. Da wir aber die gesamte Schaltung auf $800mA$ ausgelegt haben, haben wir schlussendlich den Widerstand nicht mer definitiv ersetzt auf dem Prototypaufbau.
 
-
+\subsubsection{Veroboard}
+Nach dem Testaufbau auf der Steckplatte folgte ein Prototypaufbau auf einem Veroboard. Das hat den Vorteil, dass die Schaltung übersichtlicher gestaltet ist und der Aufbau insgesamt etwas stabiler und zuverlässiger ist. Auch sind nun die Verbindungen gelötet und nicht nur gesteckt, was bei den relativ hohen Strömen auch ein Vorteil ist.
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=1\textwidth]{images/Print.jpg}
+		\includegraphics[width=0.7\textwidth]{images/Print.jpg}
 	\caption{Aufbau Veroboard}
 	\label{fig:Aufbau Veroboard}
 \end{figure}
+Auf dem Board sind im Wesentlichen nur die drei Stromregler und die dazugehörigen Widerstände. Dazu noch die Stecker um die Netzgeräte, das Spartan Board und die LED anzuschliessen. Das genaue Anschlussschema ist im Kapitel Inbetriebnahme ersichtlich und wird hier nicht weiter erklärt. 
 
 \section{Inbetriebnahme}
+Um die LED in Betrieb zu nehmen, haben wir zwei Labornetzgeräte vom Typ MN 300-2 benutzt und die Spannungen $V_{Rot} = 10.5V$, $V_{Gruen} = 17.5$, $V_{Blau} = 14.5V$ und $V_{CC} = 5V$ eingestellt. Wie die Spannungen angeschlossen werden, ist im Anschlussschema (\autoref{fig:Anschlussscehma}) ersichtlich.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{images/Anschlussschema.pdf}
+	\caption{Anschlussschema}
+	\label{fig:Anschlussscehma}
+\end{figure}
+Die Strombegrenzung haben wir dabei zuerst bei etwa $500mA$ eingestellt, kann aber bei der jetzigen Inbetriebnahme auf ein Ampere aufgedreht werden. 
+Um sicherzugehen, dass die digitale Ansteuerung funktioniert, haben wir das PWM Signal zuerst mit einem Oscilloskop ausgemessen. Auch den Prototypaufbau haben wir zuerst kontrolliert, indem wir gemessen haben, ob wir keinen Kurzschluss auf den Verschiedenen Speisungen haben. Als alles kontrolliert war, haben wir die LED an das Interface angeschlossen und geprüft, ob die LED's mit dem Stromregler angesteuert werden können. Nach erfolgreicher Ausführung dieses Schritts, schlossen wir das Spartan Board an, und siehe da - Es funktioniert!  
+
+Zu beachten gibt es noch, dass das Flachbandkabel, welches auf das Spartan Board fürht richtig angeschlossen wird. Auf dem Spartan Board sind nur einreihige Header Steckerliesten vorhanden. Wir haben einen Adapter für ein Flachbandkabel gemacht und können somit das Interface direkt anschliessen.
 
 \section{Schlussfolgerung}
 
