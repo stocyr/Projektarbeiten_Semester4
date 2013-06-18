@@ -31,6 +31,8 @@
 \includepdfset{pages=-,noautoscale}
 
 \usepackage{listings}
+\usepackage{graphicx,url}
+
 \definecolor{bg}{rgb}{0.98,0.98,0.98}
 \lstset{language=C,basicstyle=\small,keywordstyle=\color{blue}\bfseries,%
 tabsize=2,backgroundcolor=\color{bg},numbers=left,%
@@ -67,6 +69,18 @@ stringstyle=\color{violet}}
 \author{Cyril Stoller, Marcel Bärtschi}
 \maketitle
 
+\vspace{8cm}
+\begin{abstract}
+	
+\begin{center}	
+\textbf{Abstract}
+\vspace{0.3cm}
+
+	Um unsere Kentnisse in VHDL und im Entwerfen von elektronischen Schaltungen zu vertiefen, haben wir ein Projekt erarbeitet, in welchem wir beides gleichermassen üben können. Dabei ist das Projekt 40 Watt high power LED entstanden. 
+\end{center}
+	
+\end{abstract}
+\newpage
 %% Inhaltsverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents %Inhaltsverzeichnis
 
@@ -78,16 +92,6 @@ stringstyle=\color{violet}}
 
 \newpage
 
-\begin{abstract}
-	
-\begin{center}	
-\textbf{Abstract}
-\vspace{0.3cm}
-
-	Um unsere Kentnisse in VHDL und im Entwerfen von elektronischen Schaltungen zu vertiefen, haben wir ein Projekt erarbeitet, in welchem wir beides gleichermassen üben können. Dabei ist das Projekt 40 Watt high power LED entstanden. 
-\end{center}
-	
-\end{abstract}
 
 \vspace{2cm}
 
@@ -179,7 +183,7 @@ Dabei gibt es vor allem ein Problem: In VHDL kann man nicht durch 60 teilen. Dar
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.6\textwidth]{images/RGB-HSV.png}
-	\caption{HSV-RGB Konvertierung}
+	\caption[HSV-RGB Kovertierung \protect\space{\small\url{http://goo.gl/IkLJz} (18.\,06.~2013)}]{HSV-RGB Konvertierung}
 	\label{fig:RGB-HSV}
 \end{figure}
 
@@ -276,7 +280,7 @@ Mit zwei der drei Ausgangspins können Drehereignisse inklusive der Drehrichtung 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.30\textwidth]{images/rotary.png}
-	\caption{Drehencoder}
+	\caption[Drehencoder  \protect\space{\small\url{http://www.xilinx.com/} (18.\,06.~2013)}]{Drehencoder}
 	\label{fig:rotary}
 \end{figure}
 
@@ -285,7 +289,7 @@ Für das VHDL Inkremental-Decoder-Modul haben wir uns auf eine Code-Vorlage von X
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{images/Rotary_signals.png}
-	\caption{Ausgangssignale des Dreh-Encoders}
+	\caption[Ausgangssignale des Dreh-Encoders \protect\space{\small\url{http://www.xilinx.com/} (18.\,06.~2013)}]{Ausgangssignale des Dreh-Encoders}
 	\label{fig:Rotary_signals}
 \end{figure}
 
@@ -334,7 +338,7 @@ Die Testbench ist in \autoref{fig:RotaryEncoder} dargestellt.
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.8\textwidth]{images/RotaryEncoder.png}
-	\caption{Testbench des Moduls RotaryEncoder}
+	\caption[Testbench RotaryEncoder] {RotaryEncoder}
 	\label{fig:RotaryEncoder}
 \end{figure}
 
@@ -485,7 +489,7 @@ Bei der Evaluation der LED war die Leistung unser Hauptkriterium. Wir haben uns 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.50\textwidth]{images/RGB-LED.png}
-	\caption{RGB LED}
+	\caption[RGB LED \protect\space{\small\url{http://ch.farnell.com} (18.\,06.~2013)}]{RGB LED}
 	\label{fig:RGB-LED}
 \end{figure}
 
@@ -499,7 +503,7 @@ Als Stromquelle haben wir uns für eine Konstantstromquelle von ON Semiconductor 
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.30\textwidth]{images/Stromregler.png}
-	\caption{Stromregler}
+	\caption[Stromregler \protect\space{\small\url{http://ch.farnell.com} (18.\,06.~2013)}]{Stromregler}
 	\label{fig:Stromregler}
 \end{figure}
 
@@ -539,7 +543,7 @@ Bei Farnell haben wir einen Kühlkörper gefunden mit einem Wärmewiderstand von $R
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.30\textwidth]{images/Kuehlkoerper.png}
-	\caption{Kühlkörper für RGB LED}
+	\caption[Kühlkörper für RGB LED \protect{\small\url{http://ch.farnell.com} (18.\,06.~2013)}]{Kühlkörper für RGB LED}
 	\label{fig:Kuehlkoerper}
 \end{figure}
 
@@ -560,7 +564,7 @@ Um unsere Hardware zu testen und zu schauen, ob die Stromregler überhaupt funkti
 Um zu verhindern, dass die LED beim ersten Einschalten zerstört wird, haben wir den Widerstand $R_{SET}$ zuerst $1k\Omega$ gewählt, was einen Strom durch den Regler von etwa $500mA$ ergibt.
 \begin{figure}[ht]
 	\centering
-		\includegraphics[width=0.71\textwidth]{images/Steckplatte2.jpg}
+		\includegraphics[width=0.6\textwidth]{images/Steckplatte2.jpg}
 	\caption{Aufbau Steckplatte}
 	\label{fig:Aufbau Steckplatte}
 \end{figure}
@@ -582,7 +586,7 @@ Um die LED in Betrieb zu nehmen, haben wir zwei Labornetzgeräte vom Typ MN 300-2
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{images/Anschlussschema.pdf}
-	\caption{Anschlussschema}
+	\caption[Anschlussschema]{Anschlussschema}
 	\label{fig:Anschlussscehma}
 \end{figure}
 Die Strombegrenzung haben wir dabei zuerst bei etwa $500mA$ eingestellt, kann aber bei der jetzigen Inbetriebnahme auf ein Ampere aufgedreht werden. 
@@ -591,7 +595,8 @@ Um sicherzugehen, dass die digitale Ansteuerung funktioniert, haben wir das PWM 
 Zu beachten gibt es noch, dass das Flachbandkabel, welches auf das Spartan Board fürht richtig angeschlossen wird. Auf dem Spartan Board sind nur einreihige Header Steckerliesten vorhanden. Wir haben einen Adapter für ein Flachbandkabel gemacht und können somit das Interface direkt anschliessen.
 
 \section{Schlussfolgerung}
-
+Die Projektarbeit hat uns gut gefallen, besonders gut war dabei, dass wir den analogen und den digitalen Teil verbinden konnten. Wie sich im Verlauf der Arbeit herausgestellt hat, war vorallem die Ansteuerung im VHDL der LED die grosse Herausforderung. Wir haben zuerst sehr viel Zeit mit dem VHDL Entwurf verbracht und den analogen Teil etwas vernachlässigt. Desshalb hatten wir am Schluss noch etwas Stress beim fertign des Prototyps. 
+Grössere Probleme gab es eigentlich keine. Wir hatten jedoch immer noch etwas mühe, im VHDL nicht prozeduralen Code zu schreiben, sondern nur Hardware zu beschreiben. Mit den Stromreglern hatten wir noch kleine Schwieregkeiten. Es schaltete immer ein Stromregler in den Shutdown Mode, und funktionierte nach einer gewissen Zeit nicht mehr. Nach längerem Fehlersuchen, haben wir den Regler ersetzt und alle Farben zu Beginn gleich initialisiert. So konnten wir das Problem beheben.
 
 \vfill
 \begin{tabular}{rr}
@@ -619,12 +624,19 @@ Zu beachten gibt es noch, dass das Flachbandkabel, welches auf das Spartan Board
 
 % Quellenverzeichnis
 %\addcontentsline{toc}{section}{Quellenverzeichnis}
-\section{Quellenverzeichnis}
-\renewcommand\refname{}
+
+%\renewcommand\refname{Datenblatt LED}
 
 \vspace{-1cm}
 
 \bibliographystyle{amsplain}
 \bibliography{Bildquellen}
-
+\section{Datenblatt LED}
+\section{Datenblatt Stromregler}
+\section{Datenblatt Kühlkörper}
+\section{VHDL Code}
+Der Code ist in digitaler Form beigelegt. 
+\includepdf{../Datasheets/40WRGBLED.pdf}
+\includepdf{../Datasheets/CAT4101-D.pdf}
+\includepdf{../Datasheets/Kuelkoerper.pdf}
 \end{document}
