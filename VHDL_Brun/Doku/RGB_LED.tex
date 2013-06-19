@@ -569,34 +569,35 @@ Um zu verhindern, dass die LED beim ersten Einschalten zerstört wird, haben wir 
 	\label{fig:Aufbau Steckplatte}
 \end{figure}
 
-Als dies funktioneirte, haben wir den Widerstand mit einem $680\Omega$ Widerstand ersetzt, so dass der Strom nun auf 800mA eingestellt ist. Diesen Wert haben wir auch auf dem Veroboardaufbau eingesetzt. Jedoch haben wir natürlich aus Neugier die LED auch einmal mit einem Ampere pro Farbe betrieben. Der Unterschied von $800mA$ zu $1A$ war doch recht deutlich zu sehen. Da wir aber die gesamte Schaltung auf $800mA$ ausgelegt haben, haben wir schlussendlich den Widerstand nicht mer definitiv ersetzt auf dem Prototypaufbau.
+Als dies funktioneirte, haben wir den Widerstand mit einem $680\Omega$ Widerstand ersetzt, so dass der Strom nun auf 800mA eingestellt ist. Diesen Wert haben wir auch auf dem Veroboardaufbau eingesetzt. Jedoch haben wir natürlich aus Neugier die LED auch einmal mit einem Ampere pro Farbe betrieben. Der Unterschied von $800mA$ zu $1A$ war doch recht deutlich zu sehen. Da wir aber die gesamte Schaltung auf $800mA$ ausgelegt haben, haben wir auf dem Prototyp-Aufbau schlussendlich den Widerstand nicht mehr definitiv ersetzt.
 
-\subsubsection{Veroboard}
-Nach dem Testaufbau auf der Steckplatte folgte ein Prototypaufbau auf einem Veroboard. Das hat den Vorteil, dass die Schaltung übersichtlicher gestaltet ist und der Aufbau insgesamt etwas stabiler und zuverlässiger ist. Auch sind nun die Verbindungen gelötet und nicht nur gesteckt, was bei den relativ hohen Strömen auch ein Vorteil ist.
+\subsubsection{Veroboard Aufbau}
+Nach dem Testaufbau auf der Steckplatte folgte ein Prototyp-Aufbau auf einem Veroboard. Das hat den Vorteil, dass die Schaltung übersichtlicher gestaltet ist und der Aufbau insgesamt etwas stabiler und zuverlässiger ist. Auch sind nun die Verbindungen gelötet und nicht nur gesteckt, was bei den relativ hohen Strömen auch ein Vorteil ist.
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=0.7\textwidth]{images/Print.jpg}
 	\caption{Aufbau Veroboard}
 	\label{fig:Aufbau Veroboard}
 \end{figure}
-Auf dem Board sind im Wesentlichen nur die drei Stromregler und die dazugehörigen Widerstände. Dazu noch die Stecker um die Netzgeräte, das Spartan Board und die LED anzuschliessen. Das genaue Anschlussschema ist im Kapitel Inbetriebnahme ersichtlich und wird hier nicht weiter erklärt. 
+Auf dem Board sind im Wesentlichen nur die drei Stromregler und die dazugehörigen Widerstände. Dazu noch die Stecker um die Netzgeräte, das Spartan 3E Board und die LED anzuschliessen. Das genaue Anschlussschema ist in \autoref{sec:Inbetriebnahme} ersichtlich. 
 
 \section{Inbetriebnahme}
-Um die LED in Betrieb zu nehmen, haben wir zwei Labornetzgeräte vom Typ MN 300-2 benutzt und die Spannungen $V_{Rot} = 10.5V$, $V_{Gruen} = 17.5$, $V_{Blau} = 14.5V$ und $V_{CC} = 5V$ eingestellt. Wie die Spannungen angeschlossen werden, ist im Anschlussschema (\autoref{fig:Anschlussscehma}) ersichtlich.
+\label{sec:Inbetriebnahme}
+Um die LED in Betrieb zu nehmen, haben wir zwei Labornetzgeräte vom Typ \emph{MN 300-2} benutzt und die Spannungen $V_{Rot} = 10.5V$, $V_{Gruen} = 17.5$, $V_{Blau} = 14.5V$ und $V_{CC} = 5V$ eingestellt. Wie die Spannungen angeschlossen werden, ist im Anschlussschema (\autoref{fig:Anschlussscehma}) ersichtlich.
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{images/Anschlussschema.pdf}
-	\caption[Anschlussschema]{Anschlussschema}
+	\caption{Anschlussschema}
 	\label{fig:Anschlussscehma}
 \end{figure}
-Die Strombegrenzung haben wir dabei zuerst bei etwa $500mA$ eingestellt, kann aber bei der jetzigen Inbetriebnahme auf ein Ampere aufgedreht werden. 
-Um sicherzugehen, dass die digitale Ansteuerung funktioniert, haben wir das PWM Signal zuerst mit einem Oscilloskop ausgemessen. Auch den Prototypaufbau haben wir zuerst kontrolliert, indem wir gemessen haben, ob wir keinen Kurzschluss auf den Verschiedenen Speisungen haben. Als alles kontrolliert war, haben wir die LED an das Interface angeschlossen und geprüft, ob die LED's mit dem Stromregler angesteuert werden können. Nach erfolgreicher Ausführung dieses Schritts, schlossen wir das Spartan Board an, und siehe da - Es funktioniert!  
+Die Strombegrenzung haben wir dabei vorerst bei etwa $800mA$ belassen. Diese könnte aber bei der jetzigen Inbetriebnahme auf ein Ampere aufgedreht werden. 
+Um sicherzugehen, dass die digitale Ansteuerung funktioniert, haben wir das PWM Signal zuerst mit einem Oscilloskop ausgemessen. Auch den Prototyp-Aufbau haben wir zuerst kontrolliert, indem wir gemessen haben, ob wir keinen Kurzschluss auf den verschiedenen Speisungen haben. Als alles kontrolliert war, haben wir die LED an das Interface angeschlossen und geprüft, ob die LED's mit dem Stromregler angesteuert werden können. Nach erfolgreicher Ausführung dieses Schritts, schlossen wir das Spartan Board an, und siehe da - Es funktionierte!  
 
-Zu beachten gibt es noch, dass das Flachbandkabel, welches auf das Spartan Board fürht richtig angeschlossen wird. Auf dem Spartan Board sind nur einreihige Header Steckerliesten vorhanden. Wir haben einen Adapter für ein Flachbandkabel gemacht und können somit das Interface direkt anschliessen.
+Zu beachten gilt noch, dass das Flachbandkabel, welches auf das Spartan 3E Board führt, richtig angeschlossen wird. Auf dem Spartan Board sind nur einreihige Header-Steckerleisten vorhanden. Wir haben einen Adapter für ein Flachbandkabel gemacht und können somit das Interface direkt anschliessen.
 
 \section{Schlussfolgerung}
-Die Projektarbeit hat uns gut gefallen, besonders gut war dabei, dass wir den analogen und den digitalen Teil verbinden konnten. Wie sich im Verlauf der Arbeit herausgestellt hat, war vorallem die Ansteuerung im VHDL der LED die grosse Herausforderung. Wir haben zuerst sehr viel Zeit mit dem VHDL Entwurf verbracht und den analogen Teil etwas vernachlässigt. Desshalb hatten wir am Schluss noch etwas Stress beim fertign des Prototyps. 
-Grössere Probleme gab es eigentlich keine. Wir hatten jedoch immer noch etwas mühe, im VHDL nicht prozeduralen Code zu schreiben, sondern nur Hardware zu beschreiben. Mit den Stromreglern hatten wir noch kleine Schwieregkeiten. Es schaltete immer ein Stromregler in den Shutdown Mode, und funktionierte nach einer gewissen Zeit nicht mehr. Nach längerem Fehlersuchen, haben wir den Regler ersetzt und alle Farben zu Beginn gleich initialisiert. So konnten wir das Problem beheben.
+Die Projektarbeit hat uns gut gefallen. Besonders gut war dabei, dass wir den analogen und den digitalen Teil verbinden konnten. Wie sich im Verlauf der Arbeit herausgestellt hat, war vor allem die Ansteuerung der LED in VHDL die grosse Herausforderung. Wir haben zuerst sehr viel Zeit mit dem VHDL Entwurf verbracht und den analogen Teil etwas vernachlässigt. Deshalb hatten wir am Schluss noch etwas Stress beim Fertigen des Prototyps. 
+Grössere Probleme gab es eigentlich keine. Wir hatten jedoch immer noch etwas mühe, in VHDL \emph{nicht} prozeduralen Code zu schreiben, sondern nur Hardware zu beschreiben. Mit den Stromreglern hatten wir noch kleine Schwierigkeiten. Es schaltete immer ein Stromregler in den Shutdown Mode und funktionierte nach einer gewissen Zeit nicht mehr. Nach längerem Fehlersuchen haben wir den Regler ersetzt und alle Farben zu Beginn gleich initialisiert, und zwar alle auf dunkel. So konnten wir das Problem beheben.
 
 \vfill
 \begin{tabular}{rr}
