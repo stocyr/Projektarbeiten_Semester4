@@ -1,5 +1,0 @@
-set -tmpdir "U:/VHDL/RGB/Projekt/xst/projnav.tmp"
-set -xsthdpdir "U:/VHDL/RGB/Projekt/xst"
-elaborate
--ifn Duplicater.prj
--ifmt mixed

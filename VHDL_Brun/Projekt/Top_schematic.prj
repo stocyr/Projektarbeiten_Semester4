@@ -1,7 +1,0 @@
-vhdl work "RotaryDecoder.vhd"
-vhdl work "RGBEncoder.vhd"
-vhdl work "PWMEncoder.vhd"
-vhdl work "Counter360.vhd"
-vhdl work "Counter256.vhd"
-vhdl work "AutoRepeat.vhd"
-vhdl work "Top_schematic.vhf"
