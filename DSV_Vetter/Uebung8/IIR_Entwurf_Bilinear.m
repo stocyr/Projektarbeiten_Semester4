@@ -9,7 +9,7 @@ fstop=fa/pi*tan(pi*fdstop/fa);
 %-------------------Berechnung der Ordnung des analogen Filters---------------------
 % siehe Kurs Signale und Systeme mit MATLAB
 Ordnung_toleranzschema=buttord(fpass,fstop,Apass,Astop,'s');
-Ordnung_aufgabenstellung = 2;
+Ordnung_aufgabenstellung = 2;   % Vetter sagt: nimm2
 %-------------------Bestimmung der Koeffizienten des analogen Filters---------------
 [b,a]=butter(Ordnung_aufgabenstellung,2*pi*fpass,'s');
 tf(b,a)
